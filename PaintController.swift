@@ -9,6 +9,7 @@
 import UIKit
 import ACEDrawingView
 import Spring
+import ReachabilitySwift
 
 class PaintController: UIViewController, UITableViewDataSource, UITableViewDelegate,UITextFieldDelegate,UIPickerViewDelegate, UIPickerViewDataSource,UIToolbarDelegate{
 
@@ -461,8 +462,8 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
           
             
             do {
-                let reachability = try AMReachability.reachabilityForInternetConnection()
-                if reachability.isReachable() {
+                let reachability = try Reachability()!
+                if reachability.isReachable {
                     //インターネット接続あり
                     //送信文
                    SavePost(UserID,Title: PostTitle,Category: PostCategory,IMG: PostImg)

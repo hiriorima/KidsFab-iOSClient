@@ -18,7 +18,6 @@
 		0DF8CBB01C156E490058905C /* CategoryButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF8CBAC1C156E490058905C /* CategoryButtonCell.swift */; };
 		19468EFA88C16FAA91787AD7 /* Pods_2D_PaintToolUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A611AC1286A2F78218A844D0 /* Pods_2D_PaintToolUITests.framework */; };
 		20211B071BE39FEC0065E70F /* PaintController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20211B061BE39FEC0065E70F /* PaintController.swift */; };
-		202C36A11C08334300136525 /* AMReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C36A01C08334300136525 /* AMReachability.swift */; };
 		2037EF151C1617C800E3A729 /* TitleScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2037EF141C1617C800E3A729 /* TitleScreenController.swift */; };
 		20647DBB1C165280003A0076 /* MainTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 20647DBA1C165280003A0076 /* MainTitle.png */; };
 		207BAEB61C0DA3770023228F /* HomeScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207BAEB51C0DA3770023228F /* HomeScreenController.swift */; };
@@ -113,7 +112,6 @@
 		1D4F9EE05C1F67A368B596AE /* Pods_2D_PaintTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_2D_PaintTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EE39F2205BC60ABE1C692CC /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20211B061BE39FEC0065E70F /* PaintController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaintController.swift; path = ../PaintController.swift; sourceTree = "<group>"; };
-		202C36A01C08334300136525 /* AMReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AMReachability.swift; sourceTree = "<group>"; };
 		2037EF141C1617C800E3A729 /* TitleScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleScreenController.swift; sourceTree = SOURCE_ROOT; };
 		20647DBA1C165280003A0076 /* MainTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainTitle.png; sourceTree = "<group>"; };
 		207BAEB51C0DA3770023228F /* HomeScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenController.swift; sourceTree = "<group>"; };
@@ -231,7 +229,6 @@
 			children = (
 				207BAEC51C0DA95C0023228F /* images */,
 				0DF5660A1BE3596C00D0EE2E /* AppDelegate.swift */,
-				202C36A01C08334300136525 /* AMReachability.swift */,
 				20F3654A1C05A20900E1A48A /* Request.swift */,
 				20211B061BE39FEC0065E70F /* PaintController.swift */,
 				0DF5660E1BE3596C00D0EE2E /* Main.storyboard */,
@@ -677,7 +674,6 @@
 				207BAEBC1C0DA79D0023228F /* SelectGraphicController.swift in Sources */,
 				20F3654B1C05A20A00E1A48A /* Request.swift in Sources */,
 				2037EF151C1617C800E3A729 /* TitleScreenController.swift in Sources */,
-				202C36A11C08334300136525 /* AMReachability.swift in Sources */,
 				207BAEB61C0DA3770023228F /* HomeScreenController.swift in Sources */,
 				20C4EE671C0D7FF70037CB83 /* AddNewAcountViewController.swift in Sources */,
 				20C4EE651C0D7E520037CB83 /* LoginViewController.swift in Sources */,
