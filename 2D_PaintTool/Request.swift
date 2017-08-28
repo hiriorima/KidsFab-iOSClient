@@ -14,8 +14,8 @@ class Request {
     let nooooUrl = URL(string: "http://paint.fablabhakdoate.org/")
     
     // GET METHOD
-    func get(_ url: URL, completionHandler: (Data?, URLResponse?, NSError?) -> Void) {
-        let request: NSMutableURLRequest = NSMutableURLRequest(url: url)
+    func get(_ url: URL, completionHandler: @escaping (Data?, URLResponse?, NSError?) -> Void) {
+        var request: URLRequest = URLRequest(url: url)
         
         let cookies = HTTPCookieStorage.shared.cookies(for: nooooUrl!)
         let header  = HTTPCookie.requestHeaderFields(with: cookies!)
@@ -24,16 +24,16 @@ class Request {
         request.allHTTPHeaderFields = header
         
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-        session.dataTask(with: request, completionHandler: completionHandler).resume()
+        session.dataTask(with: request, completionHandler: completionHandler as! (Data?, URLResponse?, Error?) -> Void).resume()
     }
     
     // POST METHOD
-    func post(_ url: URL, body: NSMutableDictionary, completionHandler: (Data?, URLResponse?, NSError?) -> Void) {
+    func post(_ url: URL, body: NSMutableDictionary, completionHandler: @escaping (Data?, URLResponse?, NSError?) -> Void) {
         
         let cookies = HTTPCookieStorage.shared.cookies(for: nooooUrl!)
         let header  = HTTPCookie.requestHeaderFields(with: cookies!)
         
-        let request: NSMutableURLRequest = NSMutableURLRequest(url: url)
+        var request: URLRequest = URLRequest(url: url)
         
         request.httpMethod = "POST"
         request.allHTTPHeaderFields = header
@@ -46,12 +46,12 @@ class Request {
             print("NSJSONSerialization Error")
             return
         }
-        session.dataTask(with: request, completionHandler: completionHandler).resume()
+        session.dataTask(with: request, completionHandler: completionHandler as! (Data?, URLResponse?, Error?) -> Void).resume()
     }
     
     // PUT METHOD
-    func put(_ url: URL, body: NSMutableDictionary, completionHandler: (Data?, URLResponse?, NSError?) -> Void) {
-        let request: NSMutableURLRequest = NSMutableURLRequest(url: url)
+    func put(_ url: URL, body: NSMutableDictionary, completionHandler: @escaping (Data?, URLResponse?, NSError?) -> Void) {
+        var request: URLRequest = URLRequest(url: url)
         
         request.httpMethod = "PUT"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -63,15 +63,15 @@ class Request {
             print("NSJSONSerialization Error")
             return
         }
-        session.dataTask(with: request, completionHandler: completionHandler).resume()
+        session.dataTask(with: request, completionHandler: completionHandler as! (Data?, URLResponse?, Error?) -> Void).resume()
     }
     
     // DELETE METHOD
-    func delete(_ url: URL, completionHandler: (Data?, URLResponse?, NSError?) -> Void) {
-        let request: NSMutableURLRequest = NSMutableURLRequest(url: url)
+    func delete(_ url: URL, completionHandler: @escaping (Data?, URLResponse?, NSError?) -> Void) {
+        var request: URLRequest = URLRequest(url: url)
         
         request.httpMethod = "DELETE"
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-        session.dataTask(with: request, completionHandler: completionHandler).resume()
+        session.dataTask(with: request, completionHandler: completionHandler as! (Data?, URLResponse?, Error?) -> Void).resume()
     }
 }
