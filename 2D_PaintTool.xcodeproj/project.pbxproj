@@ -16,7 +16,7 @@
 		0DF8CBAD1C156E490058905C /* CustomThumbnailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF8CBA91C156E490058905C /* CustomThumbnailCell.swift */; };
 		0DF8CBAE1C156E490058905C /* ThumbnailConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF8CBAA1C156E490058905C /* ThumbnailConfig.swift */; };
 		0DF8CBB01C156E490058905C /* CategoryButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF8CBAC1C156E490058905C /* CategoryButtonCell.swift */; };
-		19468EFA88C16FAA91787AD7 /* Pods_2D_PaintToolUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A611AC1286A2F78218A844D0 /* Pods_2D_PaintToolUITests.framework */; };
+		1961A64AE63000ACC2AD4544 /* Pods_2D_PaintToolTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2627C227D3577801535C908 /* Pods_2D_PaintToolTests.framework */; };
 		20211B071BE39FEC0065E70F /* PaintController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20211B061BE39FEC0065E70F /* PaintController.swift */; };
 		2037EF151C1617C800E3A729 /* TitleScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2037EF141C1617C800E3A729 /* TitleScreenController.swift */; };
 		20647DBB1C165280003A0076 /* MainTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 20647DBA1C165280003A0076 /* MainTitle.png */; };
@@ -69,9 +69,8 @@
 		20C4EE671C0D7FF70037CB83 /* AddNewAcountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4EE661C0D7FF60037CB83 /* AddNewAcountViewController.swift */; };
 		20C9F9A71C0F5D2500A058F4 /* Mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 20C9F9A61C0F5D2500A058F4 /* Mask.png */; };
 		20F3654B1C05A20A00E1A48A /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3654A1C05A20900E1A48A /* Request.swift */; };
-		51B22FA03648336797454767 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EE39F2205BC60ABE1C692CC /* Pods.framework */; };
-		DA33464553F363977F9E5A48 /* Pods_2D_PaintTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D4F9EE05C1F67A368B596AE /* Pods_2D_PaintTool.framework */; };
-		ED1A8D4868089ED3BA6CD957 /* Pods_2D_PaintToolTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 199D4771D695C65457BD10F8 /* Pods_2D_PaintToolTests.framework */; };
+		3F481445FF0233955EF72FB6 /* Pods_2D_PaintToolUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3591A1C305DC236EAE37C85 /* Pods_2D_PaintToolUITests.framework */; };
+		8CF0759598EAC1EA7A9A6393 /* Pods_2D_PaintTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32C2797DDB5D75B2A54D568 /* Pods_2D_PaintTool.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,7 +91,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		001FE2CFF4DEF76DF6D3E670 /* Pods-2D_PaintToolUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2D_PaintToolUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-2D_PaintToolUITests/Pods-2D_PaintToolUITests.release.xcconfig"; sourceTree = "<group>"; };
 		0DF566071BE3596C00D0EE2E /* 2D_PaintTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2D_PaintTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DF5660A1BE3596C00D0EE2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DF5660F1BE3596C00D0EE2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -108,8 +106,7 @@
 		0DF8CBA91C156E490058905C /* CustomThumbnailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomThumbnailCell.swift; sourceTree = "<group>"; };
 		0DF8CBAA1C156E490058905C /* ThumbnailConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailConfig.swift; sourceTree = "<group>"; };
 		0DF8CBAC1C156E490058905C /* CategoryButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryButtonCell.swift; sourceTree = "<group>"; };
-		199D4771D695C65457BD10F8 /* Pods_2D_PaintToolTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_2D_PaintToolTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1D4F9EE05C1F67A368B596AE /* Pods_2D_PaintTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_2D_PaintTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		143E39C6D0138CDC1D444983 /* Pods-2D_PaintToolTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2D_PaintToolTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-2D_PaintToolTests/Pods-2D_PaintToolTests.release.xcconfig"; sourceTree = "<group>"; };
 		1EE39F2205BC60ABE1C692CC /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20211B061BE39FEC0065E70F /* PaintController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaintController.swift; path = ../PaintController.swift; sourceTree = "<group>"; };
 		2037EF141C1617C800E3A729 /* TitleScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleScreenController.swift; sourceTree = SOURCE_ROOT; };
@@ -163,14 +160,14 @@
 		20C4EE661C0D7FF60037CB83 /* AddNewAcountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewAcountViewController.swift; sourceTree = "<group>"; };
 		20C9F9A61C0F5D2500A058F4 /* Mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mask.png; sourceTree = "<group>"; };
 		20F3654A1C05A20900E1A48A /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		55EEAFFBB58D7CB884A40FFE /* Pods-2D_PaintToolTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2D_PaintToolTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-2D_PaintToolTests/Pods-2D_PaintToolTests.debug.xcconfig"; sourceTree = "<group>"; };
-		6F40AB18FF82D4A0A83BCF81 /* Pods-2D_PaintToolTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2D_PaintToolTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-2D_PaintToolTests/Pods-2D_PaintToolTests.release.xcconfig"; sourceTree = "<group>"; };
-		7807E69F7DD030F4D1E18044 /* Pods-2D_PaintToolUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2D_PaintToolUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-2D_PaintToolUITests/Pods-2D_PaintToolUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		A26C729F513B4145AE603CF6 /* Pods-2D_PaintTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2D_PaintTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-2D_PaintTool/Pods-2D_PaintTool.release.xcconfig"; sourceTree = "<group>"; };
-		A611AC1286A2F78218A844D0 /* Pods_2D_PaintToolUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_2D_PaintToolUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C083291C6FCA31F627B9230D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		DCB6910B68B9D57289F53D6E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		F26306A26FB17E79BD92B0C1 /* Pods-2D_PaintTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2D_PaintTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-2D_PaintTool/Pods-2D_PaintTool.debug.xcconfig"; sourceTree = "<group>"; };
+		B3591A1C305DC236EAE37C85 /* Pods_2D_PaintToolUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_2D_PaintToolUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8DE6A3DF2E5C7FD6EC00BC7 /* Pods-2D_PaintToolUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2D_PaintToolUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-2D_PaintToolUITests/Pods-2D_PaintToolUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BB58E600898613A3DD14E870 /* Pods-2D_PaintToolUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2D_PaintToolUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-2D_PaintToolUITests/Pods-2D_PaintToolUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C0B6452C4E4CA74C4C27153A /* Pods-2D_PaintTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2D_PaintTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-2D_PaintTool/Pods-2D_PaintTool.debug.xcconfig"; sourceTree = "<group>"; };
+		C2DE45B4E26F4D41593B670F /* Pods-2D_PaintTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2D_PaintTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-2D_PaintTool/Pods-2D_PaintTool.release.xcconfig"; sourceTree = "<group>"; };
+		E32C2797DDB5D75B2A54D568 /* Pods_2D_PaintTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_2D_PaintTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2627C227D3577801535C908 /* Pods_2D_PaintToolTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_2D_PaintToolTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3DBDEECBBADBE153A55F9F6 /* Pods-2D_PaintToolTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2D_PaintToolTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-2D_PaintToolTests/Pods-2D_PaintToolTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,8 +175,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51B22FA03648336797454767 /* Pods.framework in Frameworks */,
-				DA33464553F363977F9E5A48 /* Pods_2D_PaintTool.framework in Frameworks */,
+				8CF0759598EAC1EA7A9A6393 /* Pods_2D_PaintTool.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,7 +183,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED1A8D4868089ED3BA6CD957 /* Pods_2D_PaintToolTests.framework in Frameworks */,
+				1961A64AE63000ACC2AD4544 /* Pods_2D_PaintToolTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,7 +191,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19468EFA88C16FAA91787AD7 /* Pods_2D_PaintToolUITests.framework in Frameworks */,
+				3F481445FF0233955EF72FB6 /* Pods_2D_PaintToolUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,8 +205,8 @@
 				0DF5661E1BE3596C00D0EE2E /* 2D_PaintToolTests */,
 				0DF566291BE3596C00D0EE2E /* 2D_PaintToolUITests */,
 				0DF566081BE3596C00D0EE2E /* Products */,
-				5ED5CA2D4036376844D08997 /* Pods */,
 				ADDD6F790A4977095971D4B9 /* Frameworks */,
+				2F2CE11DDB4731FA8B0F22D8 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -317,17 +313,15 @@
 			path = images;
 			sourceTree = SOURCE_ROOT;
 		};
-		5ED5CA2D4036376844D08997 /* Pods */ = {
+		2F2CE11DDB4731FA8B0F22D8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				DCB6910B68B9D57289F53D6E /* Pods.debug.xcconfig */,
-				C083291C6FCA31F627B9230D /* Pods.release.xcconfig */,
-				F26306A26FB17E79BD92B0C1 /* Pods-2D_PaintTool.debug.xcconfig */,
-				A26C729F513B4145AE603CF6 /* Pods-2D_PaintTool.release.xcconfig */,
-				55EEAFFBB58D7CB884A40FFE /* Pods-2D_PaintToolTests.debug.xcconfig */,
-				6F40AB18FF82D4A0A83BCF81 /* Pods-2D_PaintToolTests.release.xcconfig */,
-				7807E69F7DD030F4D1E18044 /* Pods-2D_PaintToolUITests.debug.xcconfig */,
-				001FE2CFF4DEF76DF6D3E670 /* Pods-2D_PaintToolUITests.release.xcconfig */,
+				C0B6452C4E4CA74C4C27153A /* Pods-2D_PaintTool.debug.xcconfig */,
+				C2DE45B4E26F4D41593B670F /* Pods-2D_PaintTool.release.xcconfig */,
+				F3DBDEECBBADBE153A55F9F6 /* Pods-2D_PaintToolTests.debug.xcconfig */,
+				143E39C6D0138CDC1D444983 /* Pods-2D_PaintToolTests.release.xcconfig */,
+				B8DE6A3DF2E5C7FD6EC00BC7 /* Pods-2D_PaintToolUITests.debug.xcconfig */,
+				BB58E600898613A3DD14E870 /* Pods-2D_PaintToolUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -336,9 +330,9 @@
 			isa = PBXGroup;
 			children = (
 				1EE39F2205BC60ABE1C692CC /* Pods.framework */,
-				1D4F9EE05C1F67A368B596AE /* Pods_2D_PaintTool.framework */,
-				199D4771D695C65457BD10F8 /* Pods_2D_PaintToolTests.framework */,
-				A611AC1286A2F78218A844D0 /* Pods_2D_PaintToolUITests.framework */,
+				E32C2797DDB5D75B2A54D568 /* Pods_2D_PaintTool.framework */,
+				F2627C227D3577801535C908 /* Pods_2D_PaintToolTests.framework */,
+				B3591A1C305DC236EAE37C85 /* Pods_2D_PaintToolUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -350,12 +344,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DF5662F1BE3596C00D0EE2E /* Build configuration list for PBXNativeTarget "2D_PaintTool" */;
 			buildPhases = (
-				8CB0E470913EFE920CD6C37E /* [CP] Check Pods Manifest.lock */,
+				E7F23687ED3E8B8F0316D6E2 /* [CP] Check Pods Manifest.lock */,
 				0DF566031BE3596C00D0EE2E /* Sources */,
 				0DF566041BE3596C00D0EE2E /* Frameworks */,
 				0DF566051BE3596C00D0EE2E /* Resources */,
-				8099790109ED8FFEC536804D /* [CP] Embed Pods Frameworks */,
-				63C1EFB8B5BD9F2487E44D28 /* [CP] Copy Pods Resources */,
+				66ACCBE3F8229503056B5AF5 /* [CP] Embed Pods Frameworks */,
+				AFA32AFA34BA09651D4E4A64 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -370,12 +364,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DF566321BE3596C00D0EE2E /* Build configuration list for PBXNativeTarget "2D_PaintToolTests" */;
 			buildPhases = (
-				7EE66345AC05DB87D00023CC /* [CP] Check Pods Manifest.lock */,
+				8593A6976B5E6AACAFB14341 /* [CP] Check Pods Manifest.lock */,
 				0DF566171BE3596C00D0EE2E /* Sources */,
 				0DF566181BE3596C00D0EE2E /* Frameworks */,
 				0DF566191BE3596C00D0EE2E /* Resources */,
-				5D260E83232EC531144ED902 /* [CP] Embed Pods Frameworks */,
-				723B55B204CF08E001F976BF /* [CP] Copy Pods Resources */,
+				4D7EE016E3C738719300A903 /* [CP] Embed Pods Frameworks */,
+				BF5000CEBD7AA0EC5CE2FB4B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -391,12 +385,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DF566351BE3596C00D0EE2E /* Build configuration list for PBXNativeTarget "2D_PaintToolUITests" */;
 			buildPhases = (
-				198AB6BDEF71CE4E74AE7582 /* [CP] Check Pods Manifest.lock */,
+				95AD8372B5C69F4265BF146F /* [CP] Check Pods Manifest.lock */,
 				0DF566221BE3596C00D0EE2E /* Sources */,
 				0DF566231BE3596C00D0EE2E /* Frameworks */,
 				0DF566241BE3596C00D0EE2E /* Resources */,
-				3B10D4FFD84ED857C7CBB722 /* [CP] Embed Pods Frameworks */,
-				81AEF06BF87969F49C2385E6 /* [CP] Copy Pods Resources */,
+				32A9D2F618617AB081AF4DC9 /* [CP] Embed Pods Frameworks */,
+				0965AADD8ED38C14CAF450E5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -528,112 +522,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		198AB6BDEF71CE4E74AE7582 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		3B10D4FFD84ED857C7CBB722 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2D_PaintToolUITests/Pods-2D_PaintToolUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5D260E83232EC531144ED902 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2D_PaintToolTests/Pods-2D_PaintToolTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		63C1EFB8B5BD9F2487E44D28 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2D_PaintTool/Pods-2D_PaintTool-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		723B55B204CF08E001F976BF /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2D_PaintToolTests/Pods-2D_PaintToolTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7EE66345AC05DB87D00023CC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		8099790109ED8FFEC536804D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2D_PaintTool/Pods-2D_PaintTool-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		81AEF06BF87969F49C2385E6 /* [CP] Copy Pods Resources */ = {
+		0965AADD8ED38C14CAF450E5 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -648,7 +537,112 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2D_PaintToolUITests/Pods-2D_PaintToolUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8CB0E470913EFE920CD6C37E /* [CP] Check Pods Manifest.lock */ = {
+		32A9D2F618617AB081AF4DC9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2D_PaintToolUITests/Pods-2D_PaintToolUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4D7EE016E3C738719300A903 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2D_PaintToolTests/Pods-2D_PaintToolTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		66ACCBE3F8229503056B5AF5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2D_PaintTool/Pods-2D_PaintTool-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8593A6976B5E6AACAFB14341 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		95AD8372B5C69F4265BF146F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AFA32AFA34BA09651D4E4A64 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2D_PaintTool/Pods-2D_PaintTool-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF5000CEBD7AA0EC5CE2FB4B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2D_PaintToolTests/Pods-2D_PaintToolTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7F23687ED3E8B8F0316D6E2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -828,7 +822,7 @@
 		};
 		0DF566301BE3596C00D0EE2E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F26306A26FB17E79BD92B0C1 /* Pods-2D_PaintTool.debug.xcconfig */;
+			baseConfigurationReference = C0B6452C4E4CA74C4C27153A /* Pods-2D_PaintTool.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -845,7 +839,7 @@
 		};
 		0DF566311BE3596C00D0EE2E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A26C729F513B4145AE603CF6 /* Pods-2D_PaintTool.release.xcconfig */;
+			baseConfigurationReference = C2DE45B4E26F4D41593B670F /* Pods-2D_PaintTool.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -862,7 +856,7 @@
 		};
 		0DF566331BE3596C00D0EE2E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55EEAFFBB58D7CB884A40FFE /* Pods-2D_PaintToolTests.debug.xcconfig */;
+			baseConfigurationReference = F3DBDEECBBADBE153A55F9F6 /* Pods-2D_PaintToolTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = 2D_PaintToolTests/Info.plist;
@@ -876,7 +870,7 @@
 		};
 		0DF566341BE3596C00D0EE2E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6F40AB18FF82D4A0A83BCF81 /* Pods-2D_PaintToolTests.release.xcconfig */;
+			baseConfigurationReference = 143E39C6D0138CDC1D444983 /* Pods-2D_PaintToolTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = 2D_PaintToolTests/Info.plist;
@@ -890,7 +884,7 @@
 		};
 		0DF566361BE3596C00D0EE2E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7807E69F7DD030F4D1E18044 /* Pods-2D_PaintToolUITests.debug.xcconfig */;
+			baseConfigurationReference = B8DE6A3DF2E5C7FD6EC00BC7 /* Pods-2D_PaintToolUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = 2D_PaintToolUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -904,7 +898,7 @@
 		};
 		0DF566371BE3596C00D0EE2E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 001FE2CFF4DEF76DF6D3E670 /* Pods-2D_PaintToolUITests.release.xcconfig */;
+			baseConfigurationReference = BB58E600898613A3DD14E870 /* Pods-2D_PaintToolUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = 2D_PaintToolUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
