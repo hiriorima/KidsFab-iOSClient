@@ -7,6 +7,30 @@
 //
 
 import UIKit
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func >= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l >= r
+  default:
+    return !(lhs < rhs)
+  }
+}
+
 
 class LoginViewController: UIViewController,
 UITextFieldDelegate,UIScrollViewDelegate {
@@ -16,10 +40,10 @@ UITextFieldDelegate,UIScrollViewDelegate {
     @IBOutlet var sc: UIScrollView!
     @IBOutlet var Error: UILabel!
     
-    private var txtActiveField = UITextField()
+    fileprivate var txtActiveField = UITextField()
     
     let baseHost = "http://paint.fablabhakodate.org/"
-    let oneYearInSeconds = NSTimeInterval(60 * 60 * 24 * 365)
+    let oneYearInSeconds = TimeInterval(60 * 60 * 24 * 365)
     
     var login_id: Bool = false
     
@@ -32,7 +56,7 @@ UITextFieldDelegate,UIScrollViewDelegate {
         
         let request: Request = Request()
         
-        let url: NSURL = NSURL(string: "http://paint.fablabhakodate.org/noooo")!
+        let url: URL = URL(string: "http://paint.fablabhakodate.org/noooo")!
         
         request.get(url, completionHandler: { data, response, error in
             // code
@@ -55,17 +79,17 @@ UITextFieldDelegate,UIScrollViewDelegate {
     *if:テキストフィールドをタップ
     テキストフィールド初期化
     */
-    @IBAction func TextFieldEditingDidBegin(sender: UITextField) {
+    @IBAction func TextFieldEditingDidBegin(_ sender: UITextField) {
         txtActiveField = sender
         if(sender == PWInputField){
-            sender.secureTextEntry = true}
+            sender.isSecureTextEntry = true}
     }
     
     
     /*
     テキストが編集された際に呼ばれる.
     */
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         var maxLength: Int = 0
         
@@ -91,14 +115,14 @@ UITextFieldDelegate,UIScrollViewDelegate {
     /*
     キーボード以外をタップするとキーボードを閉じる
     */
-    @IBAction func TapScreen(sender: UITapGestureRecognizer) {
+    @IBAction func TapScreen(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }
     
     /*
     Returnをタップするとキーボードを閉じる
     */
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
@@ -107,19 +131,19 @@ UITextFieldDelegate,UIScrollViewDelegate {
     キーボード表示時にテキストフィールドと重なっているか調べる
     重なっていたらスクロールする
     */
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let notificationCenter = NSNotificationCenter.defaultCenter()
-        notificationCenter.addObserver(self, selector: #selector(LoginViewController.handleKeyboardWillShowNotification(_:)), name: UIKeyboardWillShowNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(LoginViewController.handleKeyboardWillHideNotification(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(LoginViewController.handleKeyboardWillShowNotification(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(LoginViewController.handleKeyboardWillHideNotification(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    func handleKeyboardWillShowNotification(notification: NSNotification) {
+    func handleKeyboardWillShowNotification(_ notification: Notification) {
         
         let userInfo = notification.userInfo!
-        let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
-        let myBoundSize: CGSize = UIScreen.mainScreen().bounds.size
+        let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let myBoundSize: CGSize = UIScreen.main.bounds.size
         let txtLimit = txtActiveField.frame.origin.y + txtActiveField.frame.height + 8.0
         let kbdLimit = myBoundSize.height - keyboardScreenEndFrame.size.height
         
@@ -128,14 +152,14 @@ UITextFieldDelegate,UIScrollViewDelegate {
         }
     }
     
-    func handleKeyboardWillHideNotification(notification: NSNotification) {
+    func handleKeyboardWillHideNotification(_ notification: Notification) {
         sc.contentOffset.y = 0
     }
     
     
     @IBOutlet var LoginButton: SpringButton!
      var LoginFlag = (0,0)
-    @IBAction func TapLoginButton(sender: AnyObject) {
+    @IBAction func TapLoginButton(_ sender: AnyObject) {
         let String_ID = IDInputField.text
         let String_PW = PWInputField.text
         
@@ -173,11 +197,11 @@ UITextFieldDelegate,UIScrollViewDelegate {
     /*
     * ログイン処理
     */
-    func LoginActivity(userid: String, password: String){
+    func LoginActivity(_ userid: String, password: String){
         
         let request: Request = Request()
         
-        let url: NSURL = NSURL(string: "http://paint.fablabhakodate.org/signinuser")!
+        let url: URL = URL(string: "http://paint.fablabhakodate.org/signinuser")!
         
         let body: NSMutableDictionary = NSMutableDictionary()
         body.setValue(userid, forKey: "userid")
@@ -189,7 +213,7 @@ UITextFieldDelegate,UIScrollViewDelegate {
         request.post(url, body: body, completionHandler: { data, response, error in
             // code
             do {
-                let json = try NSJSONSerialization.JSONObjectWithData((data)!, options: .MutableContainers) as! NSDictionary
+                let json = try JSONSerialization.jsonObject(with: (data)!, options: .mutableContainers) as! NSDictionary
                 if json["userid"] != nil{
                     login_flag = true
                 }else{
@@ -216,20 +240,20 @@ UITextFieldDelegate,UIScrollViewDelegate {
         }
     }
     
-    func ScreenTransition(userid:String){
+    func ScreenTransition(_ userid:String){
         //AppDelegateのインスタンスを取得
-        let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
         
         //appDelegateの変数を操作
         appDelegate.user_id = userid
         
-        let HomeScreenViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Home")
+        let HomeScreenViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home")
         
         // アニメーションを設定.
-        HomeScreenViewController.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
+        HomeScreenViewController.modalTransitionStyle = UIModalTransitionStyle.coverVertical
         
         // Viewの移動する.
-        self.presentViewController(HomeScreenViewController, animated: true, completion: nil)
+        self.present(HomeScreenViewController, animated: true, completion: nil)
     }
     
     /*

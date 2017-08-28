@@ -25,7 +25,7 @@ class HomeScreenController:UIViewController{
         
         
         //AppDelegateのインスタンスを取得
-        let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
         
         username.text = appDelegate.user_id!
         let Guest:UIImage = UIImage(named: "Guest.png")!
@@ -40,7 +40,7 @@ class HomeScreenController:UIViewController{
         
         let request: Request = Request()
         
-        let url: NSURL = NSURL(string: "http://paint.fablabhakodate.org/imgshow?category=-1")!
+        let url: URL = URL(string: "http://paint.fablabhakodate.org/imgshow?category=-1")!
         
         // create ThumbnailCollection
         var images_url:Array<String> = []
@@ -49,7 +49,7 @@ class HomeScreenController:UIViewController{
         request.get(url, completionHandler: { data, response, error in
             // code
             do {
-                let json = try NSJSONSerialization.JSONObjectWithData((data)!, options: .MutableContainers) as! NSArray
+                let json = try JSONSerialization.jsonObject(with: (data)!, options: .mutableContainers) as! NSArray
                 
                 // for ( var i = 0, n = json.count ; i < n ; i += 1 ) {
                 for  i in 0 ..< json.count {

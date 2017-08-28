@@ -35,7 +35,7 @@ class SearchScreenController: UIViewController,UICollectionViewDataSource, UICol
     
     
     //AppDelegateのインスタンスを取得
-    let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +45,7 @@ class SearchScreenController: UIViewController,UICollectionViewDataSource, UICol
         
         let request: Request = Request()
         
-        let url: NSURL = NSURL(string: baseurl+appDelegate.category_number!)!
+        let url: URL = URL(string: baseurl+appDelegate.category_number!)!
         
         // create ThumbnailCollection
         var images_url:Array<String> = []
@@ -54,7 +54,7 @@ class SearchScreenController: UIViewController,UICollectionViewDataSource, UICol
         request.get(url, completionHandler: { data, response, error in
             // code
             do {
-                let json = try NSJSONSerialization.JSONObjectWithData((data)!, options: .MutableContainers) as! NSArray
+                let json = try JSONSerialization.jsonObject(with: (data)!, options: .mutableContainers) as! NSArray
                 
                 
                 
@@ -87,13 +87,13 @@ class SearchScreenController: UIViewController,UICollectionViewDataSource, UICol
         // Dispose of any resources that can be recreated.
     }
     
-    func Reload(categoryImgString: String,categoryString:String){
+    func Reload(_ categoryImgString: String,categoryString:String){
         
         var finish_flag: Bool = false
         
         let request: Request = Request()
         
-        let url: NSURL = NSURL(string: baseurl+appDelegate.category_number!)!
+        let url: URL = URL(string: baseurl+appDelegate.category_number!)!
         
         // create ThumbnailCollection
         var images_url:Array<String> = []
@@ -102,7 +102,7 @@ class SearchScreenController: UIViewController,UICollectionViewDataSource, UICol
         request.get(url, completionHandler: { data, response, error in
             // code
             do {
-                let json = try NSJSONSerialization.JSONObjectWithData((data)!, options: .MutableContainers) as! NSArray
+                let json = try JSONSerialization.jsonObject(with: (data)!, options: .mutableContainers) as! NSArray
                 
                     for i in 0 ..< json.count{
                     let dictionary  = json[i]
@@ -128,38 +128,38 @@ class SearchScreenController: UIViewController,UICollectionViewDataSource, UICol
         categoryName.text = categoryString
         
         
-        dispatch_async(dispatch_get_main_queue(), {
+        DispatchQueue.main.async(execute: {
             self.CategoryThumbnail.reloadData()
             self.CategoryThumbnail.dataSource = self.thumbnailConfig
             self.CategoryThumbnail.delegate = self.thumbnailConfig
         })
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell:CategoryButtonCell = collectionView.dequeueReusableCellWithReuseIdentifier("CategoryButtonCell", forIndexPath: indexPath) as! CategoryButtonCell
+        let cell:CategoryButtonCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryButtonCell", for: indexPath) as! CategoryButtonCell
         
         let img = UIImage(named: categoryImg[indexPath.row]);
         
         // set Name
         cell.CategoryButtonImg.image = img
-        cell.backgroundColor = UIColor.greenColor()
+        cell.backgroundColor = UIColor.green
         
         return cell
     }
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 8;
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         //AppDelegateのインスタンスを取得
-        let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
         
         var categoryString: String = ""
         
@@ -196,13 +196,13 @@ class SearchScreenController: UIViewController,UICollectionViewDataSource, UICol
     }
     
     func viewChange(){
-        let sv = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("selectGraphic")
+        let sv = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "selectGraphic")
         
-        sv.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
+        sv.modalTransitionStyle = UIModalTransitionStyle.coverVertical
         
         
         // Viewの移動する.
-        self.presentViewController(sv, animated: true, completion: nil)
+        self.present(sv, animated: true, completion: nil)
 
     }
     

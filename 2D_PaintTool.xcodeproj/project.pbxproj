@@ -520,15 +520,18 @@
 					0DF566061BE3596C00D0EE2E = {
 						CreatedOnToolsVersion = 7.0.1;
 						DevelopmentTeam = 2YEG253Z5M;
+						LastSwiftMigration = 0830;
 					};
 					0DF5661A1BE3596C00D0EE2E = {
 						CreatedOnToolsVersion = 7.0.1;
 						DevelopmentTeam = 62NX3S29PE;
+						LastSwiftMigration = 0830;
 						TestTargetID = 0DF566061BE3596C00D0EE2E;
 					};
 					0DF566251BE3596C00D0EE2E = {
 						CreatedOnToolsVersion = 7.0.1;
 						DevelopmentTeam = 62NX3S29PE;
+						LastSwiftMigration = 0830;
 						TestTargetID = 0DF566061BE3596C00D0EE2E;
 					};
 				};
@@ -965,6 +968,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "-D-PaintTool";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -981,6 +985,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "-D-PaintTool";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
@@ -994,6 +999,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "sdfsgfd.-D-PaintToolTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/2D_PaintTool.app/2D_PaintTool";
 			};
 			name = Debug;
@@ -1007,6 +1013,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "sdfsgfd.-D-PaintToolTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/2D_PaintTool.app/2D_PaintTool";
 			};
 			name = Release;
@@ -1019,6 +1026,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "sdfsgfd.-D-PaintToolUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = 2D_PaintTool;
 				USES_XCTRUNNER = YES;
 			};
@@ -1032,6 +1040,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "sdfsgfd.-D-PaintToolUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = 2D_PaintTool;
 				USES_XCTRUNNER = YES;
 			};
