@@ -2,10 +2,9 @@
 platform :ios, '9.1'
 # Uncomment this line if you're using Swift
 use_frameworks!
-pod 'ACEDrawingView'
 
 target '2D_PaintTool' do
-
+  pod 'ACEDrawingView'
 end
 
 target '2D_PaintToolTests' do
