@@ -309,7 +309,7 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
     case 5:
         drawingView.drawTool = ACEDrawingToolTypeEraser
     case 6:
-        drawingView.drawTool = ACEDrawingToolTypeText
+        drawingView.drawTool = ACEDrawingToolTypeDraggableText
     default:
     break
     }
