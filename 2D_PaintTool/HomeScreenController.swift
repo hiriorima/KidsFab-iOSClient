@@ -53,7 +53,7 @@ class HomeScreenController:UIViewController{
                 
                 // for ( var i = 0, n = json.count ; i < n ; i += 1 ) {
                 for  i in 0 ..< json.count {
-                    let dictionary  = json[i]
+                    let dictionary  = json[i] as! Dictionary<String, Any>
                     images_url.append(dictionary["filedata"] as! String)
                     images_name.append(dictionary["title"] as! String)
                     print(images_url)
