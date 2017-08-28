@@ -5,6 +5,7 @@ use_frameworks!
 
 target '2D_PaintTool' do
   pod 'ACEDrawingView'
+  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
 end
 
 target '2D_PaintToolTests' do
