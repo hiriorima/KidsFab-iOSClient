@@ -18,8 +18,6 @@ class HomeScreenController:UIViewController{
     @IBOutlet weak var username: UILabel!
     @IBOutlet var user: UIImageView!
     
-    var finish_flag: Bool = false
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,50 +34,35 @@ class HomeScreenController:UIViewController{
             user.image = Guest
         }
 
-        
-        
         let request: Request = Request()
-        
-        let url: URL = URL(string: "http://paint.fablabhakodate.org/imgshow?category=-1")!
-        
-        // create ThumbnailCollection
-        var images_url:Array<String> = []
-        var images_name:Array<String> = []
-        
-        request.get(url, completionHandler: { data, response, error in
-            // code
-            do {
-                let json = try JSONSerialization.jsonObject(with: (data)!, options: .mutableContainers) as! NSArray
-                
-                // for ( var i = 0, n = json.count ; i < n ; i += 1 ) {
-                for  i in 0 ..< json.count {
-                    let dictionary  = json[i] as! Dictionary<String, Any>
-                    images_url.append(dictionary["filedata"] as! String)
-                    images_name.append(dictionary["title"] as! String)
-                    print(images_url)
-                }
-            } catch (let e) {
-                print(e)
-            }
-            self.finish_flag = true
-        })
-        
-        
-        while(!finish_flag){
-            usleep(10)
-        }
-        
-        // set Usagi List
-        self.thumbnailConfig = ThumbnailConfig(items: images_url,imgs_name: images_name)
+        let uri = "imgshow?category=-1"
+        request.get(uri, callBackClosure: self.renderView)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         ThumbnailCollection.dataSource = self.thumbnailConfig
         ThumbnailCollection.delegate = self.thumbnailConfig
-        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func renderView(json: NSArray){
         
+        var images_url:Array<String> = []
+        var images_name:Array<String> = []
+        
+        for  i in 0 ..< json.count {
+            let dictionary  = json[i] as! NSDictionary
+            images_url.append(dictionary["filedata"] as! String)
+            images_name.append(dictionary["title"] as! String)
+        }
+        
+        self.thumbnailConfig = ThumbnailConfig(items: images_url,imgs_name: images_name)
+        ThumbnailCollection.dataSource = self.thumbnailConfig
+        ThumbnailCollection.delegate = self.thumbnailConfig
     }
     
 }

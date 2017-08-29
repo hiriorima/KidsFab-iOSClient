@@ -18,7 +18,7 @@ class SearchScreenController: UIViewController,UICollectionViewDataSource, UICol
     
     @IBOutlet weak var homeButton: UIButton!
     
-    let baseurl:String = "http://paint.fablabhakodate.org/imgshow?category="
+    let baseuri = "imgshow?category="
     
     @IBOutlet weak var selectCategoryImg: UIImageView!
     @IBOutlet weak var categoryName: UILabel!
@@ -41,43 +41,14 @@ class SearchScreenController: UIViewController,UICollectionViewDataSource, UICol
         super.viewDidLoad()
         appDelegate.viewController = self
         
-        var finish_flag: Bool = false
-        
         let request: Request = Request()
-        
-        let url: URL = URL(string: baseurl+appDelegate.category_number!)!
-        
-        // create ThumbnailCollection
-        var images_url:Array<String> = []
-        var images_name:Array<String> = []
-        
-        request.get(url, completionHandler: { data, response, error in
-            // code
-            do {
-                let json = try JSONSerialization.jsonObject(with: (data)!, options: .mutableContainers) as! NSArray
-                
-                
-                
-                    for i in 0 ..< json.count{
-                    let dictionary  = json[i] as! Dictionary<String, Any>
-                    images_url.append(dictionary["filedata"] as! String)
-                    images_name.append(dictionary["title"] as! String)
-                }
-            } catch (let e) {
-                print(e)
-            }
-            finish_flag = true
-        })
-        
-        
-        while(!finish_flag){
-            usleep(10)
-        }
-        
-        self.thumbnailConfig = ThumbnailConfig(items: images_url, imgs_name: images_name)
+        let uri = baseuri+appDelegate.category_number!
+        request.get(uri, callBackClosure: self.renderView)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         CategoryThumbnail.dataSource = self.thumbnailConfig
         CategoryThumbnail.delegate = self.thumbnailConfig
-        
         CategoryButtonCollection.dataSource = self
         CategoryButtonCollection.delegate = self
     }
@@ -89,50 +60,17 @@ class SearchScreenController: UIViewController,UICollectionViewDataSource, UICol
     
     func Reload(_ categoryImgString: String,categoryString:String){
         
-        var finish_flag: Bool = false
-        
         let request: Request = Request()
         
-        let url: URL = URL(string: baseurl+appDelegate.category_number!)!
+        let uri = baseuri+appDelegate.category_number!
         
-        // create ThumbnailCollection
-        var images_url:Array<String> = []
-        var images_name:Array<String> = []
-        
-        request.get(url, completionHandler: { data, response, error in
-            // code
-            do {
-                let json = try JSONSerialization.jsonObject(with: (data)!, options: .mutableContainers) as! NSArray
-                
-                    for i in 0 ..< json.count{
-                    let dictionary  = json[i] as! Dictionary<String, Any>
-                    images_url.append(dictionary["filedata"] as! String)
-                    images_name.append(dictionary["title"] as! String)
-                }
-            } catch (let e) {
-                print(e)
-            }
-            finish_flag = true
-        })
-        
-        
-        while(!finish_flag){
-            usleep(10)
-        }
-        
-        self.thumbnailConfig = ThumbnailConfig(items: images_url, imgs_name: images_name)
+        request.get(uri, callBackClosure: self.renderView)
         
         // 表示する画像を設定する.
         let img = UIImage(named: categoryImgString)
         selectCategoryImg.image = img
         categoryName.text = categoryString
         
-        
-        DispatchQueue.main.async(execute: {
-            self.CategoryThumbnail.reloadData()
-            self.CategoryThumbnail.dataSource = self.thumbnailConfig
-            self.CategoryThumbnail.delegate = self.thumbnailConfig
-        })
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -206,6 +144,25 @@ class SearchScreenController: UIViewController,UICollectionViewDataSource, UICol
 
     }
     
+    func renderView(json: NSArray){
+        
+        var images_url:Array<String> = []
+        var images_name:Array<String> = []
+        
+        for  i in 0 ..< json.count {
+            let dictionary  = json[i] as! NSDictionary
+            images_url.append(dictionary["filedata"] as! String)
+            images_name.append(dictionary["title"] as! String)
+        }
+        
+        self.thumbnailConfig = ThumbnailConfig(items: images_url, imgs_name: images_name)
+        
+        DispatchQueue.main.async(execute: {
+            self.CategoryThumbnail.reloadData()
+            self.CategoryThumbnail.dataSource = self.thumbnailConfig
+            self.CategoryThumbnail.delegate = self.thumbnailConfig
+        })
+    }
     
     /*
     // MARK: - Navigation

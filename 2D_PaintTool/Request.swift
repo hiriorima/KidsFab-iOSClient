@@ -8,23 +8,23 @@
 
 
 import UIKit
+import Alamofire
 
 class Request {
     let session: URLSession = URLSession.shared
     let nooooUrl = URL(string: "http://paint.fablabhakdoate.org/")
+    let baseURL = "http://paint.fablabhakodate.org/"
     
-    // GET METHOD
-    func get(_ url: URL, completionHandler: @escaping (Data?, URLResponse?, NSError?) -> Void) {
-        var request: URLRequest = URLRequest(url: url)
-        
-        let cookies = HTTPCookieStorage.shared.cookies(for: nooooUrl!)
-        let header  = HTTPCookie.requestHeaderFields(with: cookies!)
-        
-        request.httpMethod = "GET"
-        request.allHTTPHeaderFields = header
-        
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        session.dataTask(with: request, completionHandler: completionHandler as! (Data?, URLResponse?, Error?) -> Void).resume()
+    func get(_ uri: String, callBackClosure:@escaping (NSArray)->Void){
+        Alamofire.request(baseURL + uri, headers: self.genHeader("GET")).responseJSON { response in
+            switch response.result {
+            case .success:
+                callBackClosure(response.value as! NSArray)
+            case .failure(let error):
+                print(error)
+                return
+            }
+        }
     }
     
     // POST METHOD
@@ -73,5 +73,15 @@ class Request {
         request.httpMethod = "DELETE"
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         session.dataTask(with: request, completionHandler: completionHandler as! (Data?, URLResponse?, Error?) -> Void).resume()
+    }
+    
+    func genHeader(_ method: String) -> [String:String]{
+        let cookies = HTTPCookieStorage.shared.cookies(for: nooooUrl!)
+        var headers = HTTPCookie.requestHeaderFields(with: cookies!)
+        headers["Accept"] = "application/json"
+        if (method != "GET") {
+            headers["Content-Type"] = "application/json"
+        }
+        return headers
     }
 }

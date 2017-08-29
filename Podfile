@@ -7,6 +7,7 @@ target '2D_PaintTool' do
   pod 'ACEDrawingView'
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
   pod 'ReachabilitySwift', '~> 3'
+  pod 'Alamofire'
 end
 
 target '2D_PaintToolTests' do
