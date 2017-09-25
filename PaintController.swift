@@ -438,18 +438,19 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
             
             //概形が円の時はくり抜く
             var PostImg: String
+            drawingView.layer.borderWidth = 0.0
             
             switch selectedGraphic{
-             case 1:
+            case 1:
                 let CutImg :UIImage = getMaskedImage(drawingView.image)
-            UIGraphicsBeginImageContext(CutImg.size)
-            // バッファにcImageを描画。
-            CutImg.draw(at: CGPoint(x: 0.0, y: 0.0))
-            // バッファからUIImageを生成。
-            let nonLayerImage = UIGraphicsGetImageFromCurrentImageContext()
-            // バッファを解放。
-            UIGraphicsEndImageContext()
-            // PNGフォーマットのNSDataをUIImageから作成。
+                UIGraphicsBeginImageContext(CutImg.size)
+                // バッファにcImageを描画。
+                CutImg.draw(at: CGPoint(x: 0.0, y: 0.0))
+                // バッファからUIImageを生成。
+                let nonLayerImage = UIGraphicsGetImageFromCurrentImageContext()
+                // バッファを解放。
+                UIGraphicsEndImageContext()
+                // PNGフォーマットのNSDataをUIImageから作成。
                 PostImg = Image2String(nonLayerImage!)!
             case 2:
                 PostImg = Image2String(drawingView.image)!
@@ -507,6 +508,8 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
             saveButton.animation = "shake"
             saveButton.animate()
         }
+        
+        drawingView.layer.borderWidth = 4.0
     }
     
     
