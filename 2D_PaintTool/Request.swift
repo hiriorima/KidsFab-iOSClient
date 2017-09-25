@@ -28,25 +28,17 @@ class Request {
     }
     
     // POST METHOD
-    func post(_ url: URL, body: NSMutableDictionary, completionHandler: @escaping (Data?, URLResponse?, NSError?) -> Void) {
-        
-        let cookies = HTTPCookieStorage.shared.cookies(for: nooooUrl!)
-        let header  = HTTPCookie.requestHeaderFields(with: cookies!)
-        
-        var request: URLRequest = URLRequest(url: url)
-        
-        request.httpMethod = "POST"
-        request.allHTTPHeaderFields = header
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        do {
-            request.httpBody = try JSONSerialization.data(withJSONObject: body, options: JSONSerialization.WritingOptions.init(rawValue: 2))
-        } catch {
-            // Error Handling
-            print("NSJSONSerialization Error")
-            return
+    func post(_ uri: String, body: Dictionary<String, Any>) {
+        Alamofire.request(baseURL + uri, method: .post, parameters: body, encoding: JSONEncoding.default, headers: genHeader("POST")).responseJSON { response in
+            switch response.result {
+            case .success:
+                //callBackClosure(response.value as! NSArray)
+                return
+            case .failure(let error):
+                print(error)
+                return
+            }
         }
-        session.dataTask(with: request, completionHandler: completionHandler as! (Data?, URLResponse?, Error?) -> Void).resume()
     }
     
     // PUT METHOD

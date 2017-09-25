@@ -467,7 +467,7 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
                 if reachability.isReachable {
                     //インターネット接続あり
                     //送信文
-                   SavePost(UserID,Title: PostTitle,Category: PostCategory,IMG: PostImg)
+                   SavePost(UserID: UserID,Title: PostTitle,Category: PostCategory,IMG: PostImg)
                     
                     let alertController = UIAlertController(title: "保存完了", message: "Webページからダウンロードしてご使用ください。", preferredStyle: .alert)
                     
@@ -516,42 +516,21 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
     //ポストの処理
     func PostTest(_ UserID: String ,PW:String) {
         let request: Request = Request()
-        
-        let url: URL = URL(string:"http://paint.fablabhakodate.org/loginuser")!
-        let body:NSMutableDictionary =
-        NSMutableDictionary()
-        
-        body.setValue(PW, forKey: "password")
-        body.setValue(UserID, forKey: "userid")
-       
-        
-        
-        request.post(url, body: body, completionHandler: {data, response, error in
-            //code
-        })
+        let uri = "/loginuser"
+        let body: Dictionary<String, Any> = ["userid" : UserID,
+                                             "password" : PW]
+        request.post(uri, body: body)
     }
-
-    
-    
-    
     
     //ポストの処理
-    func SavePost(_ UserID: String ,Title: String, Category: Int, IMG: String) {
+    func SavePost(UserID: String ,Title: String, Category: Int, IMG: String) {
         let request: Request = Request()
-        
-        let url: URL = URL(string:"http://paint.fablabhakodate.org/addpic")!
-        let body:NSMutableDictionary =
-        NSMutableDictionary()
-        
-        body.setValue(IMG, forKey: "filedata")
-        body.setValue(Title, forKey: "title")
-        body.setValue(UserID, forKey: "userid")
-        body.setValue(Category, forKey: "category")
-        
-        
-       request.post(url, body: body, completionHandler: {data, response, error in
-            //code
-        })
+        let uri = "addpic"
+        let body: Dictionary<String, Any> = ["userid" : UserID,
+                                             "filedata" : IMG,
+                                             "title" : Title,
+                                             "category" : Category]
+        request.post(uri, body: body)
     }
     
     @IBAction func SaveCancel(_ sender: AnyObject) {

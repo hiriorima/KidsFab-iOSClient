@@ -174,16 +174,12 @@ class AddNewAcountViewController: UIViewController, UITextFieldDelegate,UIScroll
     
     func AddNewAccountActivity(_ userid:String ,password:String, password_confirmation:String){
         let request: Request = Request()
-        
-        let url: URL = URL(string: "http://paint.fablabhakodate.org/adduser")!
-        let body: NSMutableDictionary = NSMutableDictionary()
-        body.setValue(userid, forKey: "userid")
-        body.setValue(password, forKey: "password")
-        body.setValue(password_confirmation, forKey: "password_confirmation")
-        
-        request.post(url, body: body, completionHandler: { data, response, error in
-            // code
-        })
+        let uri = "adduser"
+        let body: Dictionary<String, Any> = ["userid" : userid,
+                                             "password" : password,
+                                             "password_confirmation" : password_confirmation]
+        request.post(uri, body: body)
+
     }
     
     /*

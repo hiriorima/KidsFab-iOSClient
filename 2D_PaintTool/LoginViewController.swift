@@ -56,14 +56,6 @@ UITextFieldDelegate,UIScrollViewDelegate {
         PWInputField.delegate = self
         sc.delegate = self
         
-        let request: Request = Request()
-        
-        let url: URL = URL(string: "http://paint.fablabhakodate.org/noooo")!
-        
-        request.get(url, completionHandler: { data, response, error in
-            // code
-        })
-        
         IDInputField.placeholder = "IDを入力してください(英数字3~10字)"
         PWInputField.placeholder = "パスワードを入力してください(英数字4~8字)"
         
@@ -197,49 +189,19 @@ UITextFieldDelegate,UIScrollViewDelegate {
     }
     
     /*
-    * ログイン処理
-    */
+     * ログイン処理
+     */
     func LoginActivity(_ userid: String, password: String){
         
         let request: Request = Request()
         
-        let url: URL = URL(string: "http://paint.fablabhakodate.org/signinuser")!
+        let uri = "signinuser"
         
-        let body: NSMutableDictionary = NSMutableDictionary()
-        body.setValue(userid, forKey: "userid")
-        body.setValue(password, forKey: "password")
+        let body = ["userid" : userid,
+                    "password" : password]
         
-        var login_flag = false
-        var finish_flag = false
+        request.post(uri, body: body)
         
-        request.post(url, body: body, completionHandler: { data, response, error in
-            // code
-            do {
-                let json = try JSONSerialization.jsonObject(with: (data)!, options: .mutableContainers) as! NSDictionary
-                if json["userid"] != nil{
-                    login_flag = true
-                }else{
-                    print(json)
-                }
-            } catch (let e) {
-                print(e)
-            }
-            finish_flag = true
-        })
-        
-        while(!finish_flag){
-            usleep(10)
-        }
-        
-        if(login_flag){
-            self.ScreenTransition(userid)
-        }else{
-            //ToDo ログインできない
-           // print("ログインできませんでした")
-            Error.text = "IDまたはパスワードが違います"
-            LoginButton.animation = "shake"
-            LoginButton.animate()
-        }
     }
     
     func ScreenTransition(_ userid:String){
