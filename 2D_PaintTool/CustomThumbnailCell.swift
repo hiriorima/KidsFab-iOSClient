@@ -9,7 +9,7 @@
 import UIKit
 
 class CustomThumbnailCell: UICollectionViewCell {
-
+    
     @IBOutlet var thumbnail:UIImageView!
     @IBOutlet weak var img_name: UILabel!
     

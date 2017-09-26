@@ -45,20 +45,20 @@ class AddNewAcountViewController: UIViewController, UITextFieldDelegate,UIScroll
     }
     
     /*
-    編集開始時の処理
-    *パスワード入力方式設定
-    *if:テキストフィールドをタップ
-    テキストフィールド初期化
-    */
+     編集開始時の処理
+     *パスワード入力方式設定
+     *if:テキストフィールドをタップ
+     テキストフィールド初期化
+     */
     @IBAction func TextFieldEditingDidBegin(_ sender: UITextField) {
         txtActiveField = sender
         if(sender == PWInputField || sender == PWReinputField){
             sender.isSecureTextEntry = true}
-            }
+    }
     
     /*
-    テキストが編集された際に呼ばれる.
-    */
+     テキストが編集された際に呼ばれる.
+     */
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         var maxLength: Int = 0
@@ -81,26 +81,26 @@ class AddNewAcountViewController: UIViewController, UITextFieldDelegate,UIScroll
         return false
     }
     
-   
+    
     /*
-    キーボード以外をタップするとキーボードを閉じる
-    */
+     キーボード以外をタップするとキーボードを閉じる
+     */
     @IBAction func TapScreen(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }
     
     /*
-    Returnをタップするとキーボードを閉じる
-    */
+     Returnをタップするとキーボードを閉じる
+     */
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
     /*
-    キーボード表示時にテキストフィールドと重なっているか調べる
-    重なっていたらスクロールする
-    */
+     キーボード表示時にテキストフィールドと重なっているか調べる
+     重なっていたらスクロールする
+     */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -166,7 +166,7 @@ class AddNewAcountViewController: UIViewController, UITextFieldDelegate,UIScroll
         default:
             ErrorLabel.text = "エラーが発生しました。"
         }
-
+        
         
         
         
@@ -179,17 +179,17 @@ class AddNewAcountViewController: UIViewController, UITextFieldDelegate,UIScroll
                                              "password" : password,
                                              "password_confirmation" : password_confirmation]
         request.post(uri, body: body)
-
+        
     }
     
     /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
 }

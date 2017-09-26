@@ -24,14 +24,14 @@ class SearchScreenController: UIViewController,UICollectionViewDataSource, UICol
     @IBOutlet weak var categoryName: UILabel!
     
     let categoryImg:Array<String> =
-    ["character.png",
-        "plant.png",
-        "eat.png",
-        "human.png",
-        "animal.png",
-        "car.png",
-        "mark.png",
-        "etc.png"]
+        ["character.png",
+         "plant.png",
+         "eat.png",
+         "human.png",
+         "animal.png",
+         "car.png",
+         "mark.png",
+         "etc.png"]
     
     
     //AppDelegateのインスタンスを取得
@@ -107,7 +107,7 @@ class SearchScreenController: UIViewController,UICollectionViewDataSource, UICol
             categoryString = "キャラクター"
         case "plant.png":
             appDelegate.category_number = "1"
-        categoryString = "しょくぶつ"
+            categoryString = "しょくぶつ"
         case "eat.png":
             appDelegate.category_number = "2"
             categoryString = "たべもの"
@@ -141,7 +141,7 @@ class SearchScreenController: UIViewController,UICollectionViewDataSource, UICol
         
         // Viewの移動する.
         self.present(sv, animated: true, completion: nil)
-
+        
     }
     
     func renderView(json: NSArray){
@@ -165,13 +165,13 @@ class SearchScreenController: UIViewController,UICollectionViewDataSource, UICol
     }
     
     /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
 }

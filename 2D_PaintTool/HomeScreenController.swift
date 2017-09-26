@@ -33,7 +33,7 @@ class HomeScreenController:UIViewController{
         }else{
             user.image = Guest
         }
-
+        
         let request: Request = Request()
         let uri = "imgshow?category=-1"
         request.get(uri, callBackClosure: self.renderView)

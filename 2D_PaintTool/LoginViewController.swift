@@ -12,25 +12,25 @@ import Spring
 // FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
 // Consider refactoring the code to use the non-optional operators.
 fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l < r
-  case (nil, _?):
-    return true
-  default:
-    return false
-  }
+    switch (lhs, rhs) {
+    case let (l?, r?):
+        return l < r
+    case (nil, _?):
+        return true
+    default:
+        return false
+    }
 }
 
 // FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
 // Consider refactoring the code to use the non-optional operators.
 fileprivate func >= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l >= r
-  default:
-    return !(lhs < rhs)
-  }
+    switch (lhs, rhs) {
+    case let (l?, r?):
+        return l >= r
+    default:
+        return !(lhs < rhs)
+    }
 }
 
 
@@ -68,11 +68,11 @@ UITextFieldDelegate,UIScrollViewDelegate {
     }
     
     /*
-    編集開始時の処理
-    *パスワード入力方式設定
-    *if:テキストフィールドをタップ
-    テキストフィールド初期化
-    */
+     編集開始時の処理
+     *パスワード入力方式設定
+     *if:テキストフィールドをタップ
+     テキストフィールド初期化
+     */
     @IBAction func TextFieldEditingDidBegin(_ sender: UITextField) {
         txtActiveField = sender
         if(sender == PWInputField){
@@ -81,8 +81,8 @@ UITextFieldDelegate,UIScrollViewDelegate {
     
     
     /*
-    テキストが編集された際に呼ばれる.
-    */
+     テキストが編集された際に呼ばれる.
+     */
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         var maxLength: Int = 0
@@ -107,24 +107,24 @@ UITextFieldDelegate,UIScrollViewDelegate {
     
     
     /*
-    キーボード以外をタップするとキーボードを閉じる
-    */
+     キーボード以外をタップするとキーボードを閉じる
+     */
     @IBAction func TapScreen(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }
     
     /*
-    Returnをタップするとキーボードを閉じる
-    */
+     Returnをタップするとキーボードを閉じる
+     */
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
     /*
-    キーボード表示時にテキストフィールドと重なっているか調べる
-    重なっていたらスクロールする
-    */
+     キーボード表示時にテキストフィールドと重なっているか調べる
+     重なっていたらスクロールする
+     */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -152,7 +152,7 @@ UITextFieldDelegate,UIScrollViewDelegate {
     
     
     @IBOutlet var LoginButton: SpringButton!
-     var LoginFlag = (0,0)
+    var LoginFlag = (0,0)
     @IBAction func TapLoginButton(_ sender: AnyObject) {
         let String_ID = IDInputField.text
         let String_PW = PWInputField.text
@@ -221,14 +221,14 @@ UITextFieldDelegate,UIScrollViewDelegate {
     }
     
     /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
 }
 

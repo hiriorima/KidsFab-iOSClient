@@ -12,8 +12,8 @@ import Spring
 import ReachabilitySwift
 
 class PaintController: UIViewController, UITableViewDataSource, UITableViewDelegate,UITextFieldDelegate,UIPickerViewDelegate, UIPickerViewDataSource,UIToolbarDelegate{
-
-
+    
+    
     // view & button　の宣言
     @IBOutlet var drawingView: ACEDrawingView!
     @IBOutlet var MenuList: SpringView!
@@ -33,8 +33,8 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
     @IBOutlet var L_width2: UIButton!
     @IBOutlet var L_width3: UIButton!
     
-
-
+    
+    
     
     @IBOutlet var Reset: SpringButton!
     @IBOutlet var UnDo: UIButton!
@@ -51,10 +51,10 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     @IBOutlet var Tooltable: UITableView!
     let TImgArray: NSArray = ["Menu.png","Pen.png","Line.png","Ellipse.png","Rect.png","Eraser.png","Text.png"]
-   
+    
     //選択領域の概形選択&リセットボタンの画像設定
     let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate //AppDelegateのインスタンスを取得
-
+    
     
     
     
@@ -65,7 +65,7 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
     // 初期設定
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // 赤の枠線
         drawingView.layer.borderColor = UIColor.red.cgColor
         drawingView.layer.borderWidth = 4.0
@@ -92,7 +92,7 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
         CategoryField.inputView = pickerView
         
         
-       
+        
         myToolBar = UIToolbar(frame: CGRect(x: 0, y: self.view.frame.size.height/6, width: self.view.frame.size.width, height: 40.0))
         myToolBar.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
         myToolBar.backgroundColor = UIColor.black
@@ -110,7 +110,7 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
     }
     
     //画面が表示される直前//
-     override func viewWillAppear(_ animated: Bool){
+    override func viewWillAppear(_ animated: Bool){
         
         selectedGraphic = appDelegate.selectGraphic
         
@@ -124,23 +124,23 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
             drawingView.frame = CGRect(x: 187, y: 62, width: 650, height: 650)
         default:
             ErrorWindow()
-            }
+        }
         
         //Userの種類と名前の表示
-         Username.text = appDelegate.user_id
+        Username.text = appDelegate.user_id
         let Guest:UIImage = UIImage(named: "Guest.png")!
         let Member:UIImage = UIImage(named: "Member.png")!
         if(appDelegate.user_id != "Guest"){
-        User.image = Member
+            User.image = Member
         }else{
-        User.image = Guest
+            User.image = Guest
         }
         
         
         
         // 検索からの画像ロード
         if appDelegate.searchImg != nil{
-        drawingView.loadImage(appDelegate.searchImg)
+            drawingView.loadImage(appDelegate.searchImg)
             appDelegate.searchImg = nil
         }
     }
@@ -182,7 +182,7 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
         Ellipse_S.isHidden = true
         Ellipse_F.isHidden = true
     }
-
+    
     // 円(塗りつぶし)
     @IBAction func EllipseFill(_ sender: AnyObject) {
         drawingView.drawTool = ACEDrawingToolTypeEllipseFill
@@ -192,9 +192,9 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     // 四角(線のみ)
     @IBAction func RectStroke(_ sender: AnyObject) {
-         drawingView.drawTool = ACEDrawingToolTypeRectagleStroke
-         Rect_S.isHidden = true
-         Rect_F.isHidden = true
+        drawingView.drawTool = ACEDrawingToolTypeRectagleStroke
+        Rect_S.isHidden = true
+        Rect_F.isHidden = true
     }
     
     // 四角(塗りつぶし)
@@ -202,22 +202,22 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
         drawingView.drawTool = ACEDrawingToolTypeRectagleFill
         Rect_S.isHidden = true
         Rect_F.isHidden = true
-    
+        
     }
     
     
     
     
-
+    
     // 戻る
     @IBAction func UnDo(_ sender: AnyObject) {
         drawingView.undoLatestStep()
-    
+        
     }
     
     // 進む
     @IBAction func ReDo(_ sender: AnyObject) {
-    drawingView.redoLatestStep()}
+        drawingView.redoLatestStep()}
     
     
     // 線の太さ
@@ -227,14 +227,14 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
         L_width2.backgroundColor = clear
         L_width3.backgroundColor = clear
     }
-   
+    
     @IBAction func Width2(_ sender: AnyObject) {
         drawingView.lineWidth = 22.5
         L_width1.backgroundColor = clear
         L_width2.backgroundColor = select
         L_width3.backgroundColor = clear
     }
-
+    
     @IBAction func Width3(_ sender: AnyObject) {
         drawingView.lineWidth = 30.0
         L_width1.backgroundColor = clear
@@ -244,7 +244,7 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     
     // 全消し
-   
+    
     @IBAction func Reset(_ sender: AnyObject) {
         
         let alertController = UIAlertController(title: "Clear", message: "編集したデータを全て削除し、\n白紙に戻しますか?", preferredStyle: .alert)
@@ -290,30 +290,30 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         return cell
     }
-   // Tableの機能
+    // Tableの機能
     func tableView(_ Tooltable: UITableView, didSelectRowAt indexPath: IndexPath){
-    switch indexPath.row{
-    case 0:
-        CollisionDetection(MenuList, ONOFF: false)
-        MenuList.animation = "slideRight"
-        MenuList.animate()
-    case 1:
-        drawingView.drawTool = ACEDrawingToolTypePen
-    case 2:
-        drawingView.drawTool = ACEDrawingToolTypeLine
-    case 3:
-        Ellipse_S.isHidden = false
-        Ellipse_F.isHidden = false
-    case 4:
-        Rect_S.isHidden = false
-        Rect_F.isHidden = false
-    case 5:
-        drawingView.drawTool = ACEDrawingToolTypeEraser
-    case 6:
-        drawingView.drawTool = ACEDrawingToolTypeDraggableText
-    default:
-    break
-    }
+        switch indexPath.row{
+        case 0:
+            CollisionDetection(MenuList, ONOFF: false)
+            MenuList.animation = "slideRight"
+            MenuList.animate()
+        case 1:
+            drawingView.drawTool = ACEDrawingToolTypePen
+        case 2:
+            drawingView.drawTool = ACEDrawingToolTypeLine
+        case 3:
+            Ellipse_S.isHidden = false
+            Ellipse_F.isHidden = false
+        case 4:
+            Rect_S.isHidden = false
+            Rect_F.isHidden = false
+        case 5:
+            drawingView.drawTool = ACEDrawingToolTypeEraser
+        case 6:
+            drawingView.drawTool = ACEDrawingToolTypeDraggableText
+        default:
+            break
+        }
         if indexPath.row != 3{
             Ellipse_F.isHidden = true
             Ellipse_S.isHidden = true
@@ -323,7 +323,7 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
             Rect_S.isHidden = true
         }
     }
- 
+    
     
     
     /*--- MenuList　action ---*/
@@ -421,7 +421,7 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
         case(0,1):
             STitleError.text = "タイトルが入力されていません。"
             SCategoryError.text = ""
-
+            
         case (1,0):
             STitleError.text = ""
             SCategoryError.text = "カテゴリが選択されていません。"
@@ -430,7 +430,7 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
             SCategoryError.text = ""
         default:
             ErrorWindow()
-                }
+        }
         
         
         
@@ -459,15 +459,15 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
             default:
                 PostImg  = ""
             }
-
-          
+            
+            
             
             do {
                 let reachability = try Reachability()!
                 if reachability.isReachable {
                     //インターネット接続あり
                     //送信文
-                   SavePost(UserID: UserID,Title: PostTitle,Category: PostCategory,IMG: PostImg)
+                    SavePost(UserID: UserID,Title: PostTitle,Category: PostCategory,IMG: PostImg)
                     
                     let alertController = UIAlertController(title: "保存完了", message: "Webページからダウンロードしてご使用ください。", preferredStyle: .alert)
                     
@@ -499,11 +499,11 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
                 // NSErrorが投げられた場合
                 ErrorWindow()
             } catch {
-            // その他ハンドル出来なかったもの
+                // その他ハンドル出来なかったもの
                 ErrorWindow()
             }
             
-
+            
         }else{
             saveButton.animation = "shake"
             saveButton.animate()
@@ -538,7 +538,7 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
     }
     
     @IBAction func SwipeSaveCancel(_ sender: AnyObject) {
-        CollisionDetection(SaveView, ONOFF: true)   
+        CollisionDetection(SaveView, ONOFF: true)
     }
     
     
@@ -547,24 +547,24 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
     func Image2String(_ image:UIImage) -> String? {
         let data:Data = UIImagePNGRepresentation(image)!
         //NSDataへの変換が成功していたら
-         if let pngData:Data = data {
-        //BASE64のStringに変換する
-        let encodeString:String =
-        pngData.base64EncodedString(options: NSData.Base64EncodingOptions.lineLength64Characters)
-        return encodeString
+        if let pngData:Data = data {
+            //BASE64のStringに変換する
+            let encodeString:String =
+                pngData.base64EncodedString(options: NSData.Base64EncodingOptions.lineLength64Characters)
+            return encodeString
         }
-            return nil
+        return nil
     }
     
     //UIimageを円に切り抜く
     func getMaskedImage(_ Img:UIImage) -> UIImage {
         let maskImgre : CGImage = maskImage.cgImage!
         let mask = CGImage(maskWidth: maskImgre.width,
-            height: maskImgre.height,
-            bitsPerComponent: maskImgre.bitsPerComponent,
-            bitsPerPixel: maskImgre.bitsPerPixel,
-            bytesPerRow: maskImgre.bytesPerRow,
-            provider: maskImgre.dataProvider!,decode: nil,shouldInterpolate: false)
+                           height: maskImgre.height,
+                           bitsPerComponent: maskImgre.bitsPerComponent,
+                           bitsPerPixel: maskImgre.bitsPerPixel,
+                           bytesPerRow: maskImgre.bytesPerRow,
+                           provider: maskImgre.dataProvider!,decode: nil,shouldInterpolate: false)
         let maskedImageCG: CGImage = Img.cgImage!.masking(mask!)!
         let maskedImage = UIImage(cgImage: maskedImageCG)
         return maskedImage
@@ -573,7 +573,7 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     // 新規作成
     @IBAction func NewCreate(_ sender: AnyObject) {
-            SaveAlert("新規作成", ViewName: "selectGraphic")
+        SaveAlert("新規作成", ViewName: "selectGraphic")
     }
     
     //viewname変更
@@ -599,16 +599,16 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     //エラー画面
     func ErrorWindow(){
-    let alertController = UIAlertController(title: "エラー", message: "予期せぬエラーが発生しました。\n再起動しますか?", preferredStyle: .alert)
-    let otherAction = UIAlertAction(title: "OK", style: .default) {
-        action in print("pushed OK!")
-    }
-    let cancelAction = UIAlertAction(title: "CANCEL", style: .cancel, handler: nil)
+        let alertController = UIAlertController(title: "エラー", message: "予期せぬエラーが発生しました。\n再起動しますか?", preferredStyle: .alert)
+        let otherAction = UIAlertAction(title: "OK", style: .default) {
+            action in print("pushed OK!")
+        }
+        let cancelAction = UIAlertAction(title: "CANCEL", style: .cancel, handler: nil)
         
-    alertController.addAction(otherAction)
-    alertController.addAction(cancelAction)
-    present(alertController, animated: true, completion: nil)
-    
+        alertController.addAction(otherAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
+        
     }
     
     //list on/of
@@ -628,7 +628,7 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
             drawingView.isUserInteractionEnabled = true
             view.animation = "fadeOut"
             view.animate()
-           
+            
             
         }else {
             Tooltable.isUserInteractionEnabled = false
@@ -650,50 +650,50 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
     //未保存時の画面移動アラート
     
     func SaveAlert(_ Title: String, ViewName: String){
-         if  SaveFlag.1 == 0 && SaveFlag.0 == 0{
-        let alertController = UIAlertController(title: Title, message: "編集した画像が保存されていません。\n保存しますか?", preferredStyle: .alert)
-        let otherAction = UIAlertAction(title: "保存", style: .default) {
-            action in
-            // 保存ウィンドウの表示
-            self.MenuList.animation = "fadeOut"
-            self.MenuList.animate()
-            self.CollisionDetection(self.SaveView, ONOFF: false)
-            self.SaveView.animation = "slideDown"
-            self.SaveView.animate()
-        }
-        let goAction = UIAlertAction(title: "保存しない", style: .default) {
-            action in
-            
-            //概形選択へ移動
-            
-            let targetView: AnyObject = self.storyboard!.instantiateViewController( withIdentifier: ViewName )
-            self.present( targetView as! UIViewController, animated: true, completion: nil)
+        if  SaveFlag.1 == 0 && SaveFlag.0 == 0{
+            let alertController = UIAlertController(title: Title, message: "編集した画像が保存されていません。\n保存しますか?", preferredStyle: .alert)
+            let otherAction = UIAlertAction(title: "保存", style: .default) {
+                action in
+                // 保存ウィンドウの表示
+                self.MenuList.animation = "fadeOut"
+                self.MenuList.animate()
+                self.CollisionDetection(self.SaveView, ONOFF: false)
+                self.SaveView.animation = "slideDown"
+                self.SaveView.animate()
             }
-        
-        let cancelAction = UIAlertAction(title: "CANCEL", style: .cancel, handler: nil)
-        
-        alertController.addAction(otherAction)
-        alertController.addAction(cancelAction)
-        alertController.addAction(goAction)
-        present(alertController, animated: true, completion: nil)
-         }else{
+            let goAction = UIAlertAction(title: "保存しない", style: .default) {
+                action in
+                
+                //概形選択へ移動
+                
+                let targetView: AnyObject = self.storyboard!.instantiateViewController( withIdentifier: ViewName )
+                self.present( targetView as! UIViewController, animated: true, completion: nil)
+            }
+            
+            let cancelAction = UIAlertAction(title: "CANCEL", style: .cancel, handler: nil)
+            
+            alertController.addAction(otherAction)
+            alertController.addAction(cancelAction)
+            alertController.addAction(goAction)
+            present(alertController, animated: true, completion: nil)
+        }else{
             let targetView: AnyObject = self.storyboard!.instantiateViewController( withIdentifier: ViewName )
             self.present( targetView as! UIViewController, animated: true, completion: nil)
         }
-
-    
+        
+        
     }
     
     
-
-
-
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     
     
     
@@ -703,13 +703,13 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

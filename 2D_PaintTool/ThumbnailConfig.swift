@@ -9,7 +9,7 @@
 import UIKit
 
 class ThumbnailConfig: NSObject, UICollectionViewDataSource, UICollectionViewDelegate{
-
+    
     var items:Array<String> = []
     var imgs_name:Array<String> = []
     
@@ -26,7 +26,7 @@ class ThumbnailConfig: NSObject, UICollectionViewDataSource, UICollectionViewDel
         
         let url = URL(string: items[indexPath.row]);
         print(items[indexPath.row])
-       let data = try? Data(contentsOf: url!)
+        let data = try? Data(contentsOf: url!)
         let img = UIImage(data: data!);
         
         // set Name

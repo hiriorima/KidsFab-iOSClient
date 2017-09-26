@@ -9,7 +9,7 @@
 import UIKit
 
 class CategoryButtonCell: UICollectionViewCell {
-
+    
     @IBOutlet weak var CategoryButtonImg: UIImageView!
     
     override init(frame: CGRect){
