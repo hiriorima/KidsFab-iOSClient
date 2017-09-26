@@ -350,6 +350,7 @@
 				0DF566051BE3596C00D0EE2E /* Resources */,
 				66ACCBE3F8229503056B5AF5 /* [CP] Embed Pods Frameworks */,
 				AFA32AFA34BA09651D4E4A64 /* [CP] Copy Pods Resources */,
+				0D5911301F7A6BB1002F9991 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -536,6 +537,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2D_PaintToolUITests/Pods-2D_PaintToolUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		0D5911301F7A6BB1002F9991 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
 		};
 		32A9D2F618617AB081AF4DC9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
