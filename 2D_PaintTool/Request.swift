@@ -8,70 +8,72 @@
 
 
 import UIKit
+import Alamofire
 
 class Request {
-    let session: NSURLSession = NSURLSession.sharedSession()
-    let nooooUrl = NSURL(string: "http://paint.fablabhakdoate.org/")
+    let session: URLSession = URLSession.shared
+    let nooooUrl = URL(string: "http://paint.fablabhakdoate.org/")
+    let baseURL = "http://paint.fablabhakodate.org/"
     
-    // GET METHOD
-    func get(url: NSURL, completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) {
-        let request: NSMutableURLRequest = NSMutableURLRequest(URL: url)
-        
-        let cookies = NSHTTPCookieStorage.sharedHTTPCookieStorage().cookiesForURL(nooooUrl!)
-        let header  = NSHTTPCookie.requestHeaderFieldsWithCookies(cookies!)
-        
-        request.HTTPMethod = "GET"
-        request.allHTTPHeaderFields = header
-        
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        session.dataTaskWithRequest(request, completionHandler: completionHandler).resume()
+    func get(_ uri: String, callBackClosure:@escaping (NSArray)->Void){
+        Alamofire.request(baseURL + uri, headers: self.genHeader("GET")).responseJSON { response in
+            switch response.result {
+            case .success:
+                callBackClosure(response.value as! NSArray)
+            case .failure(let error):
+                print(error)
+                return
+            }
+        }
     }
     
     // POST METHOD
-    func post(url: NSURL, body: NSMutableDictionary, completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) {
-        
-        let cookies = NSHTTPCookieStorage.sharedHTTPCookieStorage().cookiesForURL(nooooUrl!)
-        let header  = NSHTTPCookie.requestHeaderFieldsWithCookies(cookies!)
-        
-        let request: NSMutableURLRequest = NSMutableURLRequest(URL: url)
-        
-        request.HTTPMethod = "POST"
-        request.allHTTPHeaderFields = header
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        do {
-            request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(body, options: NSJSONWritingOptions.init(rawValue: 2))
-        } catch {
-            // Error Handling
-            print("NSJSONSerialization Error")
-            return
+    func post(_ uri: String, body: Dictionary<String, Any>) {
+        Alamofire.request(baseURL + uri, method: .post, parameters: body, encoding: JSONEncoding.default, headers: genHeader("POST")).responseJSON { response in
+            switch response.result {
+            case .success:
+                //callBackClosure(response.value as! NSArray)
+                return
+            case .failure(let error):
+                print(error)
+                return
+            }
         }
-        session.dataTaskWithRequest(request, completionHandler: completionHandler).resume()
     }
     
     // PUT METHOD
-    func put(url: NSURL, body: NSMutableDictionary, completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) {
-        let request: NSMutableURLRequest = NSMutableURLRequest(URL: url)
+    func put(_ url: URL, body: NSMutableDictionary, completionHandler: @escaping (Data?, URLResponse?, NSError?) -> Void) {
+        var request: URLRequest = URLRequest(url: url)
         
-        request.HTTPMethod = "PUT"
+        request.httpMethod = "PUT"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         do {
-            request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(body, options: NSJSONWritingOptions.init(rawValue: 2))
+            request.httpBody = try JSONSerialization.data(withJSONObject: body, options: JSONSerialization.WritingOptions.init(rawValue: 2))
         } catch {
             // Error Handling
             print("NSJSONSerialization Error")
             return
         }
-        session.dataTaskWithRequest(request, completionHandler: completionHandler).resume()
+        session.dataTask(with: request, completionHandler: completionHandler as! (Data?, URLResponse?, Error?) -> Void).resume()
     }
     
     // DELETE METHOD
-    func delete(url: NSURL, completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) {
-        let request: NSMutableURLRequest = NSMutableURLRequest(URL: url)
+    func delete(_ url: URL, completionHandler: @escaping (Data?, URLResponse?, NSError?) -> Void) {
+        var request: URLRequest = URLRequest(url: url)
         
-        request.HTTPMethod = "DELETE"
+        request.httpMethod = "DELETE"
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-        session.dataTaskWithRequest(request, completionHandler: completionHandler).resume()
+        session.dataTask(with: request, completionHandler: completionHandler as! (Data?, URLResponse?, Error?) -> Void).resume()
+    }
+    
+    func genHeader(_ method: String) -> [String:String]{
+        let cookies = HTTPCookieStorage.shared.cookies(for: nooooUrl!)
+        var headers = HTTPCookie.requestHeaderFields(with: cookies!)
+        headers["Accept"] = "application/json"
+        if (method != "GET") {
+            headers["Content-Type"] = "application/json"
+        }
+        return headers
     }
 }

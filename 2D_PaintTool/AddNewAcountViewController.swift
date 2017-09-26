@@ -8,6 +8,7 @@
 
 
 import UIKit
+import Spring
 
 class AddNewAcountViewController: UIViewController, UITextFieldDelegate,UIScrollViewDelegate {
     
@@ -16,7 +17,7 @@ class AddNewAcountViewController: UIViewController, UITextFieldDelegate,UIScroll
     @IBOutlet var PWReinputField: UITextField!
     @IBOutlet var sc: UIScrollView!
     
-    private var txtActiveField = UITextField()
+    fileprivate var txtActiveField = UITextField()
     
     @IBOutlet weak var ErrorLabel: UILabel!
     
@@ -49,16 +50,16 @@ class AddNewAcountViewController: UIViewController, UITextFieldDelegate,UIScroll
     *if:テキストフィールドをタップ
     テキストフィールド初期化
     */
-    @IBAction func TextFieldEditingDidBegin(sender: UITextField) {
+    @IBAction func TextFieldEditingDidBegin(_ sender: UITextField) {
         txtActiveField = sender
         if(sender == PWInputField || sender == PWReinputField){
-            sender.secureTextEntry = true}
+            sender.isSecureTextEntry = true}
             }
     
     /*
     テキストが編集された際に呼ばれる.
     */
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         var maxLength: Int = 0
         
@@ -84,14 +85,14 @@ class AddNewAcountViewController: UIViewController, UITextFieldDelegate,UIScroll
     /*
     キーボード以外をタップするとキーボードを閉じる
     */
-    @IBAction func TapScreen(sender: UITapGestureRecognizer) {
+    @IBAction func TapScreen(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }
     
     /*
     Returnをタップするとキーボードを閉じる
     */
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
@@ -100,19 +101,19 @@ class AddNewAcountViewController: UIViewController, UITextFieldDelegate,UIScroll
     キーボード表示時にテキストフィールドと重なっているか調べる
     重なっていたらスクロールする
     */
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let notificationCenter = NSNotificationCenter.defaultCenter()
-        notificationCenter.addObserver(self, selector: #selector(AddNewAcountViewController.handleKeyboardWillShowNotification(_:)), name: UIKeyboardWillShowNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(AddNewAcountViewController.handleKeyboardWillHideNotification(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(AddNewAcountViewController.handleKeyboardWillShowNotification(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(AddNewAcountViewController.handleKeyboardWillHideNotification(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    func handleKeyboardWillShowNotification(notification: NSNotification) {
+    func handleKeyboardWillShowNotification(_ notification: Notification) {
         
         let userInfo = notification.userInfo!
-        let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
-        let myBoundSize: CGSize = UIScreen.mainScreen().bounds.size
+        let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let myBoundSize: CGSize = UIScreen.main.bounds.size
         let txtLimit = txtActiveField.frame.origin.y + txtActiveField.frame.height + 8.0
         let kbdLimit = myBoundSize.height - keyboardScreenEndFrame.size.height
         
@@ -121,13 +122,13 @@ class AddNewAcountViewController: UIViewController, UITextFieldDelegate,UIScroll
         }
     }
     
-    func handleKeyboardWillHideNotification(notification: NSNotification) {
+    func handleKeyboardWillHideNotification(_ notification: Notification) {
         sc.contentOffset.y = 0
     }
     
     @IBOutlet var AddButton: SpringButton!
     var AddFlag = (0,0)
-    @IBAction func TapAddNewAccount(sender: AnyObject) {
+    @IBAction func TapAddNewAccount(_ sender: AnyObject) {
         
         let String_ID = IDInputField.text
         let String_PW = PWInputField.text
@@ -171,18 +172,14 @@ class AddNewAcountViewController: UIViewController, UITextFieldDelegate,UIScroll
         
     }
     
-    func AddNewAccountActivity(userid:String ,password:String, password_confirmation:String){
+    func AddNewAccountActivity(_ userid:String ,password:String, password_confirmation:String){
         let request: Request = Request()
-        
-        let url: NSURL = NSURL(string: "http://paint.fablabhakodate.org/adduser")!
-        let body: NSMutableDictionary = NSMutableDictionary()
-        body.setValue(userid, forKey: "userid")
-        body.setValue(password, forKey: "password")
-        body.setValue(password_confirmation, forKey: "password_confirmation")
-        
-        request.post(url, body: body, completionHandler: { data, response, error in
-            // code
-        })
+        let uri = "adduser"
+        let body: Dictionary<String, Any> = ["userid" : userid,
+                                             "password" : password,
+                                             "password_confirmation" : password_confirmation]
+        request.post(uri, body: body)
+
     }
     
     /*

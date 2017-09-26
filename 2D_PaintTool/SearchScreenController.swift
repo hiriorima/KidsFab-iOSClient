@@ -18,7 +18,7 @@ class SearchScreenController: UIViewController,UICollectionViewDataSource, UICol
     
     @IBOutlet weak var homeButton: UIButton!
     
-    let baseurl:String = "http://paint.fablabhakodate.org/imgshow?category="
+    let baseuri = "imgshow?category="
     
     @IBOutlet weak var selectCategoryImg: UIImageView!
     @IBOutlet weak var categoryName: UILabel!
@@ -35,49 +35,20 @@ class SearchScreenController: UIViewController,UICollectionViewDataSource, UICol
     
     
     //AppDelegateのインスタンスを取得
-    let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
         appDelegate.viewController = self
         
-        var finish_flag: Bool = false
-        
         let request: Request = Request()
-        
-        let url: NSURL = NSURL(string: baseurl+appDelegate.category_number!)!
-        
-        // create ThumbnailCollection
-        var images_url:Array<String> = []
-        var images_name:Array<String> = []
-        
-        request.get(url, completionHandler: { data, response, error in
-            // code
-            do {
-                let json = try NSJSONSerialization.JSONObjectWithData((data)!, options: .MutableContainers) as! NSArray
-                
-                
-                
-                    for i in 0 ..< json.count{
-                    let dictionary  = json[i]
-                    images_url.append(dictionary["filedata"] as! String)
-                    images_name.append(dictionary["title"] as! String)
-                }
-            } catch (let e) {
-                print(e)
-            }
-            finish_flag = true
-        })
-        
-        
-        while(!finish_flag){
-            usleep(10)
-        }
-        
-        self.thumbnailConfig = ThumbnailConfig(items: images_url, imgs_name: images_name)
+        let uri = baseuri+appDelegate.category_number!
+        request.get(uri, callBackClosure: self.renderView)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         CategoryThumbnail.dataSource = self.thumbnailConfig
         CategoryThumbnail.delegate = self.thumbnailConfig
-        
         CategoryButtonCollection.dataSource = self
         CategoryButtonCollection.delegate = self
     }
@@ -87,79 +58,46 @@ class SearchScreenController: UIViewController,UICollectionViewDataSource, UICol
         // Dispose of any resources that can be recreated.
     }
     
-    func Reload(categoryImgString: String,categoryString:String){
-        
-        var finish_flag: Bool = false
+    func Reload(_ categoryImgString: String,categoryString:String){
         
         let request: Request = Request()
         
-        let url: NSURL = NSURL(string: baseurl+appDelegate.category_number!)!
+        let uri = baseuri+appDelegate.category_number!
         
-        // create ThumbnailCollection
-        var images_url:Array<String> = []
-        var images_name:Array<String> = []
-        
-        request.get(url, completionHandler: { data, response, error in
-            // code
-            do {
-                let json = try NSJSONSerialization.JSONObjectWithData((data)!, options: .MutableContainers) as! NSArray
-                
-                    for i in 0 ..< json.count{
-                    let dictionary  = json[i]
-                    images_url.append(dictionary["filedata"] as! String)
-                    images_name.append(dictionary["title"] as! String)
-                }
-            } catch (let e) {
-                print(e)
-            }
-            finish_flag = true
-        })
-        
-        
-        while(!finish_flag){
-            usleep(10)
-        }
-        
-        self.thumbnailConfig = ThumbnailConfig(items: images_url, imgs_name: images_name)
+        request.get(uri, callBackClosure: self.renderView)
         
         // 表示する画像を設定する.
         let img = UIImage(named: categoryImgString)
         selectCategoryImg.image = img
         categoryName.text = categoryString
         
-        
-        dispatch_async(dispatch_get_main_queue(), {
-            self.CategoryThumbnail.reloadData()
-            self.CategoryThumbnail.dataSource = self.thumbnailConfig
-            self.CategoryThumbnail.delegate = self.thumbnailConfig
-        })
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell:CategoryButtonCell = collectionView.dequeueReusableCellWithReuseIdentifier("CategoryButtonCell", forIndexPath: indexPath) as! CategoryButtonCell
+        let cell:CategoryButtonCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryButtonCell", for: indexPath) as! CategoryButtonCell
         
         let img = UIImage(named: categoryImg[indexPath.row]);
         
         // set Name
         cell.CategoryButtonImg.image = img
-        cell.backgroundColor = UIColor.greenColor()
+        cell.backgroundColor = UIColor.green
         
         return cell
     }
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 8;
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         //AppDelegateのインスタンスを取得
-        let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
         
         var categoryString: String = ""
         
@@ -196,16 +134,35 @@ class SearchScreenController: UIViewController,UICollectionViewDataSource, UICol
     }
     
     func viewChange(){
-        let sv = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("selectGraphic")
+        let sv = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "selectGraphic")
         
-        sv.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
+        sv.modalTransitionStyle = UIModalTransitionStyle.coverVertical
         
         
         // Viewの移動する.
-        self.presentViewController(sv, animated: true, completion: nil)
+        self.present(sv, animated: true, completion: nil)
 
     }
     
+    func renderView(json: NSArray){
+        
+        var images_url:Array<String> = []
+        var images_name:Array<String> = []
+        
+        for  i in 0 ..< json.count {
+            let dictionary  = json[i] as! NSDictionary
+            images_url.append(dictionary["filedata"] as! String)
+            images_name.append(dictionary["title"] as! String)
+        }
+        
+        self.thumbnailConfig = ThumbnailConfig(items: images_url, imgs_name: images_name)
+        
+        DispatchQueue.main.async(execute: {
+            self.CategoryThumbnail.reloadData()
+            self.CategoryThumbnail.dataSource = self.thumbnailConfig
+            self.CategoryThumbnail.delegate = self.thumbnailConfig
+        })
+    }
     
     /*
     // MARK: - Navigation

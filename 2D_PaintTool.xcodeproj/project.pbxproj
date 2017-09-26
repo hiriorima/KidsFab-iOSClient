@@ -16,38 +16,8 @@
 		0DF8CBAD1C156E490058905C /* CustomThumbnailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF8CBA91C156E490058905C /* CustomThumbnailCell.swift */; };
 		0DF8CBAE1C156E490058905C /* ThumbnailConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF8CBAA1C156E490058905C /* ThumbnailConfig.swift */; };
 		0DF8CBB01C156E490058905C /* CategoryButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF8CBAC1C156E490058905C /* CategoryButtonCell.swift */; };
-		19468EFA88C16FAA91787AD7 /* Pods_2D_PaintToolUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A611AC1286A2F78218A844D0 /* Pods_2D_PaintToolUITests.framework */; };
+		1961A64AE63000ACC2AD4544 /* Pods_2D_PaintToolTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2627C227D3577801535C908 /* Pods_2D_PaintToolTests.framework */; };
 		20211B071BE39FEC0065E70F /* PaintController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20211B061BE39FEC0065E70F /* PaintController.swift */; };
-		202B27AF1C075D3B003286B1 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B27911C075D3B003286B1 /* AsyncButton.swift */; };
-		202B27B01C075D3B003286B1 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B27921C075D3B003286B1 /* AsyncImageView.swift */; };
-		202B27B11C075D3B003286B1 /* AutoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B27931C075D3B003286B1 /* AutoTextView.swift */; };
-		202B27B21C075D3B003286B1 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B27941C075D3B003286B1 /* BlurView.swift */; };
-		202B27B31C075D3B003286B1 /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B27951C075D3B003286B1 /* DesignableButton.swift */; };
-		202B27B41C075D3B003286B1 /* DesignableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B27961C075D3B003286B1 /* DesignableImageView.swift */; };
-		202B27B51C075D3B003286B1 /* DesignableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B27971C075D3B003286B1 /* DesignableLabel.swift */; };
-		202B27B61C075D3B003286B1 /* DesignableTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B27981C075D3B003286B1 /* DesignableTabBarController.swift */; };
-		202B27B71C075D3B003286B1 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B27991C075D3B003286B1 /* DesignableTextField.swift */; };
-		202B27B81C075D3B003286B1 /* DesignableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B279A1C075D3B003286B1 /* DesignableTextView.swift */; };
-		202B27B91C075D3B003286B1 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B279B1C075D3B003286B1 /* DesignableView.swift */; };
-		202B27BA1C075D3B003286B1 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B279C1C075D3B003286B1 /* ImageLoader.swift */; };
-		202B27BB1C075D3B003286B1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 202B279D1C075D3B003286B1 /* Info.plist */; };
-		202B27BC1C075D3B003286B1 /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B279E1C075D3B003286B1 /* KeyboardLayoutConstraint.swift */; };
-		202B27BD1C075D3B003286B1 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B279F1C075D3B003286B1 /* LoadingView.swift */; };
-		202B27BE1C075D3B003286B1 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 202B27A01C075D3B003286B1 /* LoadingView.xib */; };
-		202B27BF1C075D3B003286B1 /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B27A11C075D3B003286B1 /* Misc.swift */; };
-		202B27C01C075D3B003286B1 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B27A21C075D3B003286B1 /* SoundPlayer.swift */; };
-		202B27C11C075D3B003286B1 /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B27A41C075D3B003286B1 /* Spring.swift */; };
-		202B27C21C075D3B003286B1 /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B27A51C075D3B003286B1 /* SpringAnimation.swift */; };
-		202B27C31C075D3B003286B1 /* SpringButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B27A61C075D3B003286B1 /* SpringButton.swift */; };
-		202B27C41C075D3C003286B1 /* SpringImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B27A71C075D3B003286B1 /* SpringImageView.swift */; };
-		202B27C51C075D3C003286B1 /* SpringLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B27A81C075D3B003286B1 /* SpringLabel.swift */; };
-		202B27C61C075D3C003286B1 /* SpringTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B27A91C075D3B003286B1 /* SpringTextField.swift */; };
-		202B27C71C075D3C003286B1 /* SpringTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B27AA1C075D3B003286B1 /* SpringTextView.swift */; };
-		202B27C81C075D3C003286B1 /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B27AB1C075D3B003286B1 /* SpringView.swift */; };
-		202B27C91C075D3C003286B1 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B27AC1C075D3B003286B1 /* TransitionManager.swift */; };
-		202B27CA1C075D3C003286B1 /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B27AD1C075D3B003286B1 /* TransitionZoom.swift */; };
-		202B27CB1C075D3C003286B1 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B27AE1C075D3B003286B1 /* UnwindSegue.swift */; };
-		202C36A11C08334300136525 /* AMReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C36A01C08334300136525 /* AMReachability.swift */; };
 		2037EF151C1617C800E3A729 /* TitleScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2037EF141C1617C800E3A729 /* TitleScreenController.swift */; };
 		20647DBB1C165280003A0076 /* MainTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 20647DBA1C165280003A0076 /* MainTitle.png */; };
 		207BAEB61C0DA3770023228F /* HomeScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207BAEB51C0DA3770023228F /* HomeScreenController.swift */; };
@@ -99,9 +69,8 @@
 		20C4EE671C0D7FF70037CB83 /* AddNewAcountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4EE661C0D7FF60037CB83 /* AddNewAcountViewController.swift */; };
 		20C9F9A71C0F5D2500A058F4 /* Mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 20C9F9A61C0F5D2500A058F4 /* Mask.png */; };
 		20F3654B1C05A20A00E1A48A /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3654A1C05A20900E1A48A /* Request.swift */; };
-		51B22FA03648336797454767 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EE39F2205BC60ABE1C692CC /* Pods.framework */; };
-		DA33464553F363977F9E5A48 /* Pods_2D_PaintTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D4F9EE05C1F67A368B596AE /* Pods_2D_PaintTool.framework */; };
-		ED1A8D4868089ED3BA6CD957 /* Pods_2D_PaintToolTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 199D4771D695C65457BD10F8 /* Pods_2D_PaintToolTests.framework */; };
+		3F481445FF0233955EF72FB6 /* Pods_2D_PaintToolUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3591A1C305DC236EAE37C85 /* Pods_2D_PaintToolUITests.framework */; };
+		8CF0759598EAC1EA7A9A6393 /* Pods_2D_PaintTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32C2797DDB5D75B2A54D568 /* Pods_2D_PaintTool.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,7 +91,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		001FE2CFF4DEF76DF6D3E670 /* Pods-2D_PaintToolUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2D_PaintToolUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-2D_PaintToolUITests/Pods-2D_PaintToolUITests.release.xcconfig"; sourceTree = "<group>"; };
 		0DF566071BE3596C00D0EE2E /* 2D_PaintTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2D_PaintTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DF5660A1BE3596C00D0EE2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DF5660F1BE3596C00D0EE2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -138,41 +106,9 @@
 		0DF8CBA91C156E490058905C /* CustomThumbnailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomThumbnailCell.swift; sourceTree = "<group>"; };
 		0DF8CBAA1C156E490058905C /* ThumbnailConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailConfig.swift; sourceTree = "<group>"; };
 		0DF8CBAC1C156E490058905C /* CategoryButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryButtonCell.swift; sourceTree = "<group>"; };
-		199D4771D695C65457BD10F8 /* Pods_2D_PaintToolTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_2D_PaintToolTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1D4F9EE05C1F67A368B596AE /* Pods_2D_PaintTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_2D_PaintTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		143E39C6D0138CDC1D444983 /* Pods-2D_PaintToolTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2D_PaintToolTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-2D_PaintToolTests/Pods-2D_PaintToolTests.release.xcconfig"; sourceTree = "<group>"; };
 		1EE39F2205BC60ABE1C692CC /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20211B061BE39FEC0065E70F /* PaintController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaintController.swift; path = ../PaintController.swift; sourceTree = "<group>"; };
-		202B27911C075D3B003286B1 /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
-		202B27921C075D3B003286B1 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
-		202B27931C075D3B003286B1 /* AutoTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoTextView.swift; sourceTree = "<group>"; };
-		202B27941C075D3B003286B1 /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
-		202B27951C075D3B003286B1 /* DesignableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
-		202B27961C075D3B003286B1 /* DesignableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableImageView.swift; sourceTree = "<group>"; };
-		202B27971C075D3B003286B1 /* DesignableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableLabel.swift; sourceTree = "<group>"; };
-		202B27981C075D3B003286B1 /* DesignableTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTabBarController.swift; sourceTree = "<group>"; };
-		202B27991C075D3B003286B1 /* DesignableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
-		202B279A1C075D3B003286B1 /* DesignableTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextView.swift; sourceTree = "<group>"; };
-		202B279B1C075D3B003286B1 /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
-		202B279C1C075D3B003286B1 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
-		202B279D1C075D3B003286B1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		202B279E1C075D3B003286B1 /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
-		202B279F1C075D3B003286B1 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		202B27A01C075D3B003286B1 /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
-		202B27A11C075D3B003286B1 /* Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
-		202B27A21C075D3B003286B1 /* SoundPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
-		202B27A31C075D3B003286B1 /* Spring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spring.h; sourceTree = "<group>"; };
-		202B27A41C075D3B003286B1 /* Spring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spring.swift; sourceTree = "<group>"; };
-		202B27A51C075D3B003286B1 /* SpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
-		202B27A61C075D3B003286B1 /* SpringButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringButton.swift; sourceTree = "<group>"; };
-		202B27A71C075D3B003286B1 /* SpringImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringImageView.swift; sourceTree = "<group>"; };
-		202B27A81C075D3B003286B1 /* SpringLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringLabel.swift; sourceTree = "<group>"; };
-		202B27A91C075D3B003286B1 /* SpringTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringTextField.swift; sourceTree = "<group>"; };
-		202B27AA1C075D3B003286B1 /* SpringTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringTextView.swift; sourceTree = "<group>"; };
-		202B27AB1C075D3B003286B1 /* SpringView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringView.swift; sourceTree = "<group>"; };
-		202B27AC1C075D3B003286B1 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
-		202B27AD1C075D3B003286B1 /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
-		202B27AE1C075D3B003286B1 /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
-		202C36A01C08334300136525 /* AMReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AMReachability.swift; sourceTree = "<group>"; };
 		2037EF141C1617C800E3A729 /* TitleScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleScreenController.swift; sourceTree = SOURCE_ROOT; };
 		20647DBA1C165280003A0076 /* MainTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainTitle.png; sourceTree = "<group>"; };
 		207BAEB51C0DA3770023228F /* HomeScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenController.swift; sourceTree = "<group>"; };
@@ -224,14 +160,14 @@
 		20C4EE661C0D7FF60037CB83 /* AddNewAcountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewAcountViewController.swift; sourceTree = "<group>"; };
 		20C9F9A61C0F5D2500A058F4 /* Mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mask.png; sourceTree = "<group>"; };
 		20F3654A1C05A20900E1A48A /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		55EEAFFBB58D7CB884A40FFE /* Pods-2D_PaintToolTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2D_PaintToolTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-2D_PaintToolTests/Pods-2D_PaintToolTests.debug.xcconfig"; sourceTree = "<group>"; };
-		6F40AB18FF82D4A0A83BCF81 /* Pods-2D_PaintToolTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2D_PaintToolTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-2D_PaintToolTests/Pods-2D_PaintToolTests.release.xcconfig"; sourceTree = "<group>"; };
-		7807E69F7DD030F4D1E18044 /* Pods-2D_PaintToolUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2D_PaintToolUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-2D_PaintToolUITests/Pods-2D_PaintToolUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		A26C729F513B4145AE603CF6 /* Pods-2D_PaintTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2D_PaintTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-2D_PaintTool/Pods-2D_PaintTool.release.xcconfig"; sourceTree = "<group>"; };
-		A611AC1286A2F78218A844D0 /* Pods_2D_PaintToolUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_2D_PaintToolUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C083291C6FCA31F627B9230D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		DCB6910B68B9D57289F53D6E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		F26306A26FB17E79BD92B0C1 /* Pods-2D_PaintTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2D_PaintTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-2D_PaintTool/Pods-2D_PaintTool.debug.xcconfig"; sourceTree = "<group>"; };
+		B3591A1C305DC236EAE37C85 /* Pods_2D_PaintToolUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_2D_PaintToolUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8DE6A3DF2E5C7FD6EC00BC7 /* Pods-2D_PaintToolUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2D_PaintToolUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-2D_PaintToolUITests/Pods-2D_PaintToolUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BB58E600898613A3DD14E870 /* Pods-2D_PaintToolUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2D_PaintToolUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-2D_PaintToolUITests/Pods-2D_PaintToolUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C0B6452C4E4CA74C4C27153A /* Pods-2D_PaintTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2D_PaintTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-2D_PaintTool/Pods-2D_PaintTool.debug.xcconfig"; sourceTree = "<group>"; };
+		C2DE45B4E26F4D41593B670F /* Pods-2D_PaintTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2D_PaintTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-2D_PaintTool/Pods-2D_PaintTool.release.xcconfig"; sourceTree = "<group>"; };
+		E32C2797DDB5D75B2A54D568 /* Pods_2D_PaintTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_2D_PaintTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2627C227D3577801535C908 /* Pods_2D_PaintToolTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_2D_PaintToolTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3DBDEECBBADBE153A55F9F6 /* Pods-2D_PaintToolTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2D_PaintToolTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-2D_PaintToolTests/Pods-2D_PaintToolTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,8 +175,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51B22FA03648336797454767 /* Pods.framework in Frameworks */,
-				DA33464553F363977F9E5A48 /* Pods_2D_PaintTool.framework in Frameworks */,
+				8CF0759598EAC1EA7A9A6393 /* Pods_2D_PaintTool.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,7 +183,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED1A8D4868089ED3BA6CD957 /* Pods_2D_PaintToolTests.framework in Frameworks */,
+				1961A64AE63000ACC2AD4544 /* Pods_2D_PaintToolTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +191,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19468EFA88C16FAA91787AD7 /* Pods_2D_PaintToolUITests.framework in Frameworks */,
+				3F481445FF0233955EF72FB6 /* Pods_2D_PaintToolUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,8 +205,8 @@
 				0DF5661E1BE3596C00D0EE2E /* 2D_PaintToolTests */,
 				0DF566291BE3596C00D0EE2E /* 2D_PaintToolUITests */,
 				0DF566081BE3596C00D0EE2E /* Products */,
-				5ED5CA2D4036376844D08997 /* Pods */,
 				ADDD6F790A4977095971D4B9 /* Frameworks */,
+				2F2CE11DDB4731FA8B0F22D8 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -289,9 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				207BAEC51C0DA95C0023228F /* images */,
-				202B27901C075D3B003286B1 /* Spring */,
 				0DF5660A1BE3596C00D0EE2E /* AppDelegate.swift */,
-				202C36A01C08334300136525 /* AMReachability.swift */,
 				20F3654A1C05A20900E1A48A /* Request.swift */,
 				20211B061BE39FEC0065E70F /* PaintController.swift */,
 				0DF5660E1BE3596C00D0EE2E /* Main.storyboard */,
@@ -327,43 +260,6 @@
 				0DF5662C1BE3596C00D0EE2E /* Info.plist */,
 			);
 			path = 2D_PaintToolUITests;
-			sourceTree = "<group>";
-		};
-		202B27901C075D3B003286B1 /* Spring */ = {
-			isa = PBXGroup;
-			children = (
-				202B27911C075D3B003286B1 /* AsyncButton.swift */,
-				202B27921C075D3B003286B1 /* AsyncImageView.swift */,
-				202B27931C075D3B003286B1 /* AutoTextView.swift */,
-				202B27941C075D3B003286B1 /* BlurView.swift */,
-				202B27951C075D3B003286B1 /* DesignableButton.swift */,
-				202B27961C075D3B003286B1 /* DesignableImageView.swift */,
-				202B27971C075D3B003286B1 /* DesignableLabel.swift */,
-				202B27981C075D3B003286B1 /* DesignableTabBarController.swift */,
-				202B27991C075D3B003286B1 /* DesignableTextField.swift */,
-				202B279A1C075D3B003286B1 /* DesignableTextView.swift */,
-				202B279B1C075D3B003286B1 /* DesignableView.swift */,
-				202B279C1C075D3B003286B1 /* ImageLoader.swift */,
-				202B279D1C075D3B003286B1 /* Info.plist */,
-				202B279E1C075D3B003286B1 /* KeyboardLayoutConstraint.swift */,
-				202B279F1C075D3B003286B1 /* LoadingView.swift */,
-				202B27A01C075D3B003286B1 /* LoadingView.xib */,
-				202B27A11C075D3B003286B1 /* Misc.swift */,
-				202B27A21C075D3B003286B1 /* SoundPlayer.swift */,
-				202B27A31C075D3B003286B1 /* Spring.h */,
-				202B27A41C075D3B003286B1 /* Spring.swift */,
-				202B27A51C075D3B003286B1 /* SpringAnimation.swift */,
-				202B27A61C075D3B003286B1 /* SpringButton.swift */,
-				202B27A71C075D3B003286B1 /* SpringImageView.swift */,
-				202B27A81C075D3B003286B1 /* SpringLabel.swift */,
-				202B27A91C075D3B003286B1 /* SpringTextField.swift */,
-				202B27AA1C075D3B003286B1 /* SpringTextView.swift */,
-				202B27AB1C075D3B003286B1 /* SpringView.swift */,
-				202B27AC1C075D3B003286B1 /* TransitionManager.swift */,
-				202B27AD1C075D3B003286B1 /* TransitionZoom.swift */,
-				202B27AE1C075D3B003286B1 /* UnwindSegue.swift */,
-			);
-			path = Spring;
 			sourceTree = "<group>";
 		};
 		207BAEC51C0DA95C0023228F /* images */ = {
@@ -417,17 +313,15 @@
 			path = images;
 			sourceTree = SOURCE_ROOT;
 		};
-		5ED5CA2D4036376844D08997 /* Pods */ = {
+		2F2CE11DDB4731FA8B0F22D8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				DCB6910B68B9D57289F53D6E /* Pods.debug.xcconfig */,
-				C083291C6FCA31F627B9230D /* Pods.release.xcconfig */,
-				F26306A26FB17E79BD92B0C1 /* Pods-2D_PaintTool.debug.xcconfig */,
-				A26C729F513B4145AE603CF6 /* Pods-2D_PaintTool.release.xcconfig */,
-				55EEAFFBB58D7CB884A40FFE /* Pods-2D_PaintToolTests.debug.xcconfig */,
-				6F40AB18FF82D4A0A83BCF81 /* Pods-2D_PaintToolTests.release.xcconfig */,
-				7807E69F7DD030F4D1E18044 /* Pods-2D_PaintToolUITests.debug.xcconfig */,
-				001FE2CFF4DEF76DF6D3E670 /* Pods-2D_PaintToolUITests.release.xcconfig */,
+				C0B6452C4E4CA74C4C27153A /* Pods-2D_PaintTool.debug.xcconfig */,
+				C2DE45B4E26F4D41593B670F /* Pods-2D_PaintTool.release.xcconfig */,
+				F3DBDEECBBADBE153A55F9F6 /* Pods-2D_PaintToolTests.debug.xcconfig */,
+				143E39C6D0138CDC1D444983 /* Pods-2D_PaintToolTests.release.xcconfig */,
+				B8DE6A3DF2E5C7FD6EC00BC7 /* Pods-2D_PaintToolUITests.debug.xcconfig */,
+				BB58E600898613A3DD14E870 /* Pods-2D_PaintToolUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -436,9 +330,9 @@
 			isa = PBXGroup;
 			children = (
 				1EE39F2205BC60ABE1C692CC /* Pods.framework */,
-				1D4F9EE05C1F67A368B596AE /* Pods_2D_PaintTool.framework */,
-				199D4771D695C65457BD10F8 /* Pods_2D_PaintToolTests.framework */,
-				A611AC1286A2F78218A844D0 /* Pods_2D_PaintToolUITests.framework */,
+				E32C2797DDB5D75B2A54D568 /* Pods_2D_PaintTool.framework */,
+				F2627C227D3577801535C908 /* Pods_2D_PaintToolTests.framework */,
+				B3591A1C305DC236EAE37C85 /* Pods_2D_PaintToolUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -450,12 +344,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DF5662F1BE3596C00D0EE2E /* Build configuration list for PBXNativeTarget "2D_PaintTool" */;
 			buildPhases = (
-				8CB0E470913EFE920CD6C37E /* [CP] Check Pods Manifest.lock */,
+				E7F23687ED3E8B8F0316D6E2 /* [CP] Check Pods Manifest.lock */,
 				0DF566031BE3596C00D0EE2E /* Sources */,
 				0DF566041BE3596C00D0EE2E /* Frameworks */,
 				0DF566051BE3596C00D0EE2E /* Resources */,
-				8099790109ED8FFEC536804D /* [CP] Embed Pods Frameworks */,
-				63C1EFB8B5BD9F2487E44D28 /* [CP] Copy Pods Resources */,
+				66ACCBE3F8229503056B5AF5 /* [CP] Embed Pods Frameworks */,
+				AFA32AFA34BA09651D4E4A64 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -470,12 +364,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DF566321BE3596C00D0EE2E /* Build configuration list for PBXNativeTarget "2D_PaintToolTests" */;
 			buildPhases = (
-				7EE66345AC05DB87D00023CC /* [CP] Check Pods Manifest.lock */,
+				8593A6976B5E6AACAFB14341 /* [CP] Check Pods Manifest.lock */,
 				0DF566171BE3596C00D0EE2E /* Sources */,
 				0DF566181BE3596C00D0EE2E /* Frameworks */,
 				0DF566191BE3596C00D0EE2E /* Resources */,
-				5D260E83232EC531144ED902 /* [CP] Embed Pods Frameworks */,
-				723B55B204CF08E001F976BF /* [CP] Copy Pods Resources */,
+				4D7EE016E3C738719300A903 /* [CP] Embed Pods Frameworks */,
+				BF5000CEBD7AA0EC5CE2FB4B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -491,12 +385,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DF566351BE3596C00D0EE2E /* Build configuration list for PBXNativeTarget "2D_PaintToolUITests" */;
 			buildPhases = (
-				198AB6BDEF71CE4E74AE7582 /* [CP] Check Pods Manifest.lock */,
+				95AD8372B5C69F4265BF146F /* [CP] Check Pods Manifest.lock */,
 				0DF566221BE3596C00D0EE2E /* Sources */,
 				0DF566231BE3596C00D0EE2E /* Frameworks */,
 				0DF566241BE3596C00D0EE2E /* Resources */,
-				3B10D4FFD84ED857C7CBB722 /* [CP] Embed Pods Frameworks */,
-				81AEF06BF87969F49C2385E6 /* [CP] Copy Pods Resources */,
+				32A9D2F618617AB081AF4DC9 /* [CP] Embed Pods Frameworks */,
+				0965AADD8ED38C14CAF450E5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -519,16 +413,19 @@
 				TargetAttributes = {
 					0DF566061BE3596C00D0EE2E = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = 2YEG253Z5M;
+						DevelopmentTeam = 4BNML94QL7;
+						LastSwiftMigration = 0830;
 					};
 					0DF5661A1BE3596C00D0EE2E = {
 						CreatedOnToolsVersion = 7.0.1;
 						DevelopmentTeam = 62NX3S29PE;
+						LastSwiftMigration = 0830;
 						TestTargetID = 0DF566061BE3596C00D0EE2E;
 					};
 					0DF566251BE3596C00D0EE2E = {
 						CreatedOnToolsVersion = 7.0.1;
 						DevelopmentTeam = 62NX3S29PE;
+						LastSwiftMigration = 0830;
 						TestTargetID = 0DF566061BE3596C00D0EE2E;
 					};
 				};
@@ -566,11 +463,9 @@
 				207BAF091C0DA95C0023228F /* mark.png in Resources */,
 				207BAF111C0DA95C0023228F /* Pen.png in Resources */,
 				207BAF131C0DA95C0023228F /* Rect.png in Resources */,
-				202B27BE1C075D3B003286B1 /* LoadingView.xib in Resources */,
 				207BAF171C0DA95C0023228F /* Reset.png in Resources */,
 				207BAF0E1C0DA95C0023228F /* MenuBack.png in Resources */,
 				207BAF061C0DA95C0023228F /* Line.png in Resources */,
-				202B27BB1C075D3B003286B1 /* Info.plist in Resources */,
 				207BAEFD1C0DA95C0023228F /* Eraser.png in Resources */,
 				207BAF181C0DA95C0023228F /* S_Home.png in Resources */,
 				207BAEFC1C0DA95C0023228F /* Ellipse_S.png in Resources */,
@@ -627,112 +522,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		198AB6BDEF71CE4E74AE7582 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		3B10D4FFD84ED857C7CBB722 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2D_PaintToolUITests/Pods-2D_PaintToolUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5D260E83232EC531144ED902 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2D_PaintToolTests/Pods-2D_PaintToolTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		63C1EFB8B5BD9F2487E44D28 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2D_PaintTool/Pods-2D_PaintTool-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		723B55B204CF08E001F976BF /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2D_PaintToolTests/Pods-2D_PaintToolTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7EE66345AC05DB87D00023CC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		8099790109ED8FFEC536804D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2D_PaintTool/Pods-2D_PaintTool-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		81AEF06BF87969F49C2385E6 /* [CP] Copy Pods Resources */ = {
+		0965AADD8ED38C14CAF450E5 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -747,7 +537,112 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2D_PaintToolUITests/Pods-2D_PaintToolUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8CB0E470913EFE920CD6C37E /* [CP] Check Pods Manifest.lock */ = {
+		32A9D2F618617AB081AF4DC9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2D_PaintToolUITests/Pods-2D_PaintToolUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4D7EE016E3C738719300A903 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2D_PaintToolTests/Pods-2D_PaintToolTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		66ACCBE3F8229503056B5AF5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2D_PaintTool/Pods-2D_PaintTool-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8593A6976B5E6AACAFB14341 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		95AD8372B5C69F4265BF146F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AFA32AFA34BA09651D4E4A64 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2D_PaintTool/Pods-2D_PaintTool-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF5000CEBD7AA0EC5CE2FB4B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2D_PaintToolTests/Pods-2D_PaintToolTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7F23687ED3E8B8F0316D6E2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -769,46 +664,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				202B27B81C075D3B003286B1 /* DesignableTextView.swift in Sources */,
-				202B27C01C075D3B003286B1 /* SoundPlayer.swift in Sources */,
-				202B27C21C075D3B003286B1 /* SpringAnimation.swift in Sources */,
 				0DF8CBAD1C156E490058905C /* CustomThumbnailCell.swift in Sources */,
-				202B27AF1C075D3B003286B1 /* AsyncButton.swift in Sources */,
 				207BAEBC1C0DA79D0023228F /* SelectGraphicController.swift in Sources */,
-				202B27C81C075D3C003286B1 /* SpringView.swift in Sources */,
-				202B27BC1C075D3B003286B1 /* KeyboardLayoutConstraint.swift in Sources */,
-				202B27C91C075D3C003286B1 /* TransitionManager.swift in Sources */,
 				20F3654B1C05A20A00E1A48A /* Request.swift in Sources */,
-				202B27B11C075D3B003286B1 /* AutoTextView.swift in Sources */,
-				202B27B51C075D3B003286B1 /* DesignableLabel.swift in Sources */,
 				2037EF151C1617C800E3A729 /* TitleScreenController.swift in Sources */,
-				202B27C41C075D3C003286B1 /* SpringImageView.swift in Sources */,
-				202B27B41C075D3B003286B1 /* DesignableImageView.swift in Sources */,
-				202B27B61C075D3B003286B1 /* DesignableTabBarController.swift in Sources */,
-				202B27B71C075D3B003286B1 /* DesignableTextField.swift in Sources */,
-				202C36A11C08334300136525 /* AMReachability.swift in Sources */,
 				207BAEB61C0DA3770023228F /* HomeScreenController.swift in Sources */,
 				20C4EE671C0D7FF70037CB83 /* AddNewAcountViewController.swift in Sources */,
-				202B27B31C075D3B003286B1 /* DesignableButton.swift in Sources */,
-				202B27C31C075D3B003286B1 /* SpringButton.swift in Sources */,
-				202B27C51C075D3C003286B1 /* SpringLabel.swift in Sources */,
-				202B27CB1C075D3C003286B1 /* UnwindSegue.swift in Sources */,
-				202B27B01C075D3B003286B1 /* AsyncImageView.swift in Sources */,
 				20C4EE651C0D7E520037CB83 /* LoginViewController.swift in Sources */,
 				0DF8CBAE1C156E490058905C /* ThumbnailConfig.swift in Sources */,
 				20211B071BE39FEC0065E70F /* PaintController.swift in Sources */,
-				202B27BD1C075D3B003286B1 /* LoadingView.swift in Sources */,
 				207BAF231C0DB2F60023228F /* SearchScreenController.swift in Sources */,
-				202B27C11C075D3B003286B1 /* Spring.swift in Sources */,
-				202B27C61C075D3C003286B1 /* SpringTextField.swift in Sources */,
-				202B27B21C075D3B003286B1 /* BlurView.swift in Sources */,
-				202B27BA1C075D3B003286B1 /* ImageLoader.swift in Sources */,
-				202B27C71C075D3C003286B1 /* SpringTextView.swift in Sources */,
 				0DF8CBB01C156E490058905C /* CategoryButtonCell.swift in Sources */,
-				202B27BF1C075D3B003286B1 /* Misc.swift in Sources */,
 				0DF5660B1BE3596C00D0EE2E /* AppDelegate.swift in Sources */,
-				202B27B91C075D3B003286B1 /* DesignableView.swift in Sources */,
-				202B27CA1C075D3C003286B1 /* TransitionZoom.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -955,70 +822,77 @@
 		};
 		0DF566301BE3596C00D0EE2E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F26306A26FB17E79BD92B0C1 /* Pods-2D_PaintTool.debug.xcconfig */;
+			baseConfigurationReference = C0B6452C4E4CA74C4C27153A /* Pods-2D_PaintTool.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4BNML94QL7;
 				INFOPLIST_FILE = 2D_PaintTool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-D-PaintTool";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
 		0DF566311BE3596C00D0EE2E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A26C729F513B4145AE603CF6 /* Pods-2D_PaintTool.release.xcconfig */;
+			baseConfigurationReference = C2DE45B4E26F4D41593B670F /* Pods-2D_PaintTool.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4BNML94QL7;
 				INFOPLIST_FILE = 2D_PaintTool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-D-PaintTool";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
 		0DF566331BE3596C00D0EE2E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55EEAFFBB58D7CB884A40FFE /* Pods-2D_PaintToolTests.debug.xcconfig */;
+			baseConfigurationReference = F3DBDEECBBADBE153A55F9F6 /* Pods-2D_PaintToolTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = 2D_PaintToolTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "sdfsgfd.-D-PaintToolTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/2D_PaintTool.app/2D_PaintTool";
 			};
 			name = Debug;
 		};
 		0DF566341BE3596C00D0EE2E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6F40AB18FF82D4A0A83BCF81 /* Pods-2D_PaintToolTests.release.xcconfig */;
+			baseConfigurationReference = 143E39C6D0138CDC1D444983 /* Pods-2D_PaintToolTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = 2D_PaintToolTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "sdfsgfd.-D-PaintToolTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/2D_PaintTool.app/2D_PaintTool";
 			};
 			name = Release;
 		};
 		0DF566361BE3596C00D0EE2E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7807E69F7DD030F4D1E18044 /* Pods-2D_PaintToolUITests.debug.xcconfig */;
+			baseConfigurationReference = B8DE6A3DF2E5C7FD6EC00BC7 /* Pods-2D_PaintToolUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = 2D_PaintToolUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "sdfsgfd.-D-PaintToolUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = 2D_PaintTool;
 				USES_XCTRUNNER = YES;
 			};
@@ -1026,12 +900,13 @@
 		};
 		0DF566371BE3596C00D0EE2E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 001FE2CFF4DEF76DF6D3E670 /* Pods-2D_PaintToolUITests.release.xcconfig */;
+			baseConfigurationReference = BB58E600898613A3DD14E870 /* Pods-2D_PaintToolUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = 2D_PaintToolUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "sdfsgfd.-D-PaintToolUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = 2D_PaintTool;
 				USES_XCTRUNNER = YES;
 			};

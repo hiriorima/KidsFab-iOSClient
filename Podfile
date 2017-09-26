@@ -2,10 +2,12 @@
 platform :ios, '9.1'
 # Uncomment this line if you're using Swift
 use_frameworks!
-pod 'ACEDrawingView'
 
 target '2D_PaintTool' do
-
+  pod 'ACEDrawingView'
+  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
+  pod 'ReachabilitySwift', '~> 3'
+  pod 'Alamofire'
 end
 
 target '2D_PaintToolTests' do

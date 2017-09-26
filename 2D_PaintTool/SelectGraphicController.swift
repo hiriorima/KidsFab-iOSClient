@@ -20,20 +20,20 @@ class SelectGraphicController: UIViewController {
     
     var selectGraphicImage : UIImage?
     
-    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate //AppDelegateのインスタンスを取得
+    var appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate //AppDelegateのインスタンスを取得
     
-    @IBAction func Reset1(sender: AnyObject) {
+    @IBAction func Reset1(_ sender: AnyObject) {
         //appDelegateの変数を操作　円
         appDelegate.selectGraphic = 1
     }
     
-    @IBAction func Reset2(sender: AnyObject) {
+    @IBAction func Reset2(_ sender: AnyObject) {
         appDelegate.selectGraphic = 2
         
     }
     
     
-    @IBAction func Reset3(sender: AnyObject) {
+    @IBAction func Reset3(_ sender: AnyObject) {
         appDelegate.selectGraphic = 3
         
     }
