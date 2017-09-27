@@ -460,15 +460,6 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
     }
     
     //ポストの処理
-    func PostTest(_ UserID: String, PW: String) {
-        let request: Request = Request()
-        let uri = "/loginuser"
-        let body = ["userid": UserID,
-                    "password": PW]
-        request.post(uri, body: body)
-    }
-    
-    //ポストの処理
     func SavePost(UserID: String, Title: String, Category: Int, IMG: String) {
         let request: Request = Request()
         let uri = "addpic"
