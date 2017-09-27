@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D344F851F7B8539002797D3 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D344F831F7B8539002797D3 /* UIAlertController+Extension.swift */; };
+		0D344F861F7B8539002797D3 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D344F841F7B8539002797D3 /* UIApplication+Extension.swift */; };
 		0D59112B1F7A2CB7002F9991 /* TitleScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D59112A1F7A2CB7002F9991 /* TitleScreenController.swift */; };
 		0D59112E1F7A4FFB002F9991 /* PaintController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D59112D1F7A4FFB002F9991 /* PaintController.swift */; };
 		0DF5660B1BE3596C00D0EE2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF5660A1BE3596C00D0EE2E /* AppDelegate.swift */; };
@@ -93,6 +95,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D344F831F7B8539002797D3 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
+		0D344F841F7B8539002797D3 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		0D59112A1F7A2CB7002F9991 /* TitleScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleScreenController.swift; sourceTree = "<group>"; };
 		0D59112D1F7A4FFB002F9991 /* PaintController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaintController.swift; sourceTree = "<group>"; };
 		0DF566071BE3596C00D0EE2E /* KidsFab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KidsFab.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -211,6 +215,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D344F821F7B8539002797D3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0D344F831F7B8539002797D3 /* UIAlertController+Extension.swift */,
+				0D344F841F7B8539002797D3 /* UIApplication+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		0DF565FE1BE3596C00D0EE2E = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +249,7 @@
 		0DF566091BE3596C00D0EE2E /* KidsFab */ = {
 			isa = PBXGroup;
 			children = (
+				0D344F821F7B8539002797D3 /* Extensions */,
 				207BAEC51C0DA95C0023228F /* images */,
 				0DF5660A1BE3596C00D0EE2E /* AppDelegate.swift */,
 				20F3654A1C05A20900E1A48A /* Request.swift */,
@@ -706,8 +720,10 @@
 				20F3654B1C05A20A00E1A48A /* Request.swift in Sources */,
 				207BAEB61C0DA3770023228F /* HomeScreenController.swift in Sources */,
 				0D59112B1F7A2CB7002F9991 /* TitleScreenController.swift in Sources */,
+				0D344F861F7B8539002797D3 /* UIApplication+Extension.swift in Sources */,
 				20C4EE671C0D7FF70037CB83 /* AddNewAcountViewController.swift in Sources */,
 				20C4EE651C0D7E520037CB83 /* LoginViewController.swift in Sources */,
+				0D344F851F7B8539002797D3 /* UIAlertController+Extension.swift in Sources */,
 				0DF8CBAE1C156E490058905C /* ThumbnailConfig.swift in Sources */,
 				207BAF231C0DB2F60023228F /* SearchScreenController.swift in Sources */,
 				0DF8CBB01C156E490058905C /* CategoryButtonCell.swift in Sources */,

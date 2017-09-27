@@ -217,20 +217,14 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
     // 全消し
     @IBAction func Reset(_ sender: AnyObject) {
         
-        let alertController = UIAlertController(title: "Clear", message: "編集したデータを全て削除し、\n白紙に戻しますか?", preferredStyle: .alert)
-        
-        let defaultAction = UIAlertAction(title: "OK", style: .default) { _ in
-            
-            self.drawingView.clear()
-            self.Reset.animation = "flipX"
-            self.Reset.animate()
-            
-        }
-        let cancellAction = UIAlertAction(title: "Cancell", style: .cancel, handler: nil)
-        
-        alertController.addAction(defaultAction)
-        alertController.addAction(cancellAction)
-        present(alertController, animated: true, completion: nil)
+        UIAlertController(title: "Clear", message: "編集したデータを全て削除し、\n白紙に戻しますか?", preferredStyle: .alert)
+            .addAction(title: "OK") { _ in
+                self.drawingView.clear()
+                self.Reset.animation = "flipX"
+                self.Reset.animate()
+            }
+            .addAction(title: "CANCEL", style: .cancel)
+            .show()
     }
     
     // ToolTable作成 //
@@ -307,7 +301,10 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
     var myToolBar: UIToolbar!
     
     @IBAction func Save(_ sender: AnyObject) {
-        
+        showSaveDialog()
+    }
+    
+    func showSaveDialog() {
         MenuList.animation = "fadeOut"
         MenuList.animate()
         CollisionDetection(SaveView, ONOFF: false)
@@ -414,42 +411,24 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
                 PostImg  = ""
             }
             
-            do {
-                let reachability = try Reachability()!
-                if reachability.isReachable {
-                    //インターネット接続あり
-                    //送信文
-                    SavePost(UserID: UserID, Title: PostTitle, Category: PostCategory, IMG: PostImg)
-                    
-                    let alertController = UIAlertController(title: "保存完了", message: "Webページからダウンロードしてご使用ください。", preferredStyle: .alert)
-                    
-                    let defaultAction = UIAlertAction(title: "OK", style: .default) { _ in
-                        
+            let reachability = Reachability()!
+            if reachability.isReachable {
+                //インターネット接続あり
+                //送信文
+                SavePost(UserID: UserID, Title: PostTitle, Category: PostCategory, IMG: PostImg)
+                
+                UIAlertController(title: "保存完了", message: "Webページからダウンロードしてご使用ください。", preferredStyle: .alert)
+                    .addAction(title: "OK") { _ in
                         self.CollisionDetection(self.SaveView, ONOFF: true)
-                        
                     }
-                    alertController.addAction(defaultAction)
-                    
-                    present(alertController, animated: true, completion: nil)
-                    
-                } else {
-                    //インターネット接続なし
-                    let alertController = UIAlertController(title: "インターネット接続エラー", message: "インターネットに接続されていないため保存できません。", preferredStyle: .alert)
-                    
-                    let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                    alertController.addAction(defaultAction)
-                    
-                    present(alertController, animated: true, completion: nil)
-                }
-            } catch _ as ReachabilityError {
-                // エラー処理
-                ErrorWindow()
-            } catch _ as NSError {
-                // NSErrorが投げられた場合
-                ErrorWindow()
-            } catch {
-                // その他ハンドル出来なかったもの
-                ErrorWindow()
+                    .addAction(title: "キャンセル", style: .cancel)
+                    .show()
+                
+            } else {
+                
+                UIAlertController(title: "インターネット接続エラー", message: "Webページからダウンロードしてご使用ください。", preferredStyle: .alert)
+                    .addAction(title: "OK")
+                    .show()
             }
         } else {
             saveButton.animation = "shake"
@@ -477,18 +456,19 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
     @IBAction func SwipeSaveCancel(_ sender: AnyObject) {
         CollisionDetection(SaveView, ONOFF: true)
     }
-
+    
     //画像をNSDataに変換
     func Image2String(_ image: UIImage) -> String? {
-        let data = UIImagePNGRepresentation(image)!
-        //NSDataへの変換が成功していたら
-        if let pngData: Data = data {
-            //BASE64のStringに変換する
-            let encodeString =
-                pngData.base64EncodedString(options: NSData.Base64EncodingOptions.lineLength64Characters)
-            return encodeString
+        
+        guard let data = UIImagePNGRepresentation(image) else {
+            return nil
         }
-        return nil
+        
+        //BASE64のStringに変換する
+        let encodeString =
+            data.base64EncodedString(options: NSData.Base64EncodingOptions.lineLength64Characters)
+        return encodeString
+        
     }
     
     //UIimageを円に切り抜く
@@ -528,16 +508,10 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     //エラー画面
     func ErrorWindow() {
-        let alertController = UIAlertController(title: "エラー", message: "予期せぬエラーが発生しました。\n再起動しますか?", preferredStyle: .alert)
-        let otherAction = UIAlertAction(title: "OK", style: .default) { _ in
-            print("pushed OK!")
-        }
-        let cancelAction = UIAlertAction(title: "CANCEL", style: .cancel, handler: nil)
         
-        alertController.addAction(otherAction)
-        alertController.addAction(cancelAction)
-        present(alertController, animated: true, completion: nil)
-        
+        UIAlertController(title: "エラー", message: "予期せぬエラーが発生しました。\n再起動しますか?", preferredStyle: .alert)
+            .addAction(title: "OK")
+            .show()
     }
     
     //list on/of
@@ -576,35 +550,26 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
     }
     
     //未保存時の画面移動アラート
-    
     func SaveAlert(_ Title: String, ViewName: String) {
         if  SaveFlag.1 == 0 && SaveFlag.0 == 0 {
-            let alertController = UIAlertController(title: Title, message: "編集した画像が保存されていません。\n保存しますか?", preferredStyle: .alert)
-            let otherAction = UIAlertAction(title: "保存", style: .default) { _ in
-                // 保存ウィンドウの表示
-                self.MenuList.animation = "fadeOut"
-                self.MenuList.animate()
-                self.CollisionDetection(self.SaveView, ONOFF: false)
-                self.SaveView.animation = "slideDown"
-                self.SaveView.animate()
-            }
-            let goAction = UIAlertAction(title: "保存しない", style: .default) { _ in
-                
-                //概形選択へ移動
-                let targetView: AnyObject = self.storyboard!.instantiateViewController( withIdentifier: ViewName )
-                self.present((targetView as? UIViewController)!, animated: true, completion: nil)
-            }
             
-            let cancelAction = UIAlertAction(title: "CANCEL", style: .cancel, handler: nil)
-            
-            alertController.addAction(otherAction)
-            alertController.addAction(cancelAction)
-            alertController.addAction(goAction)
-            present(alertController, animated: true, completion: nil)
+            UIAlertController(title: Title, message: "編集した画像が保存されていません。\n保存しますか?", preferredStyle: .alert)
+                .addAction(title: "保存") { _ in
+                    self.showSaveDialog()
+                }
+                .addAction(title: "保存しない") { _ in
+                    self.transition(viewName: ViewName)
+                }
+                .addAction(title: "CANCEL", style: .cancel)
+                .show()
         } else {
-            let targetView: AnyObject = self.storyboard!.instantiateViewController( withIdentifier: ViewName )
-            self.present((targetView as? UIViewController)!, animated: true, completion: nil)
+            transition(viewName: ViewName)
         }
+    }
+    
+    func transition(viewName: String) {
+        let targetView = self.storyboard!.instantiateViewController(withIdentifier: viewName)
+        self.present(targetView, animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
