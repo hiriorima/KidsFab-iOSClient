@@ -7,9 +7,9 @@
 //
 
 import XCTest
-@testable import _D_PaintTool
+@testable import KidsFab
 
-class _D_PaintToolTests: XCTestCase {
+class KidsFabTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

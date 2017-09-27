@@ -9,17 +9,15 @@
 import UIKit
 
 class CustomThumbnailCell: UICollectionViewCell {
-
-    @IBOutlet var thumbnail:UIImageView!
+    
+    @IBOutlet var thumbnail: UIImageView!
     @IBOutlet weak var img_name: UILabel!
     
-    
-    
-    override init(frame: CGRect){
+    override init(frame: CGRect) {
         super.init(frame: frame)
     }
-    required init(coder aDecoder: NSCoder){
+    
+    required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
     }
-    
 }

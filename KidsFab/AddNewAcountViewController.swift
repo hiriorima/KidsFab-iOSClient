@@ -6,11 +6,10 @@
 //  Copyright © 2015年 会津慎弥. All rights reserved.
 //
 
-
 import UIKit
 import Spring
 
-class AddNewAcountViewController: UIViewController, UITextFieldDelegate,UIScrollViewDelegate {
+class AddNewAcountViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
     
     @IBOutlet var IDInputField: UITextField!
     @IBOutlet var PWInputField: UITextField!
@@ -20,7 +19,6 @@ class AddNewAcountViewController: UIViewController, UITextFieldDelegate,UIScroll
     fileprivate var txtActiveField = UITextField()
     
     @IBOutlet weak var ErrorLabel: UILabel!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,28 +43,29 @@ class AddNewAcountViewController: UIViewController, UITextFieldDelegate,UIScroll
     }
     
     /*
-    編集開始時の処理
-    *パスワード入力方式設定
-    *if:テキストフィールドをタップ
-    テキストフィールド初期化
-    */
+     編集開始時の処理
+     *パスワード入力方式設定
+     *if:テキストフィールドをタップ
+     テキストフィールド初期化
+     */
     @IBAction func TextFieldEditingDidBegin(_ sender: UITextField) {
         txtActiveField = sender
-        if(sender == PWInputField || sender == PWReinputField){
-            sender.isSecureTextEntry = true}
-            }
+        if sender == PWInputField || sender == PWReinputField {
+            sender.isSecureTextEntry = true
+        }
+    }
     
     /*
-    テキストが編集された際に呼ばれる.
-    */
+     テキストが編集された際に呼ばれる.
+     */
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         var maxLength: Int = 0
         
         // 文字数最大を決める.
-        if(textField == IDInputField){
+        if textField == IDInputField {
             maxLength = 11
-        }else if(textField == PWInputField || textField == PWReinputField){
+        } else if textField == PWInputField || textField == PWReinputField {
             maxLength = 9
         }
         
@@ -81,26 +80,25 @@ class AddNewAcountViewController: UIViewController, UITextFieldDelegate,UIScroll
         return false
     }
     
-   
     /*
-    キーボード以外をタップするとキーボードを閉じる
-    */
+     キーボード以外をタップするとキーボードを閉じる
+     */
     @IBAction func TapScreen(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }
     
     /*
-    Returnをタップするとキーボードを閉じる
-    */
+     Returnをタップするとキーボードを閉じる
+     */
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
     /*
-    キーボード表示時にテキストフィールドと重なっているか調べる
-    重なっていたらスクロールする
-    */
+     キーボード表示時にテキストフィールドと重なっているか調べる
+     重なっていたらスクロールする
+     */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -112,10 +110,10 @@ class AddNewAcountViewController: UIViewController, UITextFieldDelegate,UIScroll
     func handleKeyboardWillShowNotification(_ notification: Notification) {
         
         let userInfo = notification.userInfo!
-        let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
         let myBoundSize: CGSize = UIScreen.main.bounds.size
         let txtLimit = txtActiveField.frame.origin.y + txtActiveField.frame.height + 8.0
-        let kbdLimit = myBoundSize.height - keyboardScreenEndFrame.size.height
+        let kbdLimit = myBoundSize.height - (keyboardScreenEndFrame?.size.height)!
         
         if txtLimit >= kbdLimit {
             sc.contentOffset.y = txtLimit - kbdLimit
@@ -127,69 +125,67 @@ class AddNewAcountViewController: UIViewController, UITextFieldDelegate,UIScroll
     }
     
     @IBOutlet var AddButton: SpringButton!
-    var AddFlag = (0,0)
+    var AddFlag = (0, 0)
     @IBAction func TapAddNewAccount(_ sender: AnyObject) {
         
         let String_ID = IDInputField.text
         let String_PW = PWInputField.text
         let String_RePW = PWReinputField.text
         
-        
         //エラー処理
-        if String_ID!.characters.count >= 3{
+        if String_ID!.characters.count >= 3 {
             AddFlag.0 =  1
-        }else{
-            AddFlag.0 = 0}
-        if String_PW!.characters.count >= 4 || String_RePW!.characters.count >= 4{
+        } else {
+            AddFlag.0 = 0
+        }
+        
+        if String_PW!.characters.count >= 4 || String_RePW!.characters.count >= 4 {
             AddFlag.1 =  1
-        }else{
-            AddFlag.1 = 0}
+        } else {
+            AddFlag.1 = 0
+        }
         
         AddButton.animation = "shake"
-        switch AddFlag{
-        case(0,0):
+        switch AddFlag {
+        case(0, 0):
             ErrorLabel.text = "IDとパスワードが違います"
             AddButton.animate()
-        case(1,0):
+        case(1, 0):
             ErrorLabel.text = "パスワードが違います"
             AddButton.animate()
-        case(0,1):
+        case(0, 1):
             ErrorLabel.text = "IDが違います"
             AddButton.animate()
-        case(1,1):
-            if String_PW == String_RePW{
+        case(1, 1):
+            if String_PW == String_RePW {
                 ErrorLabel.text = ""
-                AddNewAccountActivity(String_ID!, password: String_PW!,password_confirmation: String_RePW!);
-            }else{
+                AddNewAccountActivity(String_ID!, password: String_PW!, password_confirmation: String_RePW!)
+            } else {
                 ErrorLabel.text = "パスワードが一致していません"
                 AddButton.animate()}
         default:
             ErrorLabel.text = "エラーが発生しました。"
         }
-
-        
-        
-        
     }
     
-    func AddNewAccountActivity(_ userid:String ,password:String, password_confirmation:String){
+    func AddNewAccountActivity(_ userid: String, password: String, password_confirmation: String) {
+        
         let request: Request = Request()
         let uri = "adduser"
-        let body: Dictionary<String, Any> = ["userid" : userid,
-                                             "password" : password,
-                                             "password_confirmation" : password_confirmation]
+        let body = ["userid": userid,
+                    "password": password,
+                    "password_confirmation": password_confirmation]
         request.post(uri, body: body)
-
     }
     
     /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
 }

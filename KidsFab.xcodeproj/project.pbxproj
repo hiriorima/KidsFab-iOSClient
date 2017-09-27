@@ -7,18 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D59112B1F7A2CB7002F9991 /* TitleScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D59112A1F7A2CB7002F9991 /* TitleScreenController.swift */; };
+		0D59112E1F7A4FFB002F9991 /* PaintController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D59112D1F7A4FFB002F9991 /* PaintController.swift */; };
 		0DF5660B1BE3596C00D0EE2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF5660A1BE3596C00D0EE2E /* AppDelegate.swift */; };
 		0DF566101BE3596C00D0EE2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DF5660E1BE3596C00D0EE2E /* Main.storyboard */; };
 		0DF566121BE3596C00D0EE2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DF566111BE3596C00D0EE2E /* Assets.xcassets */; };
 		0DF566151BE3596C00D0EE2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DF566131BE3596C00D0EE2E /* LaunchScreen.storyboard */; };
-		0DF566201BE3596C00D0EE2E /* _D_PaintToolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF5661F1BE3596C00D0EE2E /* _D_PaintToolTests.swift */; };
-		0DF5662B1BE3596C00D0EE2E /* _D_PaintToolUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF5662A1BE3596C00D0EE2E /* _D_PaintToolUITests.swift */; };
+		0DF566201BE3596C00D0EE2E /* KidsFabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF5661F1BE3596C00D0EE2E /* KidsFabTests.swift */; };
+		0DF5662B1BE3596C00D0EE2E /* KidsFabUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF5662A1BE3596C00D0EE2E /* KidsFabUITests.swift */; };
 		0DF8CBAD1C156E490058905C /* CustomThumbnailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF8CBA91C156E490058905C /* CustomThumbnailCell.swift */; };
 		0DF8CBAE1C156E490058905C /* ThumbnailConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF8CBAA1C156E490058905C /* ThumbnailConfig.swift */; };
 		0DF8CBB01C156E490058905C /* CategoryButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF8CBAC1C156E490058905C /* CategoryButtonCell.swift */; };
 		1961A64AE63000ACC2AD4544 /* Pods_2D_PaintToolTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2627C227D3577801535C908 /* Pods_2D_PaintToolTests.framework */; };
-		20211B071BE39FEC0065E70F /* PaintController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20211B061BE39FEC0065E70F /* PaintController.swift */; };
-		2037EF151C1617C800E3A729 /* TitleScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2037EF141C1617C800E3A729 /* TitleScreenController.swift */; };
 		20647DBB1C165280003A0076 /* MainTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 20647DBA1C165280003A0076 /* MainTitle.png */; };
 		207BAEB61C0DA3770023228F /* HomeScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207BAEB51C0DA3770023228F /* HomeScreenController.swift */; };
 		207BAEBC1C0DA79D0023228F /* SelectGraphicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207BAEBB1C0DA79D0023228F /* SelectGraphicController.swift */; };
@@ -70,7 +70,9 @@
 		20C9F9A71C0F5D2500A058F4 /* Mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 20C9F9A61C0F5D2500A058F4 /* Mask.png */; };
 		20F3654B1C05A20A00E1A48A /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3654A1C05A20900E1A48A /* Request.swift */; };
 		3F481445FF0233955EF72FB6 /* Pods_2D_PaintToolUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3591A1C305DC236EAE37C85 /* Pods_2D_PaintToolUITests.framework */; };
-		8CF0759598EAC1EA7A9A6393 /* Pods_2D_PaintTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32C2797DDB5D75B2A54D568 /* Pods_2D_PaintTool.framework */; };
+		5132FDD9B710222B0B35DB72 /* Pods_KidsFab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 645AA1D1DA74AD1C12F25658 /* Pods_KidsFab.framework */; };
+		6BBA4DC3E459808CECB2B27B /* Pods_KidsFabUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 662DEA8437A0800BF5EC926D /* Pods_KidsFabUITests.framework */; };
+		8CC6BF46E2AA0BA6111FB8B4 /* Pods_KidsFabTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D659D441F887E9073E65C41A /* Pods_KidsFabTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,25 +93,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0DF566071BE3596C00D0EE2E /* 2D_PaintTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2D_PaintTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D59112A1F7A2CB7002F9991 /* TitleScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleScreenController.swift; sourceTree = "<group>"; };
+		0D59112D1F7A4FFB002F9991 /* PaintController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaintController.swift; sourceTree = "<group>"; };
+		0DF566071BE3596C00D0EE2E /* KidsFab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KidsFab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DF5660A1BE3596C00D0EE2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DF5660F1BE3596C00D0EE2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0DF566111BE3596C00D0EE2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DF566141BE3596C00D0EE2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0DF566161BE3596C00D0EE2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0DF5661B1BE3596C00D0EE2E /* 2D_PaintToolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 2D_PaintToolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0DF5661F1BE3596C00D0EE2E /* _D_PaintToolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _D_PaintToolTests.swift; sourceTree = "<group>"; };
+		0DF5661B1BE3596C00D0EE2E /* KidsFabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KidsFabTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DF5661F1BE3596C00D0EE2E /* KidsFabTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidsFabTests.swift; sourceTree = "<group>"; };
 		0DF566211BE3596C00D0EE2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0DF566261BE3596C00D0EE2E /* 2D_PaintToolUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 2D_PaintToolUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0DF5662A1BE3596C00D0EE2E /* _D_PaintToolUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _D_PaintToolUITests.swift; sourceTree = "<group>"; };
+		0DF566261BE3596C00D0EE2E /* KidsFabUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KidsFabUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DF5662A1BE3596C00D0EE2E /* KidsFabUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidsFabUITests.swift; sourceTree = "<group>"; };
 		0DF5662C1BE3596C00D0EE2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DF8CBA91C156E490058905C /* CustomThumbnailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomThumbnailCell.swift; sourceTree = "<group>"; };
 		0DF8CBAA1C156E490058905C /* ThumbnailConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailConfig.swift; sourceTree = "<group>"; };
 		0DF8CBAC1C156E490058905C /* CategoryButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryButtonCell.swift; sourceTree = "<group>"; };
+		1150319F561B5A1F0AB574F7 /* Pods-KidsFab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsFab.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KidsFab/Pods-KidsFab.debug.xcconfig"; sourceTree = "<group>"; };
 		143E39C6D0138CDC1D444983 /* Pods-2D_PaintToolTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2D_PaintToolTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-2D_PaintToolTests/Pods-2D_PaintToolTests.release.xcconfig"; sourceTree = "<group>"; };
 		1EE39F2205BC60ABE1C692CC /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		20211B061BE39FEC0065E70F /* PaintController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaintController.swift; path = ../PaintController.swift; sourceTree = "<group>"; };
-		2037EF141C1617C800E3A729 /* TitleScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleScreenController.swift; sourceTree = SOURCE_ROOT; };
 		20647DBA1C165280003A0076 /* MainTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainTitle.png; sourceTree = "<group>"; };
 		207BAEB51C0DA3770023228F /* HomeScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenController.swift; sourceTree = "<group>"; };
 		207BAEBB1C0DA79D0023228F /* SelectGraphicController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectGraphicController.swift; sourceTree = "<group>"; };
@@ -160,14 +163,22 @@
 		20C4EE661C0D7FF60037CB83 /* AddNewAcountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewAcountViewController.swift; sourceTree = "<group>"; };
 		20C9F9A61C0F5D2500A058F4 /* Mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mask.png; sourceTree = "<group>"; };
 		20F3654A1C05A20900E1A48A /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		36FBB279665852CF279EDA27 /* Pods-KidsFabUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsFabUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KidsFabUITests/Pods-KidsFabUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4DDB53113075ACDFEA65D232 /* Pods-KidsFabTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsFabTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KidsFabTests/Pods-KidsFabTests.release.xcconfig"; sourceTree = "<group>"; };
+		645AA1D1DA74AD1C12F25658 /* Pods_KidsFab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsFab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		662DEA8437A0800BF5EC926D /* Pods_KidsFabUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsFabUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A19F1AFB1CCFE99928C73B19 /* Pods-KidsFab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsFab.release.xcconfig"; path = "Pods/Target Support Files/Pods-KidsFab/Pods-KidsFab.release.xcconfig"; sourceTree = "<group>"; };
+		B10CE32AA847D6AB9CDF5F8B /* Pods-KidsFabUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsFabUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KidsFabUITests/Pods-KidsFabUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B3591A1C305DC236EAE37C85 /* Pods_2D_PaintToolUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_2D_PaintToolUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8DE6A3DF2E5C7FD6EC00BC7 /* Pods-2D_PaintToolUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2D_PaintToolUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-2D_PaintToolUITests/Pods-2D_PaintToolUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BB58E600898613A3DD14E870 /* Pods-2D_PaintToolUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2D_PaintToolUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-2D_PaintToolUITests/Pods-2D_PaintToolUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C0B6452C4E4CA74C4C27153A /* Pods-2D_PaintTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2D_PaintTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-2D_PaintTool/Pods-2D_PaintTool.debug.xcconfig"; sourceTree = "<group>"; };
 		C2DE45B4E26F4D41593B670F /* Pods-2D_PaintTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2D_PaintTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-2D_PaintTool/Pods-2D_PaintTool.release.xcconfig"; sourceTree = "<group>"; };
+		D659D441F887E9073E65C41A /* Pods_KidsFabTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsFabTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E32C2797DDB5D75B2A54D568 /* Pods_2D_PaintTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_2D_PaintTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2627C227D3577801535C908 /* Pods_2D_PaintToolTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_2D_PaintToolTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3DBDEECBBADBE153A55F9F6 /* Pods-2D_PaintToolTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2D_PaintToolTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-2D_PaintToolTests/Pods-2D_PaintToolTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F5FA46685E6895DBEF288A96 /* Pods-KidsFabTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsFabTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KidsFabTests/Pods-KidsFabTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,7 +186,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CF0759598EAC1EA7A9A6393 /* Pods_2D_PaintTool.framework in Frameworks */,
+				5132FDD9B710222B0B35DB72 /* Pods_KidsFab.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1961A64AE63000ACC2AD4544 /* Pods_2D_PaintToolTests.framework in Frameworks */,
+				8CC6BF46E2AA0BA6111FB8B4 /* Pods_KidsFabTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F481445FF0233955EF72FB6 /* Pods_2D_PaintToolUITests.framework in Frameworks */,
+				6BBA4DC3E459808CECB2B27B /* Pods_KidsFabUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,9 +214,9 @@
 		0DF565FE1BE3596C00D0EE2E = {
 			isa = PBXGroup;
 			children = (
-				0DF566091BE3596C00D0EE2E /* 2D_PaintTool */,
-				0DF5661E1BE3596C00D0EE2E /* 2D_PaintToolTests */,
-				0DF566291BE3596C00D0EE2E /* 2D_PaintToolUITests */,
+				0DF566091BE3596C00D0EE2E /* KidsFab */,
+				0DF5661E1BE3596C00D0EE2E /* KidsFabTests */,
+				0DF566291BE3596C00D0EE2E /* KidsFabUITests */,
 				0DF566081BE3596C00D0EE2E /* Products */,
 				ADDD6F790A4977095971D4B9 /* Frameworks */,
 				2F2CE11DDB4731FA8B0F22D8 /* Pods */,
@@ -213,53 +226,53 @@
 		0DF566081BE3596C00D0EE2E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0DF566071BE3596C00D0EE2E /* 2D_PaintTool.app */,
-				0DF5661B1BE3596C00D0EE2E /* 2D_PaintToolTests.xctest */,
-				0DF566261BE3596C00D0EE2E /* 2D_PaintToolUITests.xctest */,
+				0DF566071BE3596C00D0EE2E /* KidsFab.app */,
+				0DF5661B1BE3596C00D0EE2E /* KidsFabTests.xctest */,
+				0DF566261BE3596C00D0EE2E /* KidsFabUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0DF566091BE3596C00D0EE2E /* 2D_PaintTool */ = {
+		0DF566091BE3596C00D0EE2E /* KidsFab */ = {
 			isa = PBXGroup;
 			children = (
 				207BAEC51C0DA95C0023228F /* images */,
 				0DF5660A1BE3596C00D0EE2E /* AppDelegate.swift */,
 				20F3654A1C05A20900E1A48A /* Request.swift */,
-				20211B061BE39FEC0065E70F /* PaintController.swift */,
+				0D59112D1F7A4FFB002F9991 /* PaintController.swift */,
 				0DF5660E1BE3596C00D0EE2E /* Main.storyboard */,
 				207BAF221C0DB2F60023228F /* SearchScreenController.swift */,
 				207BAEBB1C0DA79D0023228F /* SelectGraphicController.swift */,
 				207BAEB51C0DA3770023228F /* HomeScreenController.swift */,
 				20C4EE641C0D7E520037CB83 /* LoginViewController.swift */,
 				20C4EE661C0D7FF60037CB83 /* AddNewAcountViewController.swift */,
+				0D59112A1F7A2CB7002F9991 /* TitleScreenController.swift */,
 				0DF8CBA91C156E490058905C /* CustomThumbnailCell.swift */,
 				0DF8CBAA1C156E490058905C /* ThumbnailConfig.swift */,
-				2037EF141C1617C800E3A729 /* TitleScreenController.swift */,
 				0DF8CBAC1C156E490058905C /* CategoryButtonCell.swift */,
 				0DF566111BE3596C00D0EE2E /* Assets.xcassets */,
 				0DF566131BE3596C00D0EE2E /* LaunchScreen.storyboard */,
 				0DF566161BE3596C00D0EE2E /* Info.plist */,
 			);
-			path = 2D_PaintTool;
+			path = KidsFab;
 			sourceTree = "<group>";
 		};
-		0DF5661E1BE3596C00D0EE2E /* 2D_PaintToolTests */ = {
+		0DF5661E1BE3596C00D0EE2E /* KidsFabTests */ = {
 			isa = PBXGroup;
 			children = (
-				0DF5661F1BE3596C00D0EE2E /* _D_PaintToolTests.swift */,
+				0DF5661F1BE3596C00D0EE2E /* KidsFabTests.swift */,
 				0DF566211BE3596C00D0EE2E /* Info.plist */,
 			);
-			path = 2D_PaintToolTests;
+			path = KidsFabTests;
 			sourceTree = "<group>";
 		};
-		0DF566291BE3596C00D0EE2E /* 2D_PaintToolUITests */ = {
+		0DF566291BE3596C00D0EE2E /* KidsFabUITests */ = {
 			isa = PBXGroup;
 			children = (
-				0DF5662A1BE3596C00D0EE2E /* _D_PaintToolUITests.swift */,
+				0DF5662A1BE3596C00D0EE2E /* KidsFabUITests.swift */,
 				0DF5662C1BE3596C00D0EE2E /* Info.plist */,
 			);
-			path = 2D_PaintToolUITests;
+			path = KidsFabUITests;
 			sourceTree = "<group>";
 		};
 		207BAEC51C0DA95C0023228F /* images */ = {
@@ -322,6 +335,12 @@
 				143E39C6D0138CDC1D444983 /* Pods-2D_PaintToolTests.release.xcconfig */,
 				B8DE6A3DF2E5C7FD6EC00BC7 /* Pods-2D_PaintToolUITests.debug.xcconfig */,
 				BB58E600898613A3DD14E870 /* Pods-2D_PaintToolUITests.release.xcconfig */,
+				1150319F561B5A1F0AB574F7 /* Pods-KidsFab.debug.xcconfig */,
+				A19F1AFB1CCFE99928C73B19 /* Pods-KidsFab.release.xcconfig */,
+				F5FA46685E6895DBEF288A96 /* Pods-KidsFabTests.debug.xcconfig */,
+				4DDB53113075ACDFEA65D232 /* Pods-KidsFabTests.release.xcconfig */,
+				36FBB279665852CF279EDA27 /* Pods-KidsFabUITests.debug.xcconfig */,
+				B10CE32AA847D6AB9CDF5F8B /* Pods-KidsFabUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -333,6 +352,9 @@
 				E32C2797DDB5D75B2A54D568 /* Pods_2D_PaintTool.framework */,
 				F2627C227D3577801535C908 /* Pods_2D_PaintToolTests.framework */,
 				B3591A1C305DC236EAE37C85 /* Pods_2D_PaintToolUITests.framework */,
+				645AA1D1DA74AD1C12F25658 /* Pods_KidsFab.framework */,
+				D659D441F887E9073E65C41A /* Pods_KidsFabTests.framework */,
+				662DEA8437A0800BF5EC926D /* Pods_KidsFabUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -340,9 +362,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0DF566061BE3596C00D0EE2E /* 2D_PaintTool */ = {
+		0DF566061BE3596C00D0EE2E /* KidsFab */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0DF5662F1BE3596C00D0EE2E /* Build configuration list for PBXNativeTarget "2D_PaintTool" */;
+			buildConfigurationList = 0DF5662F1BE3596C00D0EE2E /* Build configuration list for PBXNativeTarget "KidsFab" */;
 			buildPhases = (
 				E7F23687ED3E8B8F0316D6E2 /* [CP] Check Pods Manifest.lock */,
 				0DF566031BE3596C00D0EE2E /* Sources */,
@@ -350,19 +372,20 @@
 				0DF566051BE3596C00D0EE2E /* Resources */,
 				66ACCBE3F8229503056B5AF5 /* [CP] Embed Pods Frameworks */,
 				AFA32AFA34BA09651D4E4A64 /* [CP] Copy Pods Resources */,
+				0D5911301F7A6BB1002F9991 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = 2D_PaintTool;
+			name = KidsFab;
 			productName = 2D_PaintTool;
-			productReference = 0DF566071BE3596C00D0EE2E /* 2D_PaintTool.app */;
+			productReference = 0DF566071BE3596C00D0EE2E /* KidsFab.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0DF5661A1BE3596C00D0EE2E /* 2D_PaintToolTests */ = {
+		0DF5661A1BE3596C00D0EE2E /* KidsFabTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0DF566321BE3596C00D0EE2E /* Build configuration list for PBXNativeTarget "2D_PaintToolTests" */;
+			buildConfigurationList = 0DF566321BE3596C00D0EE2E /* Build configuration list for PBXNativeTarget "KidsFabTests" */;
 			buildPhases = (
 				8593A6976B5E6AACAFB14341 /* [CP] Check Pods Manifest.lock */,
 				0DF566171BE3596C00D0EE2E /* Sources */,
@@ -376,14 +399,14 @@
 			dependencies = (
 				0DF5661D1BE3596C00D0EE2E /* PBXTargetDependency */,
 			);
-			name = 2D_PaintToolTests;
+			name = KidsFabTests;
 			productName = 2D_PaintToolTests;
-			productReference = 0DF5661B1BE3596C00D0EE2E /* 2D_PaintToolTests.xctest */;
+			productReference = 0DF5661B1BE3596C00D0EE2E /* KidsFabTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		0DF566251BE3596C00D0EE2E /* 2D_PaintToolUITests */ = {
+		0DF566251BE3596C00D0EE2E /* KidsFabUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0DF566351BE3596C00D0EE2E /* Build configuration list for PBXNativeTarget "2D_PaintToolUITests" */;
+			buildConfigurationList = 0DF566351BE3596C00D0EE2E /* Build configuration list for PBXNativeTarget "KidsFabUITests" */;
 			buildPhases = (
 				95AD8372B5C69F4265BF146F /* [CP] Check Pods Manifest.lock */,
 				0DF566221BE3596C00D0EE2E /* Sources */,
@@ -397,9 +420,9 @@
 			dependencies = (
 				0DF566281BE3596C00D0EE2E /* PBXTargetDependency */,
 			);
-			name = 2D_PaintToolUITests;
+			name = KidsFabUITests;
 			productName = 2D_PaintToolUITests;
-			productReference = 0DF566261BE3596C00D0EE2E /* 2D_PaintToolUITests.xctest */;
+			productReference = 0DF566261BE3596C00D0EE2E /* KidsFabUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -430,7 +453,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0DF566021BE3596C00D0EE2E /* Build configuration list for PBXProject "2D_PaintTool" */;
+			buildConfigurationList = 0DF566021BE3596C00D0EE2E /* Build configuration list for PBXProject "KidsFab" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -443,9 +466,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0DF566061BE3596C00D0EE2E /* 2D_PaintTool */,
-				0DF5661A1BE3596C00D0EE2E /* 2D_PaintToolTests */,
-				0DF566251BE3596C00D0EE2E /* 2D_PaintToolUITests */,
+				0DF566061BE3596C00D0EE2E /* KidsFab */,
+				0DF5661A1BE3596C00D0EE2E /* KidsFabTests */,
+				0DF566251BE3596C00D0EE2E /* KidsFabUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -534,8 +557,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2D_PaintToolUITests/Pods-2D_PaintToolUITests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KidsFabUITests/Pods-KidsFabUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		0D5911301F7A6BB1002F9991 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
 		};
 		32A9D2F618617AB081AF4DC9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -549,7 +585,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2D_PaintToolUITests/Pods-2D_PaintToolUITests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KidsFabUITests/Pods-KidsFabUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4D7EE016E3C738719300A903 /* [CP] Embed Pods Frameworks */ = {
@@ -564,7 +600,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2D_PaintToolTests/Pods-2D_PaintToolTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KidsFabTests/Pods-KidsFabTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		66ACCBE3F8229503056B5AF5 /* [CP] Embed Pods Frameworks */ = {
@@ -579,7 +615,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2D_PaintTool/Pods-2D_PaintTool-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KidsFab/Pods-KidsFab-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8593A6976B5E6AACAFB14341 /* [CP] Check Pods Manifest.lock */ = {
@@ -624,7 +660,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2D_PaintTool/Pods-2D_PaintTool-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KidsFab/Pods-KidsFab-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BF5000CEBD7AA0EC5CE2FB4B /* [CP] Copy Pods Resources */ = {
@@ -639,7 +675,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2D_PaintToolTests/Pods-2D_PaintToolTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KidsFabTests/Pods-KidsFabTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E7F23687ED3E8B8F0316D6E2 /* [CP] Check Pods Manifest.lock */ = {
@@ -664,15 +700,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D59112E1F7A4FFB002F9991 /* PaintController.swift in Sources */,
 				0DF8CBAD1C156E490058905C /* CustomThumbnailCell.swift in Sources */,
 				207BAEBC1C0DA79D0023228F /* SelectGraphicController.swift in Sources */,
 				20F3654B1C05A20A00E1A48A /* Request.swift in Sources */,
-				2037EF151C1617C800E3A729 /* TitleScreenController.swift in Sources */,
 				207BAEB61C0DA3770023228F /* HomeScreenController.swift in Sources */,
+				0D59112B1F7A2CB7002F9991 /* TitleScreenController.swift in Sources */,
 				20C4EE671C0D7FF70037CB83 /* AddNewAcountViewController.swift in Sources */,
 				20C4EE651C0D7E520037CB83 /* LoginViewController.swift in Sources */,
 				0DF8CBAE1C156E490058905C /* ThumbnailConfig.swift in Sources */,
-				20211B071BE39FEC0065E70F /* PaintController.swift in Sources */,
 				207BAF231C0DB2F60023228F /* SearchScreenController.swift in Sources */,
 				0DF8CBB01C156E490058905C /* CategoryButtonCell.swift in Sources */,
 				0DF5660B1BE3596C00D0EE2E /* AppDelegate.swift in Sources */,
@@ -683,7 +719,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DF566201BE3596C00D0EE2E /* _D_PaintToolTests.swift in Sources */,
+				0DF566201BE3596C00D0EE2E /* KidsFabTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,7 +727,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DF5662B1BE3596C00D0EE2E /* _D_PaintToolUITests.swift in Sources */,
+				0DF5662B1BE3596C00D0EE2E /* KidsFabUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -700,12 +736,12 @@
 /* Begin PBXTargetDependency section */
 		0DF5661D1BE3596C00D0EE2E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0DF566061BE3596C00D0EE2E /* 2D_PaintTool */;
+			target = 0DF566061BE3596C00D0EE2E /* KidsFab */;
 			targetProxy = 0DF5661C1BE3596C00D0EE2E /* PBXContainerItemProxy */;
 		};
 		0DF566281BE3596C00D0EE2E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0DF566061BE3596C00D0EE2E /* 2D_PaintTool */;
+			target = 0DF566061BE3596C00D0EE2E /* KidsFab */;
 			targetProxy = 0DF566271BE3596C00D0EE2E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -822,13 +858,13 @@
 		};
 		0DF566301BE3596C00D0EE2E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C0B6452C4E4CA74C4C27153A /* Pods-2D_PaintTool.debug.xcconfig */;
+			baseConfigurationReference = 1150319F561B5A1F0AB574F7 /* Pods-KidsFab.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4BNML94QL7;
-				INFOPLIST_FILE = 2D_PaintTool/Info.plist;
+				INFOPLIST_FILE = KidsFab/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-D-PaintTool";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -840,13 +876,13 @@
 		};
 		0DF566311BE3596C00D0EE2E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C2DE45B4E26F4D41593B670F /* Pods-2D_PaintTool.release.xcconfig */;
+			baseConfigurationReference = A19F1AFB1CCFE99928C73B19 /* Pods-KidsFab.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4BNML94QL7;
-				INFOPLIST_FILE = 2D_PaintTool/Info.plist;
+				INFOPLIST_FILE = KidsFab/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-D-PaintTool";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -858,37 +894,37 @@
 		};
 		0DF566331BE3596C00D0EE2E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F3DBDEECBBADBE153A55F9F6 /* Pods-2D_PaintToolTests.debug.xcconfig */;
+			baseConfigurationReference = F5FA46685E6895DBEF288A96 /* Pods-KidsFabTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = 2D_PaintToolTests/Info.plist;
+				INFOPLIST_FILE = KidsFabTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "sdfsgfd.-D-PaintToolTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/2D_PaintTool.app/2D_PaintTool";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KidsFab.app/KidsFab";
 			};
 			name = Debug;
 		};
 		0DF566341BE3596C00D0EE2E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 143E39C6D0138CDC1D444983 /* Pods-2D_PaintToolTests.release.xcconfig */;
+			baseConfigurationReference = 4DDB53113075ACDFEA65D232 /* Pods-KidsFabTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = 2D_PaintToolTests/Info.plist;
+				INFOPLIST_FILE = KidsFabTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "sdfsgfd.-D-PaintToolTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/2D_PaintTool.app/2D_PaintTool";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KidsFab.app/KidsFab";
 			};
 			name = Release;
 		};
 		0DF566361BE3596C00D0EE2E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B8DE6A3DF2E5C7FD6EC00BC7 /* Pods-2D_PaintToolUITests.debug.xcconfig */;
+			baseConfigurationReference = 36FBB279665852CF279EDA27 /* Pods-KidsFabUITests.debug.xcconfig */;
 			buildSettings = {
-				INFOPLIST_FILE = 2D_PaintToolUITests/Info.plist;
+				INFOPLIST_FILE = KidsFabUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "sdfsgfd.-D-PaintToolUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -900,9 +936,9 @@
 		};
 		0DF566371BE3596C00D0EE2E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB58E600898613A3DD14E870 /* Pods-2D_PaintToolUITests.release.xcconfig */;
+			baseConfigurationReference = B10CE32AA847D6AB9CDF5F8B /* Pods-KidsFabUITests.release.xcconfig */;
 			buildSettings = {
-				INFOPLIST_FILE = 2D_PaintToolUITests/Info.plist;
+				INFOPLIST_FILE = KidsFabUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "sdfsgfd.-D-PaintToolUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -915,7 +951,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0DF566021BE3596C00D0EE2E /* Build configuration list for PBXProject "2D_PaintTool" */ = {
+		0DF566021BE3596C00D0EE2E /* Build configuration list for PBXProject "KidsFab" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0DF5662D1BE3596C00D0EE2E /* Debug */,
@@ -924,7 +960,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0DF5662F1BE3596C00D0EE2E /* Build configuration list for PBXNativeTarget "2D_PaintTool" */ = {
+		0DF5662F1BE3596C00D0EE2E /* Build configuration list for PBXNativeTarget "KidsFab" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0DF566301BE3596C00D0EE2E /* Debug */,
@@ -933,7 +969,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0DF566321BE3596C00D0EE2E /* Build configuration list for PBXNativeTarget "2D_PaintToolTests" */ = {
+		0DF566321BE3596C00D0EE2E /* Build configuration list for PBXNativeTarget "KidsFabTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0DF566331BE3596C00D0EE2E /* Debug */,
@@ -942,7 +978,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0DF566351BE3596C00D0EE2E /* Build configuration list for PBXNativeTarget "2D_PaintToolUITests" */ = {
+		0DF566351BE3596C00D0EE2E /* Build configuration list for PBXNativeTarget "KidsFabUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0DF566361BE3596C00D0EE2E /* Debug */,

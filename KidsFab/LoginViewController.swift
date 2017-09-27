@@ -9,33 +9,28 @@
 import UIKit
 import Spring
 
-// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
-// Consider refactoring the code to use the non-optional operators.
-fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l < r
-  case (nil, _?):
-    return true
-  default:
-    return false
-  }
+func < <T: Comparable>(lhs: T?, rhs: T?) -> Bool {
+    switch (lhs, rhs) {
+    case let (l?, r?):
+        return l < r
+    case (nil, _?):
+        return true
+    default:
+        return false
+    }
 }
 
-// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
-// Consider refactoring the code to use the non-optional operators.
-fileprivate func >= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l >= r
-  default:
-    return !(lhs < rhs)
-  }
+func >= <T: Comparable>(lhs: T?, rhs: T?) -> Bool {
+    switch (lhs, rhs) {
+    case let (l?, r?):
+        return l >= r
+    default:
+        return !(lhs < rhs)
+    }
 }
-
 
 class LoginViewController: UIViewController,
-UITextFieldDelegate,UIScrollViewDelegate {
+UITextFieldDelegate, UIScrollViewDelegate {
     
     @IBOutlet var IDInputField: UITextField!
     @IBOutlet var PWInputField: UITextField!
@@ -68,29 +63,29 @@ UITextFieldDelegate,UIScrollViewDelegate {
     }
     
     /*
-    編集開始時の処理
-    *パスワード入力方式設定
-    *if:テキストフィールドをタップ
-    テキストフィールド初期化
-    */
+     編集開始時の処理
+     *パスワード入力方式設定
+     *if:テキストフィールドをタップ
+     テキストフィールド初期化
+     */
     @IBAction func TextFieldEditingDidBegin(_ sender: UITextField) {
         txtActiveField = sender
-        if(sender == PWInputField){
-            sender.isSecureTextEntry = true}
+        if sender == PWInputField {
+            sender.isSecureTextEntry = true
+        }
     }
     
-    
     /*
-    テキストが編集された際に呼ばれる.
-    */
+     テキストが編集された際に呼ばれる.
+     */
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         var maxLength: Int = 0
         
         // 文字数最大を決める.
-        if(textField == IDInputField){
+        if textField == IDInputField {
             maxLength = 11
-        }else if(textField == PWInputField){
+        } else if textField == PWInputField {
             maxLength = 9
         }
         
@@ -104,27 +99,26 @@ UITextFieldDelegate,UIScrollViewDelegate {
         
         return false
     }
-    
-    
+
     /*
-    キーボード以外をタップするとキーボードを閉じる
-    */
+     キーボード以外をタップするとキーボードを閉じる
+     */
     @IBAction func TapScreen(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }
     
     /*
-    Returnをタップするとキーボードを閉じる
-    */
+     Returnをタップするとキーボードを閉じる
+     */
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
     /*
-    キーボード表示時にテキストフィールドと重なっているか調べる
-    重なっていたらスクロールする
-    */
+     キーボード表示時にテキストフィールドと重なっているか調べる
+     重なっていたらスクロールする
+     */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -136,10 +130,10 @@ UITextFieldDelegate,UIScrollViewDelegate {
     func handleKeyboardWillShowNotification(_ notification: Notification) {
         
         let userInfo = notification.userInfo!
-        let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
         let myBoundSize: CGSize = UIScreen.main.bounds.size
         let txtLimit = txtActiveField.frame.origin.y + txtActiveField.frame.height + 8.0
-        let kbdLimit = myBoundSize.height - keyboardScreenEndFrame.size.height
+        let kbdLimit = myBoundSize.height - (keyboardScreenEndFrame?.size.height)!
         
         if txtLimit >= kbdLimit {
             sc.contentOffset.y = txtLimit - kbdLimit
@@ -150,63 +144,63 @@ UITextFieldDelegate,UIScrollViewDelegate {
         sc.contentOffset.y = 0
     }
     
-    
     @IBOutlet var LoginButton: SpringButton!
-     var LoginFlag = (0,0)
+    var LoginFlag = (0, 0)
     @IBAction func TapLoginButton(_ sender: AnyObject) {
         let String_ID = IDInputField.text
         let String_PW = PWInputField.text
         
         //エラー処理
-        if String_ID!.characters.count >= 3{
+        if String_ID!.characters.count >= 3 {
             LoginFlag.0 =  1
-        }else{
-            LoginFlag.0 = 0}
+        } else {
+            LoginFlag.0 = 0
+        }
+        
         if String_PW?.characters.count >= 4 {
             LoginFlag.1 =  1
-        }else{
-            LoginFlag.1 = 0}
+        } else {
+            LoginFlag.1 = 0
+        }
         
         LoginButton.animation = "shake"
-        switch LoginFlag{
-        case(0,0):
+        switch LoginFlag {
+        case(0, 0):
             Error.text = "IDとパスワードが違います"
             LoginButton.animate()
-        case(1,0):
+        case(1, 0):
             Error.text = "パスワードが違います"
             LoginButton.animate()
-        case(0,1):
+        case(0, 1):
             Error.text = "IDが違います"
             LoginButton.animate()
-        case(1,1):
+        case(1, 1):
             Error.text = ""
             LoginActivity(String_ID!, password: String_PW!)
         default:
             Error.text = "エラーが発生しました。"
         }
-        
-        
     }
     
     /*
      * ログイン処理
      */
-    func LoginActivity(_ userid: String, password: String){
+    func LoginActivity(_ userid: String, password: String) {
         
         let request: Request = Request()
         
         let uri = "signinuser"
         
-        let body = ["userid" : userid,
-                    "password" : password]
+        let body = ["userid": userid,
+                    "password": password]
         
         request.post(uri, body: body)
         
     }
     
-    func ScreenTransition(_ userid:String){
+    func ScreenTransition(_ userid: String) {
         //AppDelegateのインスタンスを取得
-        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        let appDelegate = (UIApplication.shared.delegate as? AppDelegate)!
         
         //appDelegateの変数を操作
         appDelegate.user_id = userid
@@ -221,14 +215,13 @@ UITextFieldDelegate,UIScrollViewDelegate {
     }
     
     /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
 }
-

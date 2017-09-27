@@ -6,12 +6,11 @@
 //  Copyright © 2015年 会津慎弥. All rights reserved.
 //
 
-
 import UIKit
 
-class SearchScreenController: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate{
+class SearchScreenController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    var thumbnailConfig:ThumbnailConfig?
+    var thumbnailConfig: ThumbnailConfig?
     
     @IBOutlet weak var CategoryButtonCollection: UICollectionView!
     @IBOutlet weak var CategoryThumbnail: UICollectionView!
@@ -23,26 +22,25 @@ class SearchScreenController: UIViewController,UICollectionViewDataSource, UICol
     @IBOutlet weak var selectCategoryImg: UIImageView!
     @IBOutlet weak var categoryName: UILabel!
     
-    let categoryImg:Array<String> =
-    ["character.png",
-        "plant.png",
-        "eat.png",
-        "human.png",
-        "animal.png",
-        "car.png",
-        "mark.png",
-        "etc.png"]
-    
+    let categoryImg =
+        ["character.png",
+         "plant.png",
+         "eat.png",
+         "human.png",
+         "animal.png",
+         "car.png",
+         "mark.png",
+         "etc.png"]
     
     //AppDelegateのインスタンスを取得
-    let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+    weak var appDelegate = (UIApplication.shared.delegate as? AppDelegate)!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        appDelegate.viewController = self
+        appDelegate?.viewController = self
         
         let request: Request = Request()
-        let uri = baseuri+appDelegate.category_number!
+        let uri = baseuri+(appDelegate?.category_number)!
         request.get(uri, callBackClosure: self.renderView)
     }
     
@@ -58,11 +56,11 @@ class SearchScreenController: UIViewController,UICollectionViewDataSource, UICol
         // Dispose of any resources that can be recreated.
     }
     
-    func Reload(_ categoryImgString: String,categoryString:String){
+    func Reload(_ categoryImgString: String, categoryString: String) {
         
         let request: Request = Request()
         
-        let uri = baseuri+appDelegate.category_number!
+        let uri = baseuri+(appDelegate?.category_number)!
         
         request.get(uri, callBackClosure: self.renderView)
         
@@ -75,9 +73,9 @@ class SearchScreenController: UIViewController,UICollectionViewDataSource, UICol
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell:CategoryButtonCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryButtonCell", for: indexPath) as! CategoryButtonCell
+        let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryButtonCell", for: indexPath) as? CategoryButtonCell)!
         
-        let img = UIImage(named: categoryImg[indexPath.row]);
+        let img = UIImage(named: categoryImg[indexPath.row])
         
         // set Name
         cell.CategoryButtonImg.image = img
@@ -91,23 +89,23 @@ class SearchScreenController: UIViewController,UICollectionViewDataSource, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8;
+        return 8
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         //AppDelegateのインスタンスを取得
-        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        let appDelegate = (UIApplication.shared.delegate as? AppDelegate)!
         
         var categoryString: String = ""
         
-        switch categoryImg[indexPath.row]{
+        switch categoryImg[indexPath.row] {
         case "character.png":
             appDelegate.category_number = "0"
             categoryString = "キャラクター"
         case "plant.png":
             appDelegate.category_number = "1"
-        categoryString = "しょくぶつ"
+            categoryString = "しょくぶつ"
         case "eat.png":
             appDelegate.category_number = "2"
             categoryString = "たべもの"
@@ -130,29 +128,28 @@ class SearchScreenController: UIViewController,UICollectionViewDataSource, UICol
             break
         }
         
-        Reload(categoryImg[indexPath.row],categoryString: categoryString)
+        Reload(categoryImg[indexPath.row], categoryString: categoryString)
     }
     
-    func viewChange(){
+    func viewChange() {
         let sv = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "selectGraphic")
         
         sv.modalTransitionStyle = UIModalTransitionStyle.coverVertical
         
-        
         // Viewの移動する.
         self.present(sv, animated: true, completion: nil)
-
+        
     }
     
-    func renderView(json: NSArray){
+    func renderView(json: NSArray) {
         
-        var images_url:Array<String> = []
-        var images_name:Array<String> = []
+        var images_url = [String]()
+        var images_name = [String]()
         
         for  i in 0 ..< json.count {
-            let dictionary  = json[i] as! NSDictionary
-            images_url.append(dictionary["filedata"] as! String)
-            images_name.append(dictionary["title"] as! String)
+            let dictionary  = json[i] as? NSDictionary
+            images_url.append((dictionary?["filedata"] as? String)!)
+            images_name.append((dictionary?["title"] as? String)!)
         }
         
         self.thumbnailConfig = ThumbnailConfig(items: images_url, imgs_name: images_name)
@@ -165,13 +162,13 @@ class SearchScreenController: UIViewController,UICollectionViewDataSource, UICol
     }
     
     /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
 }
