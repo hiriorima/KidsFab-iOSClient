@@ -8,12 +8,12 @@
 
 import UIKit
 
-class ThumbnailConfig: NSObject, UICollectionViewDataSource, UICollectionViewDelegate{
+class ThumbnailConfig: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    var items:Array<String> = []
-    var imgs_name:Array<String> = []
+    var items = [String]()
+    var imgs_name = [String]()
     
-    init(items: Array<String>,imgs_name: Array<String>) {
+    init(items: [String], imgs_name: [String]) {
         self.items = items
         self.imgs_name = imgs_name
         super.init()
@@ -21,13 +21,12 @@ class ThumbnailConfig: NSObject, UICollectionViewDataSource, UICollectionViewDel
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell:CustomThumbnailCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CustomThumbnailCell
+        let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? CustomThumbnailCell)!
         
-        
-        let url = URL(string: items[indexPath.row]);
+        let url = URL(string: items[indexPath.row])
         print(items[indexPath.row])
         let data = try? Data(contentsOf: url!)
-        let img = UIImage(data: data!);
+        let img = UIImage(data: data!)
         
         // set Name
         cell.thumbnail.image = img
@@ -42,21 +41,18 @@ class ThumbnailConfig: NSObject, UICollectionViewDataSource, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items.count;
+        return items.count
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         //Todo ここで画像データをデリゲートに投げて編集画面へ画面遷移する!!
-        let url = URL(string: items[indexPath.row]);
+        let url = URL(string: items[indexPath.row])
         let data = try? Data(contentsOf: url!)
-        let img = UIImage(data: data!);
+        let img = UIImage(data: data!)
         
-        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate //AppDelegateのインスタンスを取得
+        let appDelegate = (UIApplication.shared.delegate as? AppDelegate)! //AppDelegateのインスタンスを取得
         appDelegate.searchImg = img
-        
         appDelegate.viewController?.viewChange()
-        
-        
     }
 }

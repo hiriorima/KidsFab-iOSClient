@@ -3,7 +3,7 @@ platform :ios, '9.1'
 # Uncomment this line if you're using Swift
 use_frameworks!
 
-target '2D_PaintTool' do
+target 'KidsFab' do
   pod 'ACEDrawingView'
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
   pod 'ReachabilitySwift', '~> 3'
@@ -11,11 +11,11 @@ target '2D_PaintTool' do
   pod 'SwiftLint'
 end
 
-target '2D_PaintToolTests' do
+target 'KidsFabTests' do
 
 end
 
-target '2D_PaintToolUITests' do
+target 'KidsFabUITests' do
 
 end
 

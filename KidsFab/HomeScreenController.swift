@@ -6,12 +6,11 @@
 //  Copyright © 2015年 会津慎弥. All rights reserved.
 //
 
-
 import UIKit
 
-class HomeScreenController:UIViewController{
+class HomeScreenController: UIViewController {
     
-    var thumbnailConfig:ThumbnailConfig?
+    var thumbnailConfig: ThumbnailConfig?
     
     @IBOutlet weak var ThumbnailCollection: UICollectionView!
     
@@ -21,19 +20,18 @@ class HomeScreenController:UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         //AppDelegateのインスタンスを取得
-        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
         
-        username.text = appDelegate.user_id!
-        let Guest:UIImage = UIImage(named: "Guest.png")!
-        let Member:UIImage = UIImage(named: "Member.png")!
-        if(appDelegate.user_id != "Guest"){
+        username.text = appDelegate?.user_id
+        let Guest = UIImage(named: "Guest.png")!
+        let Member = UIImage(named: "Member.png")!
+        if appDelegate?.user_id != "Guest" {
             user.image = Member
-        }else{
+        } else {
             user.image = Guest
         }
-        
+
         let request: Request = Request()
         let uri = "imgshow?category=-1"
         request.get(uri, callBackClosure: self.renderView)
@@ -49,18 +47,18 @@ class HomeScreenController:UIViewController{
         // Dispose of any resources that can be recreated.
     }
     
-    func renderView(json: NSArray){
+    func renderView(json: NSArray) {
         
-        var images_url:Array<String> = []
-        var images_name:Array<String> = []
+        var images_url = [String]()
+        var images_name = [String]()
         
         for  i in 0 ..< json.count {
-            let dictionary  = json[i] as! NSDictionary
-            images_url.append(dictionary["filedata"] as! String)
-            images_name.append(dictionary["title"] as! String)
+            let dictionary  = json[i] as? NSDictionary
+            images_url.append((dictionary?["filedata"] as? String)!)
+            images_name.append((dictionary?["title"] as? String)!)
         }
         
-        self.thumbnailConfig = ThumbnailConfig(items: images_url,imgs_name: images_name)
+        self.thumbnailConfig = ThumbnailConfig(items: images_url, imgs_name: images_name)
         ThumbnailCollection.dataSource = self.thumbnailConfig
         ThumbnailCollection.delegate = self.thumbnailConfig
     }
