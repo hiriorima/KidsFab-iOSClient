@@ -171,11 +171,10 @@ class AddNewAcountViewController: UIViewController, UITextFieldDelegate, UIScrol
     func AddNewAccountActivity(_ userid: String, password: String, password_confirmation: String) {
         
         let request: Request = Request()
-        let uri = "adduser"
         let body = ["userid": userid,
                     "password": password,
                     "password_confirmation": password_confirmation]
-        request.post(uri, body: body)
+        request.post(RequestConst().createUserURI, body: body)
     }
     
     /*

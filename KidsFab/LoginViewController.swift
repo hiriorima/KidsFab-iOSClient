@@ -39,7 +39,6 @@ UITextFieldDelegate, UIScrollViewDelegate {
     
     fileprivate var txtActiveField = UITextField()
     
-    let baseHost = "http://paint.fablabhakodate.org/"
     let oneYearInSeconds = TimeInterval(60 * 60 * 24 * 365)
     
     var login_id: Bool = false
@@ -189,12 +188,10 @@ UITextFieldDelegate, UIScrollViewDelegate {
         
         let request: Request = Request()
         
-        let uri = "signinuser"
-        
         let body = ["userid": userid,
                     "password": password]
         
-        request.post(uri, body: body)
+        request.post(RequestConst().loginURI, body: body)
         
     }
     

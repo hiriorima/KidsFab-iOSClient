@@ -441,12 +441,13 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
     //ポストの処理
     func SavePost(UserID: String, Title: String, Category: Int, IMG: String) {
         let request: Request = Request()
-        let uri = "addpic"
+
         let body = ["userid": UserID,
                     "filedata": IMG,
                     "title": Title,
                     "category": Category] as [String : Any]
-        request.post(uri, body: body)
+        
+        request.post(RequestConst().postContentsURI, body: body)
     }
     
     @IBAction func SaveCancel(_ sender: AnyObject) {

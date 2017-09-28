@@ -17,8 +17,6 @@ class SearchScreenController: UIViewController, UICollectionViewDataSource, UICo
     
     @IBOutlet weak var homeButton: UIButton!
     
-    let baseuri = "imgshow?category="
-    
     @IBOutlet weak var selectCategoryImg: UIImageView!
     @IBOutlet weak var categoryName: UILabel!
     
@@ -40,11 +38,12 @@ class SearchScreenController: UIViewController, UICollectionViewDataSource, UICo
         appDelegate?.viewController = self
         
         let request: Request = Request()
-        let uri = baseuri+(appDelegate?.category_number)!
+        let uri = RequestConst().getCategoryContentsURI+(appDelegate?.category_number)!
         request.get(uri, callBackClosure: self.renderView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         CategoryThumbnail.dataSource = self.thumbnailConfig
         CategoryThumbnail.delegate = self.thumbnailConfig
         CategoryButtonCollection.dataSource = self
@@ -60,7 +59,7 @@ class SearchScreenController: UIViewController, UICollectionViewDataSource, UICo
         
         let request: Request = Request()
         
-        let uri = baseuri+(appDelegate?.category_number)!
+        let uri = RequestConst().getCategoryContentsURI + (appDelegate?.category_number)!
         
         request.get(uri, callBackClosure: self.renderView)
         
