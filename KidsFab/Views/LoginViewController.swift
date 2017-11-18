@@ -50,26 +50,16 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
         
         IDInputField.placeholder = "IDを入力してください(英数字3~10字)"
         PWInputField.placeholder = "パスワードを入力してください(英数字4~8字)"
-        
-        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-    /*
-     キーボード以外をタップするとキーボードを閉じる
-     */
     @IBAction func TapScreen(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }
     
-    /*
-     キーボード表示時にテキストフィールドと重なっているか調べる
-     重なっていたらスクロールする
-     */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -112,9 +102,6 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    /*
-     * ログイン処理
-     */
     func LoginActivity(_ userid: String, password: String) {
         
         let request: Request = Request()
@@ -127,18 +114,12 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func ScreenTransition(_ userid: String) {
-        //AppDelegateのインスタンスを取得
         let appDelegate = (UIApplication.shared.delegate as? AppDelegate)!
-        
-        //appDelegateの変数を操作
         appDelegate.user_id = userid
         
         let HomeScreenViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home")
         
-        // アニメーションを設定.
         HomeScreenViewController.modalTransitionStyle = UIModalTransitionStyle.coverVertical
-        
-        // Viewの移動する.
         self.present(HomeScreenViewController, animated: true, completion: nil)
     }
 }
@@ -150,9 +131,6 @@ extension LoginViewController: UITextFieldDelegate {
         PWInputField.delegate = self
     }
     
-    /*
-     Returnをタップするとキーボードを閉じる
-     */
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -181,12 +159,6 @@ extension LoginViewController: UITextFieldDelegate {
         notificationCenter.addObserver(self, selector: #selector(LoginViewController.handleKeyboardWillHideNotification(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    /*
-     編集開始時の処理
-     *パスワード入力方式設定
-     *if:テキストフィールドをタップ
-     テキストフィールド初期化
-     */
     @IBAction func TextFieldEditingDidBegin(_ sender: UITextField) {
         txtActiveField = sender
         if sender == PWInputField {
@@ -194,14 +166,10 @@ extension LoginViewController: UITextFieldDelegate {
         }
     }
     
-    /*
-     テキストが編集された際に呼ばれる.
-     */
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         var maxLength: Int = 0
-        
-        // 文字数最大を決める.
+
         if textField == IDInputField {
             maxLength = 11
         } else if textField == PWInputField {
@@ -211,7 +179,6 @@ extension LoginViewController: UITextFieldDelegate {
         // 入力済みの文字と入力された文字を合わせて取得.
         let str = textField.text! + string
         
-        // 文字数がmaxLength以下ならtrueを返す.
         if str.characters.count < maxLength {
             return true
         }
