@@ -63,7 +63,7 @@ class Request {
         session.dataTask(with: request, completionHandler: (completionHandler as? (Data?, URLResponse?, Error?) -> Void)!).resume()
     }
     
-    func genHeader(_ method: String) -> [String:String] {
+    func genHeader(_ method: String) -> [String: String] {
         let cookies = HTTPCookieStorage.shared.cookies(for: URL(string: RequestConst().nooooURL)!)
         var headers = HTTPCookie.requestHeaderFields(with: cookies!)
         headers["Accept"] = "application/json"

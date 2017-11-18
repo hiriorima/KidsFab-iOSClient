@@ -239,7 +239,7 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
         // tableCell の ID で UITableViewCell のインスタンスを生成
         let cell = Tooltable.dequeueReusableCell(withIdentifier: "TtableCell", for: indexPath)
         
-        let Timg = UIImage(named:"\(TImgArray[indexPath.row])")
+        let Timg = UIImage(named: "\(TImgArray[indexPath.row])")
         // Tag番号 1 で UIImageView インスタンスの生成
         let TimageView = Tooltable.viewWithTag(1) as? UIImageView
         TimageView?.image = Timg
@@ -445,7 +445,7 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
         let body = ["userid": UserID,
                     "filedata": IMG,
                     "title": Title,
-                    "category": Category] as [String : Any]
+                    "category": Category] as [String: Any]
         
         request.post(RequestConst().postContentsURI, body: body)
     }
