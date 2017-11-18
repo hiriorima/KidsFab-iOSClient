@@ -42,6 +42,9 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
     
     var login_id: Bool = false
     
+    @IBOutlet var LoginButton: SpringButton!
+    var LoginFlag = (0, 0)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         sc.frame = self.view.frame
@@ -76,9 +79,6 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
         
         setKeyboardNotification()
     }
-    
-    @IBOutlet var LoginButton: SpringButton!
-    var LoginFlag = (0, 0)
     
     @IBAction func TapLoginButton(_ sender: AnyObject) {
         let String_ID = IDInputField.text

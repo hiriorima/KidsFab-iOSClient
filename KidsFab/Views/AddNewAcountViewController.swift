@@ -20,6 +20,9 @@ class AddNewAcountViewController: UIViewController, UITextFieldDelegate, UIScrol
     
     @IBOutlet weak var ErrorLabel: UILabel!
     
+    @IBOutlet var AddButton: SpringButton!
+    var AddFlag = (0, 0)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         sc.frame = self.view.frame
@@ -124,8 +127,6 @@ class AddNewAcountViewController: UIViewController, UITextFieldDelegate, UIScrol
         sc.contentOffset.y = 0
     }
     
-    @IBOutlet var AddButton: SpringButton!
-    var AddFlag = (0, 0)
     @IBAction func TapAddNewAccount(_ sender: AnyObject) {
         
         let String_ID = IDInputField.text
