@@ -226,6 +226,23 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		0DD38BF81FC0689A00111FF9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0D59112D1F7A4FFB002F9991 /* PaintController.swift */,
+				207BAF221C0DB2F60023228F /* SearchScreenController.swift */,
+				207BAEBB1C0DA79D0023228F /* SelectGraphicController.swift */,
+				207BAEB51C0DA3770023228F /* HomeScreenController.swift */,
+				20C4EE641C0D7E520037CB83 /* LoginViewController.swift */,
+				20C4EE661C0D7FF60037CB83 /* AddNewAcountViewController.swift */,
+				0D59112A1F7A2CB7002F9991 /* TitleScreenController.swift */,
+				0DF8CBA91C156E490058905C /* CustomThumbnailCell.swift */,
+				0DF8CBAA1C156E490058905C /* ThumbnailConfig.swift */,
+				0DF8CBAC1C156E490058905C /* CategoryButtonCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		0DF243621F7BA6CE003AFBB4 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,22 +276,13 @@
 		0DF566091BE3596C00D0EE2E /* KidsFab */ = {
 			isa = PBXGroup;
 			children = (
+				0DD38BF81FC0689A00111FF9 /* Views */,
 				0DF243621F7BA6CE003AFBB4 /* Constants */,
 				0D344F821F7B8539002797D3 /* Extensions */,
 				207BAEC51C0DA95C0023228F /* images */,
 				0DF5660A1BE3596C00D0EE2E /* AppDelegate.swift */,
 				20F3654A1C05A20900E1A48A /* Request.swift */,
-				0D59112D1F7A4FFB002F9991 /* PaintController.swift */,
 				0DF5660E1BE3596C00D0EE2E /* Main.storyboard */,
-				207BAF221C0DB2F60023228F /* SearchScreenController.swift */,
-				207BAEBB1C0DA79D0023228F /* SelectGraphicController.swift */,
-				207BAEB51C0DA3770023228F /* HomeScreenController.swift */,
-				20C4EE641C0D7E520037CB83 /* LoginViewController.swift */,
-				20C4EE661C0D7FF60037CB83 /* AddNewAcountViewController.swift */,
-				0D59112A1F7A2CB7002F9991 /* TitleScreenController.swift */,
-				0DF8CBA91C156E490058905C /* CustomThumbnailCell.swift */,
-				0DF8CBAA1C156E490058905C /* ThumbnailConfig.swift */,
-				0DF8CBAC1C156E490058905C /* CategoryButtonCell.swift */,
 				0DF566111BE3596C00D0EE2E /* Assets.xcassets */,
 				0DF566131BE3596C00D0EE2E /* LaunchScreen.storyboard */,
 				0DF566161BE3596C00D0EE2E /* Info.plist */,
