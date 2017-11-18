@@ -11,6 +11,7 @@
 		0D344F861F7B8539002797D3 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D344F841F7B8539002797D3 /* UIApplication+Extension.swift */; };
 		0D59112B1F7A2CB7002F9991 /* TitleScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D59112A1F7A2CB7002F9991 /* TitleScreenController.swift */; };
 		0D59112E1F7A4FFB002F9991 /* PaintController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D59112D1F7A4FFB002F9991 /* PaintController.swift */; };
+		0D75BF561FC1790800C7A1F0 /* UIViewController+ScrollWhenShowKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D75BF551FC1790800C7A1F0 /* UIViewController+ScrollWhenShowKeyboard.swift */; };
 		0DF243661F7BAD9D003AFBB4 /* RequestConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF243651F7BAD9D003AFBB4 /* RequestConst.swift */; };
 		0DF5660B1BE3596C00D0EE2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF5660A1BE3596C00D0EE2E /* AppDelegate.swift */; };
 		0DF566101BE3596C00D0EE2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DF5660E1BE3596C00D0EE2E /* Main.storyboard */; };
@@ -100,6 +101,7 @@
 		0D344F841F7B8539002797D3 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		0D59112A1F7A2CB7002F9991 /* TitleScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleScreenController.swift; sourceTree = "<group>"; };
 		0D59112D1F7A4FFB002F9991 /* PaintController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaintController.swift; sourceTree = "<group>"; };
+		0D75BF551FC1790800C7A1F0 /* UIViewController+ScrollWhenShowKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ScrollWhenShowKeyboard.swift"; sourceTree = "<group>"; };
 		0DF243651F7BAD9D003AFBB4 /* RequestConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestConst.swift; sourceTree = "<group>"; };
 		0DF566071BE3596C00D0EE2E /* KidsFab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KidsFab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DF5660A1BE3596C00D0EE2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 		0D344F821F7B8539002797D3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0D75BF551FC1790800C7A1F0 /* UIViewController+ScrollWhenShowKeyboard.swift */,
 				0D344F831F7B8539002797D3 /* UIAlertController+Extension.swift */,
 				0D344F841F7B8539002797D3 /* UIApplication+Extension.swift */,
 			);
@@ -758,6 +761,7 @@
 				0D59112E1F7A4FFB002F9991 /* PaintController.swift in Sources */,
 				0DF8CBAD1C156E490058905C /* CustomThumbnailCell.swift in Sources */,
 				207BAEBC1C0DA79D0023228F /* SelectGraphicController.swift in Sources */,
+				0D75BF561FC1790800C7A1F0 /* UIViewController+ScrollWhenShowKeyboard.swift in Sources */,
 				20F3654B1C05A20A00E1A48A /* Request.swift in Sources */,
 				207BAEB61C0DA3770023228F /* HomeScreenController.swift in Sources */,
 				0DF243661F7BAD9D003AFBB4 /* RequestConst.swift in Sources */,

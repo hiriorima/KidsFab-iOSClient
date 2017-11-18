@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" colorMatched="YES" initialViewController="EPQ-bX-4Tx">
-    <device id="ipad9_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" colorMatched="YES" initialViewController="EPQ-bX-4Tx">
+    <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HiraginoKakuGothic.ttc">
+            <string>HiraginoSans-W3</string>
+            <string>HiraginoSans-W6</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Select Graphic Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="selectGraphic" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="SelectGraphicController" customModule="_D_PaintTool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="selectGraphic" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="SelectGraphicController" customModule="KidsFab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="b06-sf-OsH">
@@ -69,9 +76,9 @@
         <!--Paint Controller-->
         <scene sceneID="xmb-nB-wyj">
             <objects>
-                <viewController id="lAh-mq-XgJ" customClass="PaintController" customModule="_D_PaintTool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lAh-mq-XgJ" customClass="PaintController" customModule="KidsFab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="Qxm-e6-gYO">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="T9I-bu-98m" customClass="ACEDrawingView">
@@ -359,7 +366,7 @@
                                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rJ4-9m-lpY" customClass="SpringButton" customModule="_D_PaintTool" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rJ4-9m-lpY" customClass="SpringButton" customModule="KidsFab" customModuleProvider="target">
                                         <rect key="frame" x="273" y="282" width="100" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.058823529411764705" green="0.24313725490196078" blue="0.48627450980392156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -447,9 +454,9 @@
         <!--Title Screen Controller-->
         <scene sceneID="foe-tx-Dgw">
             <objects>
-                <viewController storyboardIdentifier="Title" id="EPQ-bX-4Tx" customClass="TitleScreenController" customModule="_D_PaintTool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Title" id="EPQ-bX-4Tx" customClass="TitleScreenController" customModule="KidsFab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RzI-io-iJb">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MainTitle.png" id="KLc-rE-u54">
@@ -483,70 +490,54 @@
         <!--Login View Controller-->
         <scene sceneID="WZ7-Yl-aW2">
             <objects>
-                <viewController id="LeO-Vz-VXh" customClass="LoginViewController" customModule="_D_PaintTool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="LeO-Vz-VXh" customClass="LoginViewController" customModule="KidsFab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HiB-vs-uBm">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="nY6-Dm-jq8">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="nY6-Dm-jq8">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="lyO-pR-iey">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="IDを入力してください(英数字3~10字)" textAlignment="natural" minimumFontSize="17" id="lyO-pR-iey">
                                         <rect key="frame" x="300" y="384" width="424" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="done"/>
-                                        <connections>
-                                            <action selector="TextFieldEditingDidBegin:" destination="LeO-Vz-VXh" eventType="editingDidBegin" id="IiN-uF-XlF"/>
-                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="YDW-SD-iNR">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワードを入力してください(英数字4~8字)" textAlignment="natural" minimumFontSize="17" id="YDW-SD-iNR">
                                         <rect key="frame" x="300" y="471" width="424" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                                        <connections>
-                                            <action selector="TextFieldEditingDidBegin:" destination="LeO-Vz-VXh" eventType="editingDidBegin" id="HUI-aA-qNZ"/>
-                                        </connections>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="41n-C3-O9e">
-                                        <rect key="frame" x="353" y="669" width="316" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="アカウントを作っていない方はこちらから"/>
-                                        <connections>
-                                            <segue destination="I0Z-jv-pL9" kind="modal" id="hqQ-cQ-vfL"/>
-                                        </connections>
-                                    </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="member_login.png" id="MPv-9A-0ZV">
                                         <rect key="frame" x="401" y="80" width="222" height="222"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xca-Vz-8Bw" customClass="SpringButton" customModule="Spring">
-                                        <rect key="frame" x="445" y="565" width="135" height="62"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button" image="login.png"/>
-                                        <connections>
-                                            <action selector="TapLoginButton:" destination="LeO-Vz-VXh" eventType="touchUpInside" id="m8b-9s-MxL"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="clE-Id-l7H">
-                                        <rect key="frame" x="60" y="40" width="30" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="clE-Id-l7H">
+                                        <rect key="frame" x="41" y="28" width="63" height="55"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="戻る"/>
                                         <connections>
                                             <segue destination="EPQ-bX-4Tx" kind="modal" id="Ws0-R2-YGk"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yon-Gc-0bA">
-                                        <rect key="frame" x="300" y="336" width="424" height="28"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xca-Vz-8Bw">
+                                        <rect key="frame" x="445" y="567" width="135" height="62"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <state key="normal" title="Button" image="login.png"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="41n-C3-O9e">
+                                        <rect key="frame" x="354" y="651" width="316" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="アカウントを作っていない方はこちらから"/>
+                                        <connections>
+                                            <segue destination="I0Z-jv-pL9" kind="modal" id="hqQ-cQ-vfL"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <gestureRecognizers/>
                             </scrollView>
@@ -558,28 +549,23 @@
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="Error" destination="yon-Gc-0bA" id="94n-mF-C5A"/>
                         <outlet property="IDInputField" destination="lyO-pR-iey" id="YyI-zJ-giR"/>
-                        <outlet property="LoginButton" destination="xca-Vz-8Bw" id="Daf-F7-6SQ"/>
+                        <outlet property="LoginButton" destination="xca-Vz-8Bw" id="gnD-Ee-HzH"/>
                         <outlet property="PWInputField" destination="YDW-SD-iNR" id="s9V-Er-hwG"/>
-                        <outlet property="sc" destination="nY6-Dm-jq8" id="wIf-Fu-1eL"/>
+                        <outlet property="tapGesture" destination="h64-yN-d0j" id="ZkK-tL-Cog"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K1F-wI-B0i" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="h64-yN-d0j">
-                    <connections>
-                        <action selector="TapScreen:" destination="LeO-Vz-VXh" id="EvI-hJ-zBR"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <tapGestureRecognizer id="h64-yN-d0j"/>
             </objects>
             <point key="canvasLocation" x="-1743" y="-452"/>
         </scene>
         <!--Add New Acount View Controller-->
         <scene sceneID="lJi-8X-ftr">
             <objects>
-                <viewController id="I0Z-jv-pL9" customClass="AddNewAcountViewController" customModule="_D_PaintTool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="I0Z-jv-pL9" customClass="AddNewAcountViewController" customModule="KidsFab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2t3-Nq-Scn">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="9Hg-yM-KKf">
@@ -673,9 +659,9 @@
         <!--Home Screen Controller-->
         <scene sceneID="ck4-yo-lZl">
             <objects>
-                <viewController storyboardIdentifier="Home" id="rJl-iq-bvy" customClass="HomeScreenController" customModule="_D_PaintTool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Home" id="rJl-iq-bvy" customClass="HomeScreenController" customModule="KidsFab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1bh-De-dRV">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ECe-NU-FsR">
@@ -714,7 +700,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="WQY-Tq-9wz" customClass="CustomThumbnailCell" customModule="_D_PaintTool" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="WQY-Tq-9wz" customClass="CustomThumbnailCell" customModule="KidsFab" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="220" height="174"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -780,9 +766,9 @@
         <!--Search Screen Controller-->
         <scene sceneID="MWG-mv-tP6">
             <objects>
-                <viewController storyboardIdentifier="searchscreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HDv-JO-drU" customClass="SearchScreenController" customModule="_D_PaintTool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="searchscreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HDv-JO-drU" customClass="SearchScreenController" customModule="KidsFab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="36y-OZ-ANk">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="キャラクター" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="kS3-c8-NGD">
@@ -815,7 +801,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="rvH-UG-c5V" customClass="CustomThumbnailCell" customModule="_D_PaintTool" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="rvH-UG-c5V" customClass="CustomThumbnailCell" customModule="KidsFab" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="220" height="174"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -864,7 +850,7 @@
                                     <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryButtonCell" id="djN-Lf-D8A" customClass="CategoryButtonCell" customModule="_D_PaintTool" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryButtonCell" id="djN-Lf-D8A" customClass="CategoryButtonCell" customModule="KidsFab" customModuleProvider="target">
                                         <rect key="frame" x="20" y="0.0" width="110" height="110"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -929,14 +915,10 @@
         <image name="member_login.png" width="223" height="222"/>
         <image name="newAccount.png" width="223" height="223"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
-    </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Q7z-Bm-LR3"/>
+        <segue reference="hqQ-cQ-vfL"/>
         <segue reference="pcT-uq-CMe"/>
+        <segue reference="RXj-di-MXD"/>
         <segue reference="vT6-Xt-rUx"/>
     </inferredMetricsTieBreakers>
 </document>
