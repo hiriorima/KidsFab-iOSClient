@@ -38,10 +38,6 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
     
     fileprivate var txtActiveField = UITextField()
     
-    let oneYearInSeconds = TimeInterval(60 * 60 * 24 * 365)
-    
-    var login_id: Bool = false
-    
     @IBOutlet var LoginButton: SpringButton!
     var LoginFlag = (0, 0)
     
