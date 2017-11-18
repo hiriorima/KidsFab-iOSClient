@@ -9,6 +9,9 @@ target 'KidsFab' do
   pod 'ReachabilitySwift', '~> 3'
   pod 'Alamofire'
   pod 'SwiftLint'
+  pod 'RxSwift'
+  pod 'RxCocoa'
+
 end
 
 target 'KidsFabTests' do
