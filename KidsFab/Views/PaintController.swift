@@ -9,7 +9,7 @@
 import UIKit
 import ACEDrawingView
 import Spring
-import ReachabilitySwift
+import Reachability
 
 class PaintController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UIToolbarDelegate {
     
@@ -348,7 +348,7 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
         CategoryField.text = CategoryArray[row] as? String
         PostCategory = row
     }
-    func onClick(_ sender: UIBarButtonItem) {
+    @objc func onClick(_ sender: UIBarButtonItem) {
         CategoryField.resignFirstResponder()
     }
     
@@ -412,7 +412,7 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
             }
             
             let reachability = Reachability()!
-            if reachability.isReachable {
+            if reachability.connection != .none {
                 //インターネット接続あり
                 //送信文
                 SavePost(UserID: UserID, Title: PostTitle, Category: PostCategory, IMG: PostImg)

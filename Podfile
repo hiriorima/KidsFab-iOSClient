@@ -5,8 +5,8 @@ use_frameworks!
 
 target 'KidsFab' do
   pod 'ACEDrawingView'
-  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
-  pod 'ReachabilitySwift', '~> 3'
+  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
+  pod 'ReachabilitySwift'
   pod 'Alamofire'
   pod 'SwiftLint'
   pod 'RxSwift'

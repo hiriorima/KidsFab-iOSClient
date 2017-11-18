@@ -110,7 +110,7 @@ class AddNewAcountViewController: UIViewController, UITextFieldDelegate, UIScrol
         notificationCenter.addObserver(self, selector: #selector(AddNewAcountViewController.handleKeyboardWillHideNotification(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    func handleKeyboardWillShowNotification(_ notification: Notification) {
+    @objc func handleKeyboardWillShowNotification(_ notification: Notification) {
         
         let userInfo = notification.userInfo!
         let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
@@ -123,7 +123,7 @@ class AddNewAcountViewController: UIViewController, UITextFieldDelegate, UIScrol
         }
     }
     
-    func handleKeyboardWillHideNotification(_ notification: Notification) {
+    @objc func handleKeyboardWillHideNotification(_ notification: Notification) {
         sc.contentOffset.y = 0
     }
     

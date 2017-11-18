@@ -162,7 +162,7 @@ extension LoginViewController: UITextFieldDelegate {
         return true
     }
     
-    func handleKeyboardWillShowNotification(_ notification: Notification) {
+    @objc func handleKeyboardWillShowNotification(_ notification: Notification) {
         
         let userInfo = notification.userInfo!
         let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
@@ -175,7 +175,7 @@ extension LoginViewController: UITextFieldDelegate {
         }
     }
     
-    func handleKeyboardWillHideNotification(_ notification: Notification) {
+    @objc func handleKeyboardWillHideNotification(_ notification: Notification) {
         sc.contentOffset.y = 0
     }
     
