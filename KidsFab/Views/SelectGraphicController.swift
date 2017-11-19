@@ -7,29 +7,42 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class SelectGraphicController: UIViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+    @IBOutlet weak var circleButton: UIButton!
+    @IBOutlet weak var rectangleButton: UIButton!
+    @IBOutlet weak var squareButton: UIButton!
     
     var selectGraphicImage: UIImage?
-    
     weak var appDelegate = (UIApplication.shared.delegate as? AppDelegate)! //AppDelegateのインスタンスを取得
     
-    @IBAction func Reset1(_ sender: AnyObject) {
-        //appDelegateの変数を操作　円
-        appDelegate?.selectGraphic = 1
+    let disposeBag = DisposeBag()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        bind()
     }
     
-    @IBAction func Reset2(_ sender: AnyObject) {
-        appDelegate?.selectGraphic = 2
-    }
-    
-    @IBAction func Reset3(_ sender: AnyObject) {
-        appDelegate?.selectGraphic = 3
+    func bind() {
+        
+        circleButton.rx.tap
+            .subscribe(onNext: {
+                self.appDelegate?.selectGraphic = 1
+            }).disposed(by: disposeBag)
+        
+        rectangleButton.rx.tap
+            .subscribe(onNext: {
+                self.appDelegate?.selectGraphic = 2
+            }).disposed(by: disposeBag)
+        
+        squareButton.rx.tap
+            .subscribe(onNext: {
+                self.appDelegate?.selectGraphic = 3
+                
+            }).disposed(by: disposeBag)
     }
     
     override func didReceiveMemoryWarning() {

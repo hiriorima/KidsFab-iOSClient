@@ -28,7 +28,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Select1.png"/>
                                 <connections>
-                                    <action selector="Reset1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S7f-Kv-HQA"/>
                                     <segue destination="lAh-mq-XgJ" kind="modal" id="bSQ-zb-pAo"/>
                                 </connections>
                             </button>
@@ -37,7 +36,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Select2.png"/>
                                 <connections>
-                                    <action selector="Reset2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sRJ-Ch-ffF"/>
                                     <segue destination="lAh-mq-XgJ" kind="modal" id="vT6-Xt-rUx"/>
                                 </connections>
                             </button>
@@ -68,6 +66,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="circleButton" destination="b06-sf-OsH" id="3ed-lE-c7T"/>
+                        <outlet property="rectangleButton" destination="BWW-V9-yhf" id="tCa-Fy-R3z"/>
+                        <outlet property="squareButton" destination="Y2U-S3-YCa" id="iWq-MN-QT6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -892,7 +895,6 @@
         <image name="newAccount.png" width="223" height="223"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hqQ-cQ-vfL"/>
         <segue reference="pcT-uq-CMe"/>
         <segue reference="RXj-di-MXD"/>
         <segue reference="vT6-Xt-rUx"/>
