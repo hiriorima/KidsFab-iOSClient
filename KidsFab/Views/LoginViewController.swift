@@ -44,13 +44,6 @@ class LoginViewController: UIViewController {
             .bind(to: LoginButton.rx.isEnabled)
             .disposed(by: disposeBag)
         
-        PWInputField.rx.controlEvent(.editingDidBegin)
-            .asObservable()
-            .subscribe({_ in
-                self.PWInputField.isSecureTextEntry = true
-            })
-            .disposed(by: disposeBag)
-        
         LoginButton.rx.tap
             .subscribe({ [weak self] _ in self?.LoginActivity() })
             .disposed(by: disposeBag)

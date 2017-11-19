@@ -511,7 +511,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                     </textField>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="member_login.png" id="MPv-9A-0ZV">
                                         <rect key="frame" x="401" y="80" width="222" height="222"/>
@@ -892,6 +892,7 @@
         <image name="newAccount.png" width="223" height="223"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="hqQ-cQ-vfL"/>
         <segue reference="pcT-uq-CMe"/>
         <segue reference="RXj-di-MXD"/>
         <segue reference="vT6-Xt-rUx"/>
