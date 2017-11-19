@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    var selectGraphic = 0
+    var selectGraphic: GraphicType = .circle
     var viewController: SearchScreenController?
     
     var user_id = "Guest"

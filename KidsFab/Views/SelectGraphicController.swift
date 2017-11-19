@@ -30,23 +30,21 @@ class SelectGraphicController: UIViewController {
         
         circleButton.rx.tap
             .subscribe(onNext: {
-                self.appDelegate?.selectGraphic = 1
+                self.appDelegate?.selectGraphic = .circle
             }).disposed(by: disposeBag)
         
         rectangleButton.rx.tap
             .subscribe(onNext: {
-                self.appDelegate?.selectGraphic = 2
+                self.appDelegate?.selectGraphic = .rectangle
             }).disposed(by: disposeBag)
         
         squareButton.rx.tap
             .subscribe(onNext: {
-                self.appDelegate?.selectGraphic = 3
-                
+                self.appDelegate?.selectGraphic = .square
             }).disposed(by: disposeBag)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }

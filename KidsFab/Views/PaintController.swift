@@ -34,8 +34,7 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     // 保存フラグ
     var SaveFlag = (0, 0)
-    //概形フラグ
-    var selectedGraphic = 0
+    
     //Maskイメージ
     var maskImage: UIImage = UIImage(named: "Mask.png")!
     @IBOutlet var SaveView: SpringView!
@@ -99,15 +98,13 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
     //画面が表示される直前//
     override func viewWillAppear(_ animated: Bool) {
         
-        selectedGraphic = (appDelegate?.selectGraphic)!
-        
-        switch selectedGraphic {
-        case 1:
+        switch appDelegate?.selectGraphic {
+        case .circle?:
             self.drawingView.layer.cornerRadius = 325
             self.drawingView.layer.masksToBounds = true
-        case 2:
+        case .rectangle?:
             drawingView.frame = CGRect(x: 170, y: 100, width: 700, height: 550)
-        case 3:
+        case .square?:
             drawingView.frame = CGRect(x: 187, y: 62, width: 650, height: 650)
         default:
             ErrorWindow()
@@ -391,8 +388,8 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
             var PostImg: String
             drawingView.layer.borderWidth = 0.0
             
-            switch selectedGraphic {
-            case 1:
+            switch appDelegate?.selectGraphic {
+            case .circle?:
                 let CutImg = getMaskedImage(drawingView.image)
                 UIGraphicsBeginImageContext(CutImg.size)
                 // バッファにcImageを描画。
@@ -403,9 +400,9 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
                 UIGraphicsEndImageContext()
                 // PNGフォーマットのNSDataをUIImageから作成。
                 PostImg = Image2String(nonLayerImage!)!
-            case 2:
+            case .rectangle?:
                 PostImg = Image2String(drawingView.image)!
-            case 3:
+            case .square?:
                 PostImg = Image2String(drawingView.image)!
             default:
                 PostImg  = ""
