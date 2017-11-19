@@ -20,26 +20,12 @@ class SearchScreenController: UIViewController, UICollectionViewDataSource, UICo
     @IBOutlet weak var selectCategoryImg: UIImageView!
     @IBOutlet weak var categoryName: UILabel!
     
-    let categoryImg =
-        ["character.png",
-         "plant.png",
-         "eat.png",
-         "human.png",
-         "animal.png",
-         "car.png",
-         "mark.png",
-         "etc.png"]
-    
-    //AppDelegateのインスタンスを取得
     weak var appDelegate = (UIApplication.shared.delegate as? AppDelegate)!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         appDelegate?.viewController = self
-        
-        let request: Request = Request()
-        let uri = RequestConst().getCategoryContentsURI+(appDelegate?.category_number)!
-        request.get(uri, callBackClosure: self.renderView)
+        getCategoryContents()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,32 +38,26 @@ class SearchScreenController: UIViewController, UICollectionViewDataSource, UICo
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    func Reload(_ categoryImgString: String, categoryString: String) {
+    func getCategoryContents() {
         
         let request: Request = Request()
-        
-        let uri = RequestConst().getCategoryContentsURI + (appDelegate?.category_number)!
-        
+        let uri = RequestConst().getCategoryContentsURI + String((appDelegate?.category)!.rawValue)
         request.get(uri, callBackClosure: self.renderView)
+    }
+    
+    func Reload(category: Category) {
         
-        // 表示する画像を設定する.
-        let img = UIImage(named: categoryImgString)
-        selectCategoryImg.image = img
-        categoryName.text = categoryString
-        
+        getCategoryContents()
+        selectCategoryImg.image = category.getImage()
+        categoryName.text = category.getName()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryButtonCell", for: indexPath) as? CategoryButtonCell)!
-        
-        let img = UIImage(named: categoryImg[indexPath.row])
-        
-        // set Name
-        cell.CategoryButtonImg.image = img
+        cell.CategoryButtonImg.image = Category(rawValue: indexPath.row)?.getImage()
         cell.backgroundColor = UIColor.green
         
         return cell
@@ -92,52 +72,18 @@ class SearchScreenController: UIViewController, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    
+        let category = Category(rawValue: indexPath.row)
+        appDelegate?.category = category!
         
-        //AppDelegateのインスタンスを取得
-        let appDelegate = (UIApplication.shared.delegate as? AppDelegate)!
-        
-        var categoryString: String = ""
-        
-        switch categoryImg[indexPath.row] {
-        case "character.png":
-            appDelegate.category_number = "0"
-            categoryString = "キャラクター"
-        case "plant.png":
-            appDelegate.category_number = "1"
-            categoryString = "しょくぶつ"
-        case "eat.png":
-            appDelegate.category_number = "2"
-            categoryString = "たべもの"
-        case "human.png":
-            appDelegate.category_number = "3"
-            categoryString = "じんぶつ"
-        case "animal.png":
-            appDelegate.category_number = "4"
-            categoryString = "どうぶつ"
-        case "car.png":
-            appDelegate.category_number = "5"
-            categoryString = "のりもの"
-        case "mark.png":
-            appDelegate.category_number = "6"
-            categoryString = "マーク"
-        case "etc.png":
-            appDelegate.category_number = "7"
-            categoryString = "そのた"
-        default:
-            break
-        }
-        
-        Reload(categoryImg[indexPath.row], categoryString: categoryString)
+        Reload(category: Category(rawValue: indexPath.row)!)
     }
     
     func viewChange() {
+        
         let sv = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "selectGraphic")
-        
         sv.modalTransitionStyle = UIModalTransitionStyle.coverVertical
-        
-        // Viewの移動する.
         self.present(sv, animated: true, completion: nil)
-        
     }
     
     func renderView(json: NSArray) {
@@ -159,15 +105,4 @@ class SearchScreenController: UIViewController, UICollectionViewDataSource, UICo
             self.CategoryThumbnail.delegate = self.thumbnailConfig
         })
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
