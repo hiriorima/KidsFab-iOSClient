@@ -8,184 +8,83 @@
 
 import UIKit
 import Spring
+import RxSwift
+import RxCocoa
 
-class AddNewAcountViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
+class AddNewAcountViewController: UIViewController {
     
     @IBOutlet var IDInputField: UITextField!
     @IBOutlet var PWInputField: UITextField!
     @IBOutlet var PWReinputField: UITextField!
-    @IBOutlet var sc: UIScrollView!
     
     fileprivate var txtActiveField = UITextField()
     
     @IBOutlet weak var ErrorLabel: UILabel!
     
-    @IBOutlet var AddButton: SpringButton!
+    @IBOutlet var AddButton: UIButton!
     var AddFlag = (0, 0)
+    
+    @IBOutlet var tapGesture: UITapGestureRecognizer!
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        sc.frame = self.view.frame
-        IDInputField.delegate = self
-        PWInputField.delegate = self
-        PWReinputField.delegate = self
-        sc.delegate = self
         
-        ErrorLabel.numberOfLines = 3
-        
-        IDInputField.placeholder = "IDを入力してください(英数字3~10字)"
-        PWInputField.placeholder = "パスワードを入力してください(英数字4~8字)"
-        PWReinputField.placeholder = "パスワードをもう一度入力してください(英数字4~8字)"
-        
-        // Do any additional setup after loading the view.
+        bind()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    /*
-     編集開始時の処理
-     *パスワード入力方式設定
-     *if:テキストフィールドをタップ
-     テキストフィールド初期化
-     */
-    @IBAction func TextFieldEditingDidBegin(_ sender: UITextField) {
-        txtActiveField = sender
-        if sender == PWInputField || sender == PWReinputField {
-            sender.isSecureTextEntry = true
-        }
-    }
-    
-    /*
-     テキストが編集された際に呼ばれる.
-     */
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        var maxLength: Int = 0
-        
-        // 文字数最大を決める.
-        if textField == IDInputField {
-            maxLength = 11
-        } else if textField == PWInputField || textField == PWReinputField {
-            maxLength = 9
-        }
-        
-        // 入力済みの文字と入力された文字を合わせて取得.
-        let str = textField.text! + string
-        
-        // 文字数がmaxLength以下ならtrueを返す.
-        if str.characters.count < maxLength {
-            return true
-        }
-        
-        return false
-    }
-    
-    /*
-     キーボード以外をタップするとキーボードを閉じる
-     */
-    @IBAction func TapScreen(_ sender: UITapGestureRecognizer) {
-        self.view.endEditing(true)
-    }
-    
-    /*
-     Returnをタップするとキーボードを閉じる
-     */
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
-    /*
-     キーボード表示時にテキストフィールドと重なっているか調べる
-     重なっていたらスクロールする
-     */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(AddNewAcountViewController.handleKeyboardWillShowNotification(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(AddNewAcountViewController.handleKeyboardWillHideNotification(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        scrollWhenShowKeyboard()
     }
     
-    @objc func handleKeyboardWillShowNotification(_ notification: Notification) {
+    func bind() {
+        let idValidation = IDInputField.rx.text
+            .map { text -> Bool in
+                text!.characters.count >= 3
+            }
+            .share(replay: 1)
         
-        let userInfo = notification.userInfo!
-        let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
-        let myBoundSize: CGSize = UIScreen.main.bounds.size
-        let txtLimit = txtActiveField.frame.origin.y + txtActiveField.frame.height + 8.0
-        let kbdLimit = myBoundSize.height - (keyboardScreenEndFrame?.size.height)!
+        let pwValidation = PWInputField.rx.text
+            .map { text -> Bool in
+                text!.characters.count >= 4
+            }
+            .share(replay: 1)
         
-        if txtLimit >= kbdLimit {
-            sc.contentOffset.y = txtLimit - kbdLimit
-        }
+        let pwRepeatedValidation = PWReinputField.rx.text
+            .map { text -> Bool in
+                text!.characters.count >= 4 && text! == self.PWInputField.text!
+            }
+            .share(replay: 1)
+        
+        Observable.combineLatest(idValidation, pwValidation, pwRepeatedValidation) {
+            $0 && $1 && $2
+            }
+            .bind(to: AddButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        AddButton.rx.tap
+            .subscribe({ [weak self] _ in self?.AddNewAccountActivity() })
+            .disposed(by: disposeBag)
+        
+        tapGesture.rx.event
+            .asObservable()
+            .subscribe {_ in
+                self.view.endEditing(true)
+            }
+            .disposed(by: disposeBag)
     }
     
-    @objc func handleKeyboardWillHideNotification(_ notification: Notification) {
-        sc.contentOffset.y = 0
-    }
-    
-    @IBAction func TapAddNewAccount(_ sender: AnyObject) {
-        
-        let String_ID = IDInputField.text
-        let String_PW = PWInputField.text
-        let String_RePW = PWReinputField.text
-        
-        //エラー処理
-        if String_ID!.characters.count >= 3 {
-            AddFlag.0 =  1
-        } else {
-            AddFlag.0 = 0
-        }
-        
-        if String_PW!.characters.count >= 4 || String_RePW!.characters.count >= 4 {
-            AddFlag.1 =  1
-        } else {
-            AddFlag.1 = 0
-        }
-        
-        AddButton.animation = "shake"
-        switch AddFlag {
-        case(0, 0):
-            ErrorLabel.text = "IDとパスワードが違います"
-            AddButton.animate()
-        case(1, 0):
-            ErrorLabel.text = "パスワードが違います"
-            AddButton.animate()
-        case(0, 1):
-            ErrorLabel.text = "IDが違います"
-            AddButton.animate()
-        case(1, 1):
-            if String_PW == String_RePW {
-                ErrorLabel.text = ""
-                AddNewAccountActivity(String_ID!, password: String_PW!, password_confirmation: String_RePW!)
-            } else {
-                ErrorLabel.text = "パスワードが一致していません"
-                AddButton.animate()}
-        default:
-            ErrorLabel.text = "エラーが発生しました。"
-        }
-    }
-    
-    func AddNewAccountActivity(_ userid: String, password: String, password_confirmation: String) {
+    func AddNewAccountActivity() {
         
         let request: Request = Request()
-        let body = ["userid": userid,
-                    "password": password,
-                    "password_confirmation": password_confirmation]
+        let body = ["userid": IDInputField.text!,
+                    "password": PWInputField.text!,
+                    "password_confirmation": PWReinputField.text!]
         request.post(RequestConst().createUserURI, body: body)
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
