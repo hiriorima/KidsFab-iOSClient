@@ -17,8 +17,8 @@ class SelectGraphicController: UIViewController {
     @IBOutlet weak var squareButton: UIButton!
     
     var selectGraphicImage: UIImage?
-    weak var appDelegate = (UIApplication.shared.delegate as? AppDelegate)! //AppDelegateのインスタンスを取得
     
+    weak var appDelegate = (UIApplication.shared.delegate as? AppDelegate)!
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {

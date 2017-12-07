@@ -16,15 +16,14 @@ class AddNewAcountViewController: UIViewController {
     @IBOutlet var IDInputField: UITextField!
     @IBOutlet var PWInputField: UITextField!
     @IBOutlet var PWReinputField: UITextField!
-    
     fileprivate var txtActiveField = UITextField()
-    
     @IBOutlet weak var ErrorLabel: UILabel!
-    
+
     @IBOutlet var AddButton: UIButton!
     var AddFlag = (0, 0)
     
     @IBOutlet var tapGesture: UITapGestureRecognizer!
+    
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {

@@ -44,7 +44,7 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
     let TImgArray: NSArray = ["Menu.png", "Pen.png", "Line.png", "Ellipse.png", "Rect.png", "Eraser.png", "Text.png"]
     
     //選択領域の概形選択&リセットボタンの画像設定
-    weak var appDelegate = UIApplication.shared.delegate as? AppDelegate //AppDelegateのインスタンスを取得
+    weak var appDelegate = UIApplication.shared.delegate as? AppDelegate
     
     // 背景色の設定
     let select = UIColor.lightGray
@@ -324,7 +324,6 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
         }
         return false}
     
-    //改行した時キーボードを閉じる
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -572,16 +571,5 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

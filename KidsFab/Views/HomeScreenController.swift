@@ -20,7 +20,6 @@ class HomeScreenController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //AppDelegateのインスタンスを取得
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         
         username.text = appDelegate?.user_id
@@ -44,7 +43,6 @@ class HomeScreenController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func renderView(json: NSArray) {

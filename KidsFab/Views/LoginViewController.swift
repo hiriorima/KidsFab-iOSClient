@@ -57,15 +57,15 @@ class LoginViewController: UIViewController {
     }
     
     func LoginActivity() {
-        let request: Request = Request()
         
+        let request: Request = Request()
         let body = ["userid": IDInputField.text!,
                     "password": PWInputField.text!]
-        
         request.post(RequestConst().loginURI, body: body)
     }
     
     func ScreenTransition(_ userid: String) {
+        
         let appDelegate = (UIApplication.shared.delegate as? AppDelegate)!
         appDelegate.user_id = userid
         
