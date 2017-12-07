@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchScreenController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class SearchScreenController: UIViewController {
     
     var thumbnailConfig: ThumbnailConfig?
     
@@ -54,31 +54,6 @@ class SearchScreenController: UIViewController, UICollectionViewDataSource, UICo
         categoryName.text = category.getName()
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryButtonCell", for: indexPath) as? CategoryButtonCell)!
-        cell.CategoryButtonImg.image = Category(rawValue: indexPath.row)?.getImage()
-        cell.backgroundColor = UIColor.green
-        
-        return cell
-    }
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    
-        let category = Category(rawValue: indexPath.row)
-        appDelegate?.category = category!
-        
-        Reload(category: Category(rawValue: indexPath.row)!)
-    }
-    
     func viewChange() {
         
         let sv = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "selectGraphic")
@@ -104,5 +79,33 @@ class SearchScreenController: UIViewController, UICollectionViewDataSource, UICo
             self.CategoryThumbnail.dataSource = self.thumbnailConfig
             self.CategoryThumbnail.delegate = self.thumbnailConfig
         })
+    }
+}
+
+extension SearchScreenController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryButtonCell", for: indexPath) as? CategoryButtonCell)!
+        cell.CategoryButtonImg.image = Category(rawValue: indexPath.row)?.getImage()
+        cell.backgroundColor = UIColor.green
+        
+        return cell
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 8
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let category = Category(rawValue: indexPath.row)
+        appDelegate?.category = category!
+        
+        Reload(category: Category(rawValue: indexPath.row)!)
     }
 }
