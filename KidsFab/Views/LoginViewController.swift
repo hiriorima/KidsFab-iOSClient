@@ -39,7 +39,7 @@ class LoginViewController: UIViewController {
     
     func bind() {
         Observable.combineLatest(IDInputField.rx.text.orEmpty.asObservable(), PWInputField.rx.text.orEmpty.asObservable()) {
-            $0.characters.count > 3 && $0.characters.count < 10 && $1.characters.count > 4 && $1.characters.count < 8
+            $0.count > 3 && $0.count < 10 && $1.count > 4 && $1.count < 8
             }
             .bind(to: LoginButton.rx.isEnabled)
             .disposed(by: disposeBag)

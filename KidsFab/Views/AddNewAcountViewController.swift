@@ -45,19 +45,19 @@ class AddNewAcountViewController: UIViewController {
     func bind() {
         let idValidation = IDInputField.rx.text
             .map { text -> Bool in
-                text!.characters.count >= 3
+                text!.count >= 3
             }
             .share(replay: 1)
         
         let pwValidation = PWInputField.rx.text
             .map { text -> Bool in
-                text!.characters.count >= 4
+                text!.count >= 4
             }
             .share(replay: 1)
         
         let pwRepeatedValidation = PWReinputField.rx.text
             .map { text -> Bool in
-                text!.characters.count >= 4 && text! == self.PWInputField.text!
+                text!.count >= 4 && text! == self.PWInputField.text!
             }
             .share(replay: 1)
         

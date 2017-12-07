@@ -319,7 +319,7 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
         // 入力済みの文字と入力された文字を合わせて取得.
         let str = TittleField.text! + string
         // 文字数がmaxLength以下ならtrueを返す.
-        if str.characters.count <= maxLength {
+        if str.count <= maxLength {
             return true
         }
         return false}
@@ -356,7 +356,7 @@ class PaintController: UIViewController, UITableViewDataSource, UITableViewDeleg
         self.view.endEditing(true)
         
         //エラー処理
-        if PostTitle.characters.count != 0 {
+        if PostTitle.count != 0 {
             SaveFlag.0 =  1
         }
         
