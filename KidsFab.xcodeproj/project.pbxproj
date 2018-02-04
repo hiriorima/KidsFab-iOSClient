@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D344F851F7B8539002797D3 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D344F831F7B8539002797D3 /* UIAlertController+Extension.swift */; };
+		0D344F861F7B8539002797D3 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D344F841F7B8539002797D3 /* UIApplication+Extension.swift */; };
 		0D59112B1F7A2CB7002F9991 /* TitleScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D59112A1F7A2CB7002F9991 /* TitleScreenController.swift */; };
 		0D59112E1F7A4FFB002F9991 /* PaintController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D59112D1F7A4FFB002F9991 /* PaintController.swift */; };
+		0D75BF561FC1790800C7A1F0 /* UIViewController+ScrollWhenShowKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D75BF551FC1790800C7A1F0 /* UIViewController+ScrollWhenShowKeyboard.swift */; };
+		0D75BF581FC1BBF200C7A1F0 /* ContentsConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D75BF571FC1BBF200C7A1F0 /* ContentsConst.swift */; };
+		0DF243661F7BAD9D003AFBB4 /* RequestConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF243651F7BAD9D003AFBB4 /* RequestConst.swift */; };
 		0DF5660B1BE3596C00D0EE2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF5660A1BE3596C00D0EE2E /* AppDelegate.swift */; };
 		0DF566101BE3596C00D0EE2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DF5660E1BE3596C00D0EE2E /* Main.storyboard */; };
 		0DF566121BE3596C00D0EE2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DF566111BE3596C00D0EE2E /* Assets.xcassets */; };
@@ -93,8 +98,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D344F831F7B8539002797D3 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
+		0D344F841F7B8539002797D3 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		0D59112A1F7A2CB7002F9991 /* TitleScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleScreenController.swift; sourceTree = "<group>"; };
 		0D59112D1F7A4FFB002F9991 /* PaintController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaintController.swift; sourceTree = "<group>"; };
+		0D75BF551FC1790800C7A1F0 /* UIViewController+ScrollWhenShowKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ScrollWhenShowKeyboard.swift"; sourceTree = "<group>"; };
+		0D75BF571FC1BBF200C7A1F0 /* ContentsConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsConst.swift; sourceTree = "<group>"; };
+		0DF243651F7BAD9D003AFBB4 /* RequestConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestConst.swift; sourceTree = "<group>"; };
 		0DF566071BE3596C00D0EE2E /* KidsFab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KidsFab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DF5660A1BE3596C00D0EE2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DF5660F1BE3596C00D0EE2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -211,6 +221,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D344F821F7B8539002797D3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0D75BF551FC1790800C7A1F0 /* UIViewController+ScrollWhenShowKeyboard.swift */,
+				0D344F831F7B8539002797D3 /* UIAlertController+Extension.swift */,
+				0D344F841F7B8539002797D3 /* UIApplication+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0DD38BF81FC0689A00111FF9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0D59112D1F7A4FFB002F9991 /* PaintController.swift */,
+				207BAF221C0DB2F60023228F /* SearchScreenController.swift */,
+				207BAEBB1C0DA79D0023228F /* SelectGraphicController.swift */,
+				207BAEB51C0DA3770023228F /* HomeScreenController.swift */,
+				20C4EE641C0D7E520037CB83 /* LoginViewController.swift */,
+				20C4EE661C0D7FF60037CB83 /* AddNewAcountViewController.swift */,
+				0D59112A1F7A2CB7002F9991 /* TitleScreenController.swift */,
+				0DF8CBA91C156E490058905C /* CustomThumbnailCell.swift */,
+				0DF8CBAA1C156E490058905C /* ThumbnailConfig.swift */,
+				0DF8CBAC1C156E490058905C /* CategoryButtonCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0DF243621F7BA6CE003AFBB4 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				0DF243651F7BAD9D003AFBB4 /* RequestConst.swift */,
+				0D75BF571FC1BBF200C7A1F0 /* ContentsConst.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		0DF565FE1BE3596C00D0EE2E = {
 			isa = PBXGroup;
 			children = (
@@ -236,20 +282,13 @@
 		0DF566091BE3596C00D0EE2E /* KidsFab */ = {
 			isa = PBXGroup;
 			children = (
+				0DD38BF81FC0689A00111FF9 /* Views */,
+				0DF243621F7BA6CE003AFBB4 /* Constants */,
+				0D344F821F7B8539002797D3 /* Extensions */,
 				207BAEC51C0DA95C0023228F /* images */,
 				0DF5660A1BE3596C00D0EE2E /* AppDelegate.swift */,
 				20F3654A1C05A20900E1A48A /* Request.swift */,
-				0D59112D1F7A4FFB002F9991 /* PaintController.swift */,
 				0DF5660E1BE3596C00D0EE2E /* Main.storyboard */,
-				207BAF221C0DB2F60023228F /* SearchScreenController.swift */,
-				207BAEBB1C0DA79D0023228F /* SelectGraphicController.swift */,
-				207BAEB51C0DA3770023228F /* HomeScreenController.swift */,
-				20C4EE641C0D7E520037CB83 /* LoginViewController.swift */,
-				20C4EE661C0D7FF60037CB83 /* AddNewAcountViewController.swift */,
-				0D59112A1F7A2CB7002F9991 /* TitleScreenController.swift */,
-				0DF8CBA91C156E490058905C /* CustomThumbnailCell.swift */,
-				0DF8CBAA1C156E490058905C /* ThumbnailConfig.swift */,
-				0DF8CBAC1C156E490058905C /* CategoryButtonCell.swift */,
 				0DF566111BE3596C00D0EE2E /* Assets.xcassets */,
 				0DF566131BE3596C00D0EE2E /* LaunchScreen.storyboard */,
 				0DF566161BE3596C00D0EE2E /* Info.plist */,
@@ -431,7 +470,7 @@
 		0DF565FF1BE3596C00D0EE2E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "会津慎弥";
 				TargetAttributes = {
 					0DF566061BE3596C00D0EE2E = {
@@ -609,9 +648,22 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-KidsFab/Pods-KidsFab-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ACEDrawingView/ACEDrawingView.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ACEDrawingView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -624,13 +676,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KidsFabTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		95AD8372B5C69F4265BF146F /* [CP] Check Pods Manifest.lock */ = {
@@ -639,13 +694,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KidsFabUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AFA32AFA34BA09651D4E4A64 /* [CP] Copy Pods Resources */ = {
@@ -684,13 +742,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KidsFab-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -703,11 +764,16 @@
 				0D59112E1F7A4FFB002F9991 /* PaintController.swift in Sources */,
 				0DF8CBAD1C156E490058905C /* CustomThumbnailCell.swift in Sources */,
 				207BAEBC1C0DA79D0023228F /* SelectGraphicController.swift in Sources */,
+				0D75BF561FC1790800C7A1F0 /* UIViewController+ScrollWhenShowKeyboard.swift in Sources */,
 				20F3654B1C05A20A00E1A48A /* Request.swift in Sources */,
 				207BAEB61C0DA3770023228F /* HomeScreenController.swift in Sources */,
+				0DF243661F7BAD9D003AFBB4 /* RequestConst.swift in Sources */,
 				0D59112B1F7A2CB7002F9991 /* TitleScreenController.swift in Sources */,
+				0D344F861F7B8539002797D3 /* UIApplication+Extension.swift in Sources */,
 				20C4EE671C0D7FF70037CB83 /* AddNewAcountViewController.swift in Sources */,
 				20C4EE651C0D7E520037CB83 /* LoginViewController.swift in Sources */,
+				0D75BF581FC1BBF200C7A1F0 /* ContentsConst.swift in Sources */,
+				0D344F851F7B8539002797D3 /* UIAlertController+Extension.swift in Sources */,
 				0DF8CBAE1C156E490058905C /* ThumbnailConfig.swift in Sources */,
 				207BAF231C0DB2F60023228F /* SearchScreenController.swift in Sources */,
 				0DF8CBB01C156E490058905C /* CategoryButtonCell.swift in Sources */,
@@ -774,14 +840,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -809,7 +881,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -822,14 +894,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -850,7 +928,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -869,7 +947,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "-D-PaintTool";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -887,7 +965,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "-D-PaintTool";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;

@@ -11,11 +11,9 @@ import Alamofire
 
 class Request {
     let session: URLSession = URLSession.shared
-    let nooooUrl = URL(string: "http://paint.fablabhakdoate.org/")
-    let baseURL = "http://paint.fablabhakodate.org/"
     
     func get(_ uri: String, callBackClosure: @escaping (NSArray) -> Void) {
-        Alamofire.request(baseURL + uri, headers: self.genHeader("GET")).responseJSON { response in
+        Alamofire.request(RequestConst().baseURL + uri, headers: self.genHeader("GET")).responseJSON { response in
             switch response.result {
             case .success:
                 callBackClosure((response.value as? NSArray)!)
@@ -27,7 +25,7 @@ class Request {
     
     // POST METHOD
     func post(_ uri: String, body: [String: Any]) {
-        Alamofire.request(baseURL + uri, method: .post, parameters: body, encoding: JSONEncoding.default, headers: genHeader("POST")).responseJSON { response in
+        Alamofire.request(RequestConst().baseURL + uri, method: .post, parameters: body, encoding: JSONEncoding.default, headers: genHeader("POST")).responseJSON { response in
             switch response.result {
             case .success:
                 //callBackClosure(response.value as! NSArray)
@@ -65,8 +63,8 @@ class Request {
         session.dataTask(with: request, completionHandler: (completionHandler as? (Data?, URLResponse?, Error?) -> Void)!).resume()
     }
     
-    func genHeader(_ method: String) -> [String:String] {
-        let cookies = HTTPCookieStorage.shared.cookies(for: nooooUrl!)
+    func genHeader(_ method: String) -> [String: String] {
+        let cookies = HTTPCookieStorage.shared.cookies(for: URL(string: RequestConst().nooooURL)!)
         var headers = HTTPCookie.requestHeaderFields(with: cookies!)
         headers["Accept"] = "application/json"
         if method != "GET" {

@@ -28,7 +28,6 @@ class ThumbnailConfig: NSObject, UICollectionViewDataSource, UICollectionViewDel
         let data = try? Data(contentsOf: url!)
         let img = UIImage(data: data!)
         
-        // set Name
         cell.thumbnail.image = img
         cell.backgroundColor = UIColor.white
         cell.img_name.text = imgs_name[indexPath.row]
@@ -46,12 +45,11 @@ class ThumbnailConfig: NSObject, UICollectionViewDataSource, UICollectionViewDel
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        //Todo ここで画像データをデリゲートに投げて編集画面へ画面遷移する!!
         let url = URL(string: items[indexPath.row])
         let data = try? Data(contentsOf: url!)
         let img = UIImage(data: data!)
         
-        let appDelegate = (UIApplication.shared.delegate as? AppDelegate)! //AppDelegateのインスタンスを取得
+        let appDelegate = (UIApplication.shared.delegate as? AppDelegate)!
         appDelegate.searchImg = img
         appDelegate.viewController?.viewChange()
     }

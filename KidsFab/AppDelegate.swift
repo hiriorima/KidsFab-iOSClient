@@ -12,12 +12,12 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    var selectGraphic = 0
+    var selectGraphic: GraphicType = .circle
     var viewController: SearchScreenController?
     
     var user_id = "Guest"
     var images_url: String?
-    var category_number = "0"
+    var category: Category = .character
     var searchImg: UIImage?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
